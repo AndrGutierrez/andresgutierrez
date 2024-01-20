@@ -16,8 +16,8 @@ export default function RouteProvider({children}: Readonly<{
     }
     if (i== 1){
       // pathname != lastPathname && redirect(pathname)
-      console.log("pathname", pathname)
-      console.log("lastPathname", lastPathname)
+      localStorage.setItem("lastPathname", lastPathname)
+      localStorage.setItem("pathname", pathname)
     }
     i++
     // redirect(pathngccame)
