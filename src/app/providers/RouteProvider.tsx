@@ -16,7 +16,7 @@ export default function RouteProvider({children}: Readonly<{
       console.log("a")
     }
     if (i== 1){
-      // pathname != lastPathname && redirect(pathname)
+      pathname != lastPathname && redirect(pathname)
       localStorage.setItem("lastPathname", lastPathname)
       localStorage.setItem("pathname", pathname)
     }
