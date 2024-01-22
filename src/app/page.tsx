@@ -6,8 +6,8 @@ export default function Home() {
     const isInView = useInView(ref);
   return (
 
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-background" ref={ref}>
-        {/* <motion.div className="h-[500px] bg-white w-[500px] mb-[10px]" variants={{
+    <main className="flex min-h-screen justify-center flex-col items-center p-24 bg-background" ref={ref}>
+        <motion.div className="w-100 justify-center" variants={{
           hidden: {
             opacity: 0, y: 75
           },
@@ -18,8 +18,13 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.3 }}
         initial= "hidden"
         animate="visible"
-        ></motion.div>
-     */}
+        >
+        <h1 className="text-5xl text-center font-bold mb-24">
+          Thank you for visiting my website. I am currently working on it. 
+          <br />
+          Please come back later!.
+        </h1>
+      </motion.div>
     </main>
   );
 }
