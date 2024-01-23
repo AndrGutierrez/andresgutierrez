@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -30,4 +31,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1{
+  font-family: futura-font;
 }
