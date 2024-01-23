@@ -4,7 +4,6 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import Electron from "../components/animated/Electron";
 import { Canvas } from "@react-three/fiber";
 import { Vector3 } from "three";
-import { useTexture } from "@react-three/drei";
 
 const orbitRadius = 2.5;
 export default function Home() {
@@ -21,14 +20,13 @@ export default function Home() {
       "x": (date: number)=> Math.cos(date) * orbitRadius,
       "y": (date: number)=> Math.cos(date) * orbitRadius,
       "z": (date: number)=>Math.sin(date) * orbitRadius,
-      "texture": "images/python.png",
+      "texture": "/images/python.png",
     },
         "js" : {
       "x": (date: number)=> -Math.cos(date-1) * orbitRadius,
       "y": (date: number)=> Math.cos(date-1) * orbitRadius,
       "z": (date: number)=> Math.sin(date-1) * orbitRadius,
-      "texture": "images/js.png",
-      // "color": "rgba(255,223,0,255)"
+      "texture": "/images/js.png",
     }
 
   }
@@ -62,7 +60,6 @@ export default function Home() {
           <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
           <Electron position={new Vector3(-1.2, 0, 0)} orbit={orbits["python"]} />
           <Electron position={new Vector3(5, 0, 0)} orbit={orbits["js"]} />
-          {/* <Atom position={[1.2, 0, 0]} /> */}
         </Canvas>
         </div>
       </div>

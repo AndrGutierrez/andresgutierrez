@@ -1,7 +1,7 @@
-import React, { ReactPropTypes, useRef, useState } from 'react'
-import { ThreeElements, useFrame, useLoader } from '@react-three/fiber'
+import React, { useRef, useState } from 'react'
+import { useFrame } from '@react-three/fiber'
 import { useTexture } from "@react-three/drei"
-import { TextureLoader, Vector3 } from 'three'
+import { Vector3 } from 'three'
 
 
 type propTypes = {orbit:{x:Function, y: Function, z: Function, texture: string, color?: string},  position: Vector3}
@@ -10,7 +10,6 @@ export default function Electron({orbit, position}: propTypes) {
   const ref = useRef<THREE.Mesh>(null!)
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
-  // ref.current.
   // useFrame((state, delta) => (ref.current.rotation.y += delta))
   useFrame((state, delta) => {
 
@@ -29,16 +28,6 @@ export default function Electron({orbit, position}: propTypes) {
 
   return (
     <>
-      {/* <mesh
-        {...props}
-        ref={ref}
-        scale={clicked ? 1.5 : 1}
-        onClick={(event) => click(!clicked)}
-        onPointerOver={(event) => hover(true)}
-        onPointerOut={(event) => hover(false)}>
-        <sphereGeometry />
-        <meshStandardMaterial  /> 
-      </mesh> */}
       <mesh
         position={position}
         ref={ref}
