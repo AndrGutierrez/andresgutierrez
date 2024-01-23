@@ -21,13 +21,13 @@ export default function Home() {
       "x": (date: number)=> Math.cos(date) * orbitRadius,
       "y": (date: number)=> Math.cos(date) * orbitRadius,
       "z": (date: number)=>Math.sin(date) * orbitRadius,
-      "texture": "https://images.ctfassets.net/mrop88jh71hl/55rrbZfwMaURHZKAUc5oOW/9e5fe805eb03135b82e962e92169ce6d/python-programming-language.png",
+      "texture": "images/python.png",
     },
         "js" : {
       "x": (date: number)=> -Math.cos(date-1) * orbitRadius,
       "y": (date: number)=> Math.cos(date-1) * orbitRadius,
       "z": (date: number)=> Math.sin(date-1) * orbitRadius,
-      "texture": "https://www.svgrepo.com/show/303206/javascript-logo.svg",
+      "texture": "images/js.png",
       // "color": "rgba(255,223,0,255)"
     }
 
