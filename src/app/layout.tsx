@@ -29,7 +29,7 @@ export default function RootLayout({
               <Link href="/about">About me</Link> 
             </li>
             <li>
-              <Link href="#projects">Projects</Link> 
+              <Link href="/projects">Projects</Link> 
             </li>
             <li>
               <Link href="/blog">Blog</Link> 
