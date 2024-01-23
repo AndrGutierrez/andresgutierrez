@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, Suspense } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useTexture } from "@react-three/drei"
-import { Vector3 } from 'three'
+import { Vector3, TextureLoader} from 'three'
+import { useLoader } from '@react-three/fiber'
 
 
 type propTypes = {orbit:{x:Function, y: Function, z: Function, texture: string, color?: string},  position: Vector3}
@@ -21,13 +22,16 @@ export default function Electron({orbit, position}: propTypes) {
     );
     ref.current.position.dot(new Vector3(1, 1, 1))
   })
-  const textures = useTexture({
-    map: orbit.texture,
-  })
+  // const textures = useTexture({
+  //   map: orbit.texture,
+  // })
+  const colorMap = useLoader(TextureLoader, orbit.texture)
+
 
 
   return (
-    <>
+    // TODO: add fallback component
+    <Suspense fallback={"a"}>
       <mesh
         position={position}
         ref={ref}
@@ -36,8 +40,8 @@ export default function Electron({orbit, position}: propTypes) {
         onPointerOver={(event) => hover(true)}
         onPointerOut={(event) => hover(false)}>
         <circleGeometry />
-        <meshStandardMaterial  {...textures} color={orbit["color"]}/> 
+        <meshStandardMaterial   map={colorMap} color={orbit["color"]}/> 
       </mesh>
-    </>
+    </Suspense>
   )
 }
