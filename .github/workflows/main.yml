@@ -2,7 +2,7 @@
 name: Build and Deploy Next App to CloudFront
 on:
   push:
-    branches: [ main ]
+      branches: [ building ]
 jobs:
   build-and-deploy:
     name: Build and Deploy
