@@ -14,7 +14,7 @@ export default function Electron({orbit, position}: propTypes) {
   // useFrame((state, delta) => (ref.current.rotation.y += delta))
   useFrame((state, delta) => {
 
-    const date = Date.now() * 0.0009;
+    const date = Date.now() * 0.0005;
     ref.current.position.set(
       orbit["x"](date),
       orbit["y"](date),
