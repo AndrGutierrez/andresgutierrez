@@ -13,7 +13,6 @@ export default function RouteProvider({children}: Readonly<{
   useEffect(() => {
     if (i == 0) {
       lastPathname = pathname
-      console.log("a")
     }
     if (i== 1){
       pathname != lastPathname && redirect(pathname)
