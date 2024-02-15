@@ -35,13 +35,12 @@ export default function AtomCore(props: any) {
                       name="Crystal_Heart_Crystal_Heart_Mat_0"
                       castShadow
                       receiveShadow
+                      // @ts-ignore
                       geometry={nodes.Crystal_Heart_Crystal_Heart_Mat_0.geometry}
                       material={materials.Crystal_Heart_Mat}
                       position={[0, 0, 0]}
                       rotation={[0, -0.2, 0]}
-                      // scale={[1, 1, 1]}
                       ref={mesh}
-                      // rotateX={Math.PI / 2}
                     />
                   </group>
                 </group>

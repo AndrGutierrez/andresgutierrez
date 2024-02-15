@@ -4,7 +4,7 @@ import { BufferGeometry, Euler, RingGeometry, TorusGeometry, Vector3 } from "thr
 
 type PropTypes = {
   radius: number
-  rotation: Euler
+  rotation: Array<number>
 }
 export default function Ring({radius, rotation}: PropTypes) {
    const ref = useRef(null);
@@ -44,7 +44,7 @@ export default function Ring({radius, rotation}: PropTypes) {
          // position={[0.15, 0.15, 0]}
          // rotation={[-1.57, 0.785, 0.785]}
          // rotation={[1, 0.785, 0.785]}
-         rotation={rotation}
+         rotation={new Euler(...rotation)}
          castShadow
          ref={ref}>
           <torusGeometry args={[radius, 0.05]} />
