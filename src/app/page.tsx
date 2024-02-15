@@ -22,15 +22,15 @@ export default function Home() {
   const orbits = {
     "python" : {
       "x": (date: number)=> (((Math.cos(date)) * (electronOrbit))*0.7),
-      "y": (date: number)=> ((((Math.cos(date)) * (electronOrbit))*0.65)+Math.sin(date)/2),
-      "z": (date: number)=>((Math.sin(date)) * (electronOrbit)*0.9)+0.3,
+      "y": (date: number)=> ((((Math.cos(date)) * (electronOrbit))*0.65)),
+      "z": (date: number)=>((Math.sin(date)) * (electronOrbit)*0.9)+0.4,
       "texture": "/images/python.png",
     },
         "js" : {
       "x": (date: number)=> -(((Math.cos(date-2)) * (electronOrbit))*0.7),
-      "y": (date: number)=> ((((Math.cos(date-2)) * (electronOrbit))*0.65)-Math.sin(date-2)/2)+0.25,
+      "y": (date: number)=> ((((Math.cos(date-2)) * (electronOrbit))*0.65)),
       // "y": (date: number)=> 0,
-      "z": (date: number)=>((Math.sin(date-2)) * (electronOrbit*0.9)+Math.sin(date-2)/2),
+      "z": (date: number)=>((Math.sin(date-2)) * (electronOrbit*0.9)+0.4),
       "texture": "/images/js.png",
     }
 
@@ -66,7 +66,7 @@ export default function Home() {
           <ambientLight intensity={Math.PI / 2} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
           <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-                <mesh /* rotation={[0,0.758,0]} */>
+                <mesh rotation={[0,-0.15,0]}>
 
           <Electron position={new Vector3(0, 0, 0)} orbit={orbits["python"]} />
           <Electron position={new Vector3(0, 0, 0)} orbit={orbits["js"]} />
@@ -80,8 +80,8 @@ export default function Home() {
 
                    */
                 }
-                <Orbit radius={orbitRadius} rotation={[1.374, 0.758, 0]}></Orbit>
-                <Orbit radius={orbitRadius} rotation={[-1.374, 0.758, 0]}></Orbit>
+                <Orbit radius={orbitRadius} rotation={[Math.PI/2, Math.PI/4, 0]}></Orbit>
+                <Orbit radius={orbitRadius} rotation={[-Math.PI/2, Math.PI/4, 0]}></Orbit>
                 {/* <Orbit radius={orbitRadius} rotation={[1.374, 0.758, 0]}></Orbit>*/}
                 </mesh>
         </Canvas>

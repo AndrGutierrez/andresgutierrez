@@ -41,7 +41,7 @@ export default function Ring({radius, rotation}: PropTypes) {
    return (
       <mesh
          visible
-         position={[0.15, 0.15, 0]}
+         // position={[0.15, 0.15, 0]}
          // rotation={[-1.57, 0.785, 0.785]}
          // rotation={[1, 0.785, 0.785]}
          rotation={rotation}
