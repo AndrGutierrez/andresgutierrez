@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex min-h-screen justify-between p-10 xl:pl-24 bg-background h-100" ref={ref}>
+      <div className="md:flex min-h-screen justify-between p-10 xl:pl-24 bg-background h-100" ref={ref}>
           <div className="h-100 flex items-center">
             <motion.div className="w-100 md:w-1/3 xl:1/5" variants={{
               hidden: {
