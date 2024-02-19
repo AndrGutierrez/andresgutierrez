@@ -12,7 +12,6 @@ export default function AtomCore(props: any) {
   useFrame((state, delta) => {
     const date = Date.now() * 0.001;
     const scale = 1 + Math.exp(Math.sin(date)-2.5)
-    console.log(scale)
     // console.log(date)
     mesh.current.scale.set(scale, scale, scale)
     
