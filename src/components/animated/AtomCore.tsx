@@ -52,6 +52,4 @@ export default function AtomCore(props: any) {
   );
 }
 
-  // useGLTF.preload("https://andresgutierrezassets.s3.amazonaws.com/optimized_heart.glb");
-
   useGLTF.preload("crystal_heart.glb");
