@@ -5,12 +5,13 @@ import Electron from "../components/animated/Electron";
 import { Canvas } from "@react-three/fiber";
 import { Euler, Vector3 } from "three";
 import Orbit from "@/components/animated/Orbit";
+import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
 const AtomCore = lazy(()=> import("@/components/animated/AtomCore"));
 
 const orbitRadius = 2.5;
 const electronOrbit = 2.5
 export default function Home() {
-  const [title, setTitle] = useState(<>Full Stack <br /> Developer</>);  
+    const [title, setTitle] = useState(<>Hi, I'm Andres</>);  
   const [display, setDisplay]= useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -38,9 +39,9 @@ export default function Home() {
 
   return (
     <main>
-      <div className="md:flex min-h-screen justify-between p-10 xl:pl-24 bg-background h-100" ref={ref}>
-          <div className="h-100 flex items-center">
-            <motion.div className="w-100 md:w-1/3 xl:1/5" variants={{
+      <div className="lg:flex min-h-screen justify-between p-10 xl:pl-24 bg-background h-100 " ref={ref}>
+        <div className="h-100 flex items-center justify-center">
+            <motion.div className="w-100 " variants={{
               hidden: {
                 opacity: 0, y: 75
               },
@@ -53,38 +54,43 @@ export default function Home() {
             animate="visible"
             onAnimationComplete={()=>{setDisplay(true)}}
             >
-            <h1 className="text-center md:text-left text-5xl md:text-5xl xl:text-8xl font-bold mb-24  ">
-              {title}
-            </h1>
+            <div className="mb-24 flex flex-col items-center lg:items-start">
+              <h1 className="text-center lg:text-left text-5xl xl:text-7xl font-bold mb-2 sm:truncate">
+                {title}
+              </h1>
+              <p>Full Stack Developer</p>
+            </div>
           </motion.div>
         </div>
-        <div className="h-100 md:w-2/3 xl:4/5">
+        <div className="h-[400px] md:h-[500px] lg:h-auto lg:w-2/3 ">
 
           {
             display && (
-        <Canvas>
-          <ambientLight intensity={Math.PI / 2} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
-          <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-                <mesh rotation={[0,-0.15,0]}>
+              <Canvas style={{
+                // height: "400px"
+              }} >
+                <ambientLight intensity={Math.PI / 2} />
+                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+                <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+                      <mesh rotation={[0,-0.15,0]}>
 
-          <Electron position={new Vector3(0, 0, 0)} orbit={orbits["python"]} />
-          <Electron position={new Vector3(0, 0, 0)} orbit={orbits["js"]} />
-          <AtomCore></AtomCore>
-                {
-                  /*
-                   
-          <Orbit radius={orbitRadius} rotation={[1.57, 0.785, 0]}></Orbit>
-          <Orbit radius={orbitRadius} rotation={[0, 0, 0, 0]}></Orbit>
-          <Orbit radius={orbitRadius} rotation={[-1.57, 0.785, 0]}></Orbit>
+                <Electron position={new Vector3(0, 0, 0)} orbit={orbits["python"]} />
+                <Electron position={new Vector3(0, 0, 0)} orbit={orbits["js"]} />
+                <AtomCore></AtomCore>
+                      {
+                        /*
+                         
+                <Orbit radius={orbitRadius} rotation={[1.57, 0.785, 0]}></Orbit>
+                <Orbit radius={orbitRadius} rotation={[0, 0, 0, 0]}></Orbit>
+                <Orbit radius={orbitRadius} rotation={[-1.57, 0.785, 0]}></Orbit>
 
-                   */
-                }
-                <Orbit radius={orbitRadius} rotation={[Math.PI/2, Math.PI/4, 0]}></Orbit>
-                <Orbit radius={orbitRadius} rotation={[-Math.PI/2, Math.PI/4, 0]}></Orbit>
-                {/* <Orbit radius={orbitRadius} rotation={[1.374, 0.758, 0]}></Orbit>*/}
-                </mesh>
-        </Canvas>
+                         */
+                      }
+                      <Orbit radius={orbitRadius} rotation={[Math.PI/2, Math.PI/4, 0]}></Orbit>
+                      <Orbit radius={orbitRadius} rotation={[-Math.PI/2, Math.PI/4, 0]}></Orbit>
+                      {/* <Orbit radius={orbitRadius} rotation={[1.374, 0.758, 0]}></Orbit>*/}
+                      </mesh>
+              </Canvas>
 
             )
           }
