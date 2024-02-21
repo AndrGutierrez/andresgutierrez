@@ -62,4 +62,4 @@ export default function Home() {
     </main>
   );
 }
-useGLTF.preload("crystal_heart.glb");
+// useGLTF.preload("crystal_heart.glb");
