@@ -23,7 +23,7 @@ function Rig({mouseClicked}: {mouseClicked: boolean}) {
 }
 
 export default function Home() {
-  const [title, setTitle] = useState(<>Hi, I'm Andres</>);  
+  const [title, setTitle] = useState(<>Hi, I&apos;m Andres</>);  
   const [display, setDisplay]= useState(false);
   const [mouseClicked, setMouseClicked] = useState(false);
   const ref = useRef(null);
