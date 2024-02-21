@@ -21,9 +21,9 @@ export default function Home() {
     console.log(display)
   }, [display])
 
-  const gltf = useGLTF("crystal_heart.glb");
 
   return (
+
     <main>
       <div className="lg:flex min-h-screen justify-between p-10 xl:pl-24 bg-background h-100 " ref={ref}>
         <div className="h-100 flex items-center justify-center">
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="h-[400px] md:h-[550px] lg:h-[600px] xl:h-full xl:w-[80%]  ">
             {
               display && (
-                <Atom gltf={gltf}/>
+                <Atom />
               )
             }
             </div>
@@ -62,4 +62,4 @@ export default function Home() {
     </main>
   );
 }
-// useGLTF.preload("crystal_heart.glb");
+useGLTF.preload("crystal_heart.glb");

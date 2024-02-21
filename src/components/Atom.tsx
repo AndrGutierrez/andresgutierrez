@@ -1,5 +1,6 @@
 import { useEffect, Suspense, useState, lazy, SetStateAction, Dispatch } from "react"
 import { motion, useAnimation, useInView } from "framer-motion";
+import { useGLTF, useAnimations } from "@react-three/drei";
 
 import Electron from "../components/animated/Electron";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
@@ -42,7 +43,7 @@ function Rig({mouseClicked}: {mouseClicked: boolean}) {
     }
 
   }
-export default function Atom({gltf}: {gltf: any}){
+export default function Atom(){
   const [mouseClicked, setMouseClicked] = useState(false);
   const animation = {
     hidden: {
@@ -54,6 +55,7 @@ export default function Atom({gltf}: {gltf: any}){
       // scale: 2
     }
   }
+  const gltf = useGLTF("crystal_heart.glb");
   return (
           <motion.div className={`w-full h-full`} variants={animation} 
             transition={{ duration: 2, delay: 0.3 }}
