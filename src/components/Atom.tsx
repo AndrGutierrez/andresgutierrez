@@ -1,4 +1,4 @@
-import { useEffect, Suspense, useState, lazy, SetStateAction, Dispatch } from "react"
+import { useEffect, Suspense, useState, lazy, SetStateAction, Dispatch, useRef } from "react"
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
@@ -45,6 +45,8 @@ function Rig({mouseClicked}: {mouseClicked: boolean}) {
   }
 export default function Atom(){
   const [mouseClicked, setMouseClicked] = useState(false);
+  const gltf = useGLTF("crystal_heart.glb");
+  const mesh= useRef<THREE.Mesh>(null);
   const animation = {
     hidden: {
       opacity: 0,
@@ -55,33 +57,36 @@ export default function Atom(){
       // scale: 2
     }
   }
-  const gltf = useGLTF("crystal_heart.glb");
+  const [opacity, setOpacity] = useState(0);
+  const [counter, setCounter] = useState(1);
+  useFrame((state, delta) => {
+    if(opacity <=1){
+
+      setCounter((prev)=>(prev+0.01))
+      console.log(counter)
+      // setOpacity((prev)=>(((prev+1.001)**1.5)-1)/1.5)
+      setOpacity((prev)=>((Math.log(prev+counter))))
+      // setOpacity((prev)=>((prev+0.01)))
+    }
+  })
   return (
-          <motion.div className={`w-full h-full`} variants={animation} 
-            transition={{ duration: 2, delay: 0.3 }}
-            initial= "hidden"
-            animate="visible"
-            onMouseDown={()=>setMouseClicked(true)}
-            onMouseUp={()=>setMouseClicked(false)}
-            >
-              <Canvas >
+          <>
                 <ambientLight intensity={Math.PI / 2} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
                 <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-                <mesh rotation={[0,-0.15,0]} >
-
-                  <Electron position={new Vector3(0, 0, 0)} orbit={orbits["python"]} />
-                  <Electron position={new Vector3(0, 0, 0)} orbit={orbits["js"]} />
-                  <Electron position={new Vector3(0, 0, 0)} orbit={orbits["aws"]} />
+                <mesh rotation={[0,-0.15,0]} ref={mesh}  >
+                  <Electron position={new Vector3(0, 0, 0)} orbit={orbits["python"]} opacity={opacity}/>
+                  <Electron position={new Vector3(0, 0, 0)} orbit={orbits["js"]} opacity={opacity}/>
+                  <Electron position={new Vector3(0, 0, 0)} orbit={orbits["aws"]} opacity={opacity}/>
                   <AtomCore gltf={gltf}></AtomCore>
-                  <Orbit radius={orbitRadius} rotation={[Math.PI/2, Math.PI/4, 0]}></Orbit>
-                  <Orbit radius={orbitRadius} rotation={[-Math.PI/2, Math.PI/4, 0]}></Orbit>
-                  <Orbit radius={orbitRadius} rotation={[Math.PI/2, 0, 0]}></Orbit>
-                  </mesh>
-                  <Rig mouseClicked={mouseClicked}/>
-                </Canvas>
+                  <Orbit radius={orbitRadius} rotation={[Math.PI/2, Math.PI/4, 0]} opacity={opacity}></Orbit>
+                  <Orbit radius={orbitRadius} rotation={[-Math.PI/2, Math.PI/4, 0]} opacity={opacity}></Orbit>
+                  <Orbit radius={orbitRadius} rotation={[Math.PI/2, 0, 0]} opacity={opacity}></Orbit>
 
-          </motion.div>
+                </mesh>
+                <Rig mouseClicked={mouseClicked}/>
+
+        </>
   )
 
 }

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState, lazy, Suspense } from "react"
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 const Atom = lazy(()=> import("@/components/Atom"));
 
@@ -53,7 +54,10 @@ export default function Home() {
             <div className="h-[400px] md:h-[550px] lg:h-[600px] xl:h-full xl:w-[80%]  ">
             {
               display && (
+                <Canvas>
+
                 <Atom />
+                </Canvas>
               )
             }
             </div>

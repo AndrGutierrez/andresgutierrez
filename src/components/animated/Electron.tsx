@@ -1,13 +1,17 @@
-import React, { useRef, useState, Suspense } from 'react'
+import React, { useRef, useState, Suspense, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useTexture } from "@react-three/drei"
 import { Vector3, TextureLoader} from 'three'
 import { useLoader } from '@react-three/fiber'
 
 
-type propTypes = {orbit:{x:Function, y: Function, z: Function, texture: string, color?: string},  position: Vector3}
+type propTypes = {
+  orbit:{x:Function, y: Function, z: Function, texture: string, color?: string},  
+  position: Vector3, 
+  opacity: number
+}
 
-export default function Electron({orbit, position}: propTypes) {
+export default function Electron({orbit, position, opacity}: propTypes) {
   const ref = useRef<THREE.Mesh>(null!)
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
@@ -28,6 +32,9 @@ export default function Electron({orbit, position}: propTypes) {
   const colorMap = useLoader(TextureLoader, orbit.texture)
 
 
+  // useEffect(()=>{
+  //   console.log("opacity", opacity)
+  // }, [opacity])
 
   return (
     // TODO: add fallback component
@@ -40,7 +47,7 @@ export default function Electron({orbit, position}: propTypes) {
         onPointerOver={(event) => hover(true)}
         onPointerOut={(event) => hover(false)}>
         <circleGeometry />
-        <meshStandardMaterial   map={colorMap} color={orbit["color"]}/> 
+        <meshStandardMaterial   map={colorMap} color={orbit["color"]} opacity={opacity} transparent/> 
       </mesh>
     </Suspense>
   )
