@@ -61,12 +61,8 @@ export default function Atom(){
   const [counter, setCounter] = useState(1);
   useFrame((state, delta) => {
     if(opacity <=1){
-
       setCounter((prev)=>(prev+0.01))
-      console.log(counter)
-      // setOpacity((prev)=>(((prev+1.001)**1.5)-1)/1.5)
       setOpacity((prev)=>((Math.log(prev+counter))))
-      // setOpacity((prev)=>((prev+0.01)))
     }
   })
   return (

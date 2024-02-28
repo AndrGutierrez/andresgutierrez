@@ -30,9 +30,11 @@ function Clients(){
             >
 
           <h2 className="text-4xl mb-8">My Clients</h2>
-          <div className="flex justify-evenly align-center w-100">
-            <img src="images/clients/gobuyside.png" alt="goBuySide" />
-            <img src="images/clients/zeitfur.svg" alt="Zeit Fui Die Schule" className="invert" />
+          <div className="flex flex-col md:flex-row justify-evenly align-center">
+            <div className="h-[50px] flex justify-center">
+              <img src="images/clients/gobuyside.png" alt="goBuySide " className="h-full opacity-25 hover:opacity-100 transition-opacity" height={50}/>
+            </div>
+            <img src="images/clients/zeitfur.svg" alt="Zeit Fui Die Schule" className=" h-[50px] opacity-25 hover:opacity-100 transition-opacity" height={50}/>
           </div>
         </motion.div>
     </section>)
