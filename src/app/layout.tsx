@@ -41,7 +41,7 @@ export default function RootLayout({
         <RouteProvider>
         {children}
         </RouteProvider>
-        <footer className="px-10 py-5 ">
+        <footer className="px-10 py-5 mt-36 ">
           <div className="mb-2">
             <h4>
               <strong>

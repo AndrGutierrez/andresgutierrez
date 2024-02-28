@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, lazy, Suspense } from "react"
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import Image from "next/image";
+import Skill from "@/components/Skill";
 const Atom = lazy(()=> import("@/components/Atom"));
 
 
@@ -15,7 +15,7 @@ function Clients(){
     if (isInView) mainControls.start("visible")
   }, [isInView])
   return (
-    <section ref={ref} className="px-10 lg:px-20">
+    <section ref={ref} className="px-10 lg:px-20 pb-20">
         <motion.div className="w-100 " variants={{
               hidden: {
                 opacity: 0, y: 75
@@ -38,6 +38,18 @@ function Clients(){
           </div>
         </motion.div>
     </section>)
+}
+
+function Skills(){
+  return (
+    <div className="px-10 lg:px-20 ">
+      
+      <h2 className="text-4xl mb-8 ">Skills</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:grid-rows-1 h-[200px] gap-4 mt-36">
+        <Skill image="images/skills/react.png" title="React"></Skill>
+      </div>
+    </div>
+  )
 }
 
 export default function Home() {
@@ -96,6 +108,7 @@ export default function Home() {
         </div>
       </div>
       <Clients></Clients>
+      <Skills></Skills>
     </main>
   );
 }
