@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useRef, useState, lazy, Suspense } from "react"
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Skill from "@/components/Skill";
 const Atom = lazy(()=> import("@/components/Atom"));
@@ -140,4 +140,4 @@ export default function Home() {
     </main>
   );
 }
-useGLTF.preload("crystal_heart.glb");
+useGLTF.preload("crystal_heart_compressed.glb");
