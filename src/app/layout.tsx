@@ -56,7 +56,7 @@ export default function RootLayout({
             </strong>
           </h4>
           <div className="flex xl:w-1/6 justify-between p-2">
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://www.instagram.com/andresg.ut" target="_blank">
               <FontAwesomeIcon icon={faInstagram} className="w-7" />
             </a>
             <a href="https://www.linkedin.com/in/andr%C3%A9s-gutierrez-1584a1181" target="_blank">
