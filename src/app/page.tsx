@@ -70,8 +70,8 @@ function Skills(){
       <h2 className="text-4xl mb-8 ">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:grid-rows-1 h-[200px] gap-4 mt-36">
       {
-        skills.map((skill)=>(
-            <Skill {...skill}></Skill>
+        skills.map((skill, i)=>(
+            <Skill {...skill} key={i}></Skill>
         ))}
       </div>
     </div>
