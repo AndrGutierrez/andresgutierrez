@@ -19,9 +19,7 @@ export default function AtomCore({gltf}: {gltf: any}) {
     <Suspense>
 
       <mesh ref={mesh}>
-        <primitive object={scene} position={[0,-1,0]}>
-
-        </primitive>
+          <primitive object={scene} position={[0,-1,0]}  rotation={[0,0,0]} scale={[1,1,1]}/> 
           <meshPhongMaterial color="white" opacity={0.1} transparent />
       </mesh>
     </Suspense>

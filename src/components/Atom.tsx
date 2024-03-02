@@ -45,7 +45,8 @@ function Rig({mouseClicked}: {mouseClicked: boolean}) {
   }
 export default function Atom(){
   const [mouseClicked, setMouseClicked] = useState(false);
-  const gltf = useGLTF("crystal_heart.glb");
+  const gltf = useGLTF("crystal_heart_compressed.glb");
+  // const gltf = useGLTF("bubble_heart.glb");
   const mesh= useRef<THREE.Mesh>(null);
   const animation = {
     hidden: {
