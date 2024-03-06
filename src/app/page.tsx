@@ -56,11 +56,11 @@ function Skills(){
     },
     {
       "image": "images/skills/nextjs.png",
-      "title": "nextjs.png"
+      "title": "Nextjs.png"
     },
     {
       "image": "images/skills/docker.png",
-      "title": "docker.png"
+      "title": "Docker.png"
     }
 
   ]
@@ -68,7 +68,7 @@ function Skills(){
   return (
     <div className="px-10 lg:px-20 ">
       <h2 className="text-4xl mb-8 ">Skills</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:grid-rows-1 h-[200px] gap-4 mt-36">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
       {
         skills.map((skill, i)=>(
             <Skill {...skill} key={i}></Skill>

@@ -44,6 +44,7 @@ function Rig({mouseClicked}: {mouseClicked: boolean}) {
 
   }
 export default function Atom(){
+  const [scale, setScale] = useState(1)
   const [mouseClicked, setMouseClicked] = useState(false);
   const gltf = useGLTF("crystal_heart_compressed.glb");
   // const gltf = useGLTF("bubble_heart.glb");
@@ -66,12 +67,30 @@ export default function Atom(){
       setOpacity((prev)=>((Math.log(prev+counter))))
     }
   })
+  useEffect(()=>{
+    
+      if(window.innerWidth >= 450 && window.innerWidth<=1024){
+        setScale(1.3)
+      }
+      else{
+        setScale(1)
+      }
+    window.addEventListener("resize", (e)=>{
+      // console.log(window.innerWidth)
+      if(window.innerWidth >= 450 && window.innerWidth<=1024){
+        setScale(1.3)
+      }
+      else{
+        setScale(1)
+      }
+    })
+  }, [])
   return (
           <>
                 <ambientLight intensity={Math.PI / 2} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
                 <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-                <mesh rotation={[0,-0.15,0]} ref={mesh}  >
+                <mesh rotation={[0,-0.15,0]} ref={mesh} scale={[scale,scale,scale]} >
                   <Electron position={new Vector3(0, 0, 0)} orbit={orbits["python"]} opacity={opacity}/>
                   <Electron position={new Vector3(0, 0, 0)} orbit={orbits["js"]} opacity={opacity}/>
                   <Electron position={new Vector3(0, 0, 0)} orbit={orbits["aws"]} opacity={opacity}/>
