@@ -39,7 +39,7 @@ jobs:
 
     - name: Copy files to the production website with the AWS CLI
       run: |
-        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }} --exclude crystal_heart.glb --exclude images/*
+        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }} --exclude crystal_heart_compressed.glb --exclude images/*
     # delete cloudfront cache
     - name: Copy files to the production website with the AWS CLI
       run: |
