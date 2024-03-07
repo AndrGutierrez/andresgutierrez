@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-background`}>
-        <nav className="py-3 px-10">
+        <nav className="py-4 px-10">
           <ul className="flex justify-between xl:w-1/5 w"> 
             <li>
               <Link href="/about">About me</Link> 

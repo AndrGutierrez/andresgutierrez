@@ -7,28 +7,31 @@ import Skill from "@/components/Skill";
 const Atom = lazy(()=> import("@/components/Atom"));
 
 
-function Clients(){
+function FadeIn({children}: React.PropsWithChildren){
   const ref=useRef(null)
   const mainControls= useAnimation();
   const isInView = useInView(ref);
   useEffect(()=>{
     if (isInView) mainControls.start("visible")
   }, [isInView])
-  return (
-    <section ref={ref} className="px-10 lg:px-20 pb-20">
-        <motion.div className="w-100 " variants={{
-              hidden: {
-                opacity: 0, y: 75
-              },
-              visible: {
-                opacity: 1, y: 0
-              }
-            }} 
-            transition={{ duration: .7, delay: 0.3 }}
-            initial= "hidden"
-            animate={mainControls}
-            >
 
+  const animationConfig={
+    hidden: {
+      opacity: 0, y: 75
+    },
+    visible: {
+      opacity: 1, y: 0
+    }
+  }
+  return (
+    <motion.div className="w-100 " ref={ref} variants={animationConfig} transition={{ duration: .7, delay: 0.3 }} initial= "hidden" animate={mainControls}>
+      {children}
+    </motion.div>)
+}
+function Clients(){
+  return (
+    <section className="px-10 lg:px-20 pb-20">
+      <FadeIn>
           <h2 className="text-4xl mb-8">My Clients</h2>
           <div className="flex flex-col md:flex-row justify-evenly align-center">
             <div className="h-[50px] flex justify-center">
@@ -36,8 +39,9 @@ function Clients(){
             </div>
             <img src="images/clients/zeitfur.svg" alt="Zeit Fui Die Schule" className=" h-[50px] opacity-25 hover:opacity-100 transition-opacity" height={50}/>
           </div>
-        </motion.div>
-    </section>)
+      </FadeIn>
+    </section>
+  )
 }
 
 function Skills(){
@@ -56,24 +60,27 @@ function Skills(){
     },
     {
       "image": "images/skills/nextjs.png",
-      "title": "Nextjs.png"
+      "title": "Nextjs"
     },
     {
       "image": "images/skills/docker.png",
-      "title": "Docker.png"
+      "title": "Docker"
     }
 
   ]
 
   return (
     <div className="px-10 lg:px-20 ">
-      <h2 className="text-4xl mb-8 ">Skills</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
-      {
-        skills.map((skill, i)=>(
-            <Skill {...skill} key={i}></Skill>
-        ))}
-      </div>
+      <FadeIn>
+
+        <h2 className="text-4xl mb-8 ">Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
+        {
+          skills.map((skill, i)=>(
+              <Skill {...skill} key={i}></Skill>
+          ))}
+        </div>
+      </FadeIn>
     </div>
   )
 }
