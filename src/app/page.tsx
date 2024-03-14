@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef, useState, lazy, Suspense, Dispatch, SetStateAction } from "react"
+import { useEffect, useRef, useState, lazy, Suspense, Dispatch, SetStateAction, ReactNode } from "react"
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
@@ -8,7 +8,7 @@ const Atom = lazy(() => import("@/components/Atom"));
 
 
 
-function FadeIn({ children, setFinished = () => { } }: { children: React.PropsWithChildren, setFinished?: Dispatch<SetStateAction<Boolean>> }) {
+function FadeIn({ children, setFinished = () => { } }: { children: ReactNode, setFinished?: Dispatch<SetStateAction<boolean>> }) {
   const ref = useRef(null)
   const mainControls = useAnimation();
   const isInView = useInView(ref);
@@ -38,7 +38,7 @@ function FadeIn({ children, setFinished = () => { } }: { children: React.PropsWi
     </motion.div>)
 }
 
-function Clients({ setFinished }: { setFinished: Dispatch<SetStateAction<Boolean>> }) {
+function Clients({ setFinished }: { setFinished: Dispatch<SetStateAction<boolean>> }) {
   return (
     <section className="px-10 lg:px-20 pb-20">
       <FadeIn setFinished={setFinished}>
