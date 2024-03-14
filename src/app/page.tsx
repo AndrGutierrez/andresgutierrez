@@ -8,13 +8,13 @@ const Atom = lazy(() => import("@/components/Atom"));
 
 
 
-function FadeIn({ children, setFinished = () => { } }: { children: ReactNode, setFinished?: Dispatch<SetStateAction<boolean>> }) {
+function FadeIn({ children, setFinished = () => { }, show = true }: { children: ReactNode, setFinished?: Dispatch<SetStateAction<boolean>>, show?: boolean }) {
   const ref = useRef(null)
   const mainControls = useAnimation();
   const isInView = useInView(ref);
   useEffect(() => {
-    if (isInView) mainControls.start("visible")
-  }, [isInView])
+    if (isInView && show) mainControls.start("visible")
+  }, [isInView, show])
 
   const animationConfig = {
     hidden: {
@@ -33,23 +33,23 @@ function FadeIn({ children, setFinished = () => { } }: { children: ReactNode, se
       transition={{ duration: .6, delay: 0.3 }}
       initial="hidden"
       animate={mainControls}
-      onAnimationComplete={() => setFinished(true)}>
+      onAnimationComplete={() => {
+        setFinished(true)
+      }}>
       {children}
     </motion.div>)
 }
 
-function Clients({ setFinished }: { setFinished: Dispatch<SetStateAction<boolean>> }) {
+function Clients() {
   return (
     <section className="px-10 lg:px-20 pb-20">
-      <FadeIn setFinished={setFinished}>
-        <h2 className="text-4xl mb-8">My Clients</h2>
-        <div className="flex flex-col md:flex-row justify-evenly align-center">
-          <div className="h-[50px] flex justify-center mb-5 md:mb-0">
-            <img src="images/clients/gobuyside.png" alt="goBuySide " className="h-full opacity-25 hover:opacity-100 transition-opacity" height={50} />
-          </div>
-          <img src="images/clients/zeitfur.svg" alt="Zeit Fui Die Schule" className=" h-[50px] opacity-25 hover:opacity-100 transition-opacity" height={50} />
+      <h2 className="text-4xl mb-8">My Clients</h2>
+      <div className="flex flex-col md:flex-row justify-evenly align-center">
+        <div className="h-[50px] flex justify-center mb-5 md:mb-0">
+          <img src="images/clients/gobuyside.png" alt="goBuySide " className="h-full opacity-25 hover:opacity-100 transition-opacity" height={50} />
         </div>
-      </FadeIn>
+        <img src="images/clients/zeitfur.svg" alt="Zeit Fui Die Schule" className=" h-[50px] opacity-25 hover:opacity-100 transition-opacity" height={50} />
+      </div>
     </section>
   )
 }
@@ -81,16 +81,14 @@ function Skills() {
 
   return (
     <div className="px-10 lg:px-20 ">
-      <FadeIn>
 
-        <h2 className="text-4xl mb-8 ">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
-          {
-            skills.map((skill, i) => (
-              <Skill {...skill} key={i}></Skill>
-            ))}
-        </div>
-      </FadeIn>
+      <h2 className="text-4xl mb-8 ">Skills</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
+        {
+          skills.map((skill, i) => (
+            <Skill {...skill} key={i}></Skill>
+          ))}
+      </div>
     </div>
   )
 }
@@ -108,6 +106,9 @@ export default function Home() {
     if (isInView) mainControls.start("visible")
   }, [isInView])
 
+  useEffect(() => {
+    console.log(showSkills)
+  }, [showSkills])
   return (
 
     <main>
@@ -147,9 +148,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {}
-      <Clients setFinished={setShowSkills}></Clients>
-      {showSkills && <Skills />}
+      <FadeIn setFinished={setShowSkills} show={displayAtom}>
+        <Clients ></Clients>
+      </FadeIn>
+      <FadeIn show={showSkills}>
+        <Skills></Skills>
+      </FadeIn>
+      {/* {(!showSkills && displayAtom) && <div className="h-[100vh]"></div>} */}
+      {/* <div className="h-10"></div> */}
 
     </main>
   );
