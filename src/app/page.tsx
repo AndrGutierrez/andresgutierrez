@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, lazy, Suspense, Dispatch, SetStateAction, ReactNode } from "react"
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, Props } from "@react-three/fiber";
 import Skill from "@/components/Skill";
 const Atom = lazy(() => import("@/components/Atom"));
 
@@ -27,7 +27,7 @@ function FadeIn({ children, setFinished = () => { }, show = true }: { children: 
 
   return (
     <motion.div
-      className="w-100 "
+      className="w-100"
       ref={ref}
       variants={animationConfig}
       transition={{ duration: .6, delay: 0.3 }}
@@ -42,7 +42,7 @@ function FadeIn({ children, setFinished = () => { }, show = true }: { children: 
 
 function Clients() {
   return (
-    <section className="px-10 lg:px-20 pb-20">
+    <section className="w-full">
       <h2 className="text-4xl mb-8">My Clients</h2>
       <div className="flex flex-col md:flex-row justify-evenly align-center">
         <div className="h-[50px] flex justify-center mb-5 md:mb-0">
@@ -80,7 +80,7 @@ function Skills() {
   ]
 
   return (
-    <div className="px-10 lg:px-20 ">
+    <div className="w-full">
 
       <h2 className="text-4xl mb-8 ">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
@@ -101,6 +101,7 @@ export default function Home() {
   const mainControls = useAnimation();
 
   const [showSkills, setShowSkills] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
 
   useEffect(() => {
     if (isInView) mainControls.start("visible")
@@ -148,12 +149,24 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <FadeIn setFinished={setShowSkills} show={displayAtom}>
-        <Clients ></Clients>
-      </FadeIn>
-      <FadeIn show={showSkills}>
-        <Skills></Skills>
-      </FadeIn>
+      <div className="px-10 lg:px-20 grid grid-cols-1 gap-y-12 ">
+        <FadeIn setFinished={setShowSkills} show={displayAtom}>
+          <Clients ></Clients>
+        </FadeIn>
+        <FadeIn show={showSkills} setFinished={setShowAbout}>
+          <Skills></Skills>
+        </FadeIn>
+        <FadeIn show={showAbout}>
+          <h2 className="text-4xl mb-2 ">About Me</h2>
+          {/* <div className="justify-center flex w-full"> */}
+          <div className="w-full lg:w-[768px]">
+            <p className="text-xl">
+              <i>I am a Computer Science Engineer working from Venezuela. I have 4+ years of experience working on IT as a Full Stack developer and AWS Solutions architect, designing cloud infraestructure for high quality, fast, and scalable software</i>
+            </p>
+          </div>
+          {/* </div> */}
+        </FadeIn>
+      </div>
       {/* {(!showSkills && displayAtom) && <div className="h-[100vh]"></div>} */}
       {/* <div className="h-10"></div> */}
 
