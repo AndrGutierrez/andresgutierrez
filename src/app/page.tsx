@@ -132,7 +132,7 @@ export default function Home() {
               <h1 className="text-center lg:text-left text-5xl xl:text-7xl font-bold mb-2 sm:truncate">
                 {title}
               </h1>
-              <p>Full Stack Developer</p>
+              <p>Software Engineer and tech enthusiast</p>
             </div>
           </motion.div>
         </div>
@@ -160,7 +160,7 @@ export default function Home() {
           <h2 className="text-4xl mb-2 ">About Me</h2>
           {/* <div className="justify-center flex w-full"> */}
           <div className="w-full lg:w-[768px]">
-            <p className="text-xl">
+            <p className="text-lg font-light ">
               <i>I am a Computer Science Engineer working from Venezuela. I have 4+ years of experience working on IT as a Full Stack developer and AWS Solutions architect, designing cloud infraestructure for high quality, fast, and scalable software</i>
             </p>
           </div>
