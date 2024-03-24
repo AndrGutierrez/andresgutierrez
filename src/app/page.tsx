@@ -4,6 +4,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useGLTF } from "@react-three/drei";
 import { Canvas, Props } from "@react-three/fiber";
 import Skill from "@/components/Skill";
+import Link from "next/link";
 const Atom = lazy(() => import("@/components/Atom"));
 
 
@@ -66,7 +67,7 @@ function Skills() {
     },
     {
       "image": "images/skills/aws.png",
-      "title": "Amazon Web Services"
+      "title": "AWS",
     },
     {
       "image": "images/skills/nextjs.png",
@@ -83,7 +84,7 @@ function Skills() {
     <div className="w-full">
 
       <h2 className="text-4xl mb-8 ">Skills</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 lg:grid-rows-1  gap-4 mt-36 gap-y-24">
         {
           skills.map((skill, i) => (
             <Skill {...skill} key={i}></Skill>
@@ -102,7 +103,9 @@ export default function Home() {
 
   const [showSkills, setShowSkills] = useState(false)
   const [showAbout, setShowAbout] = useState(false)
+  const [showClients, setShowClients] = useState(false)
 
+  const timerid = useRef(null)
   useEffect(() => {
     if (isInView) mainControls.start("visible")
   }, [isInView])
@@ -110,10 +113,15 @@ export default function Home() {
   useEffect(() => {
     console.log(showSkills)
   }, [showSkills])
+
+  useEffect(() => {
+    if (displayAtom) setTimeout(() => setShowClients(true), 500)
+    // return ()=> clearTimeout(timerid.current)
+  }, [displayAtom])
   return (
 
-    <main>
-      <div className="lg:flex min-h-screen justify-between py-10 lg:pl-12 xl:pl-24 bg-background h-100 " ref={ref}>
+    <main className="bg-gradient-to-b from-background to-black from-15% ">
+      <div className="lg:flex min-h-screen justify-between py-10 lg:pl-12 xl:pl-24 h-100 " ref={ref}>
         <div className="h-100 flex items-center justify-center px-10 sm:px-0">
           <motion.div className="w-100 " variants={{
             hidden: {
@@ -149,24 +157,34 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="px-10 lg:px-20 grid grid-cols-1 gap-y-12 ">
-        <FadeIn setFinished={setShowSkills} show={displayAtom}>
-          <Clients ></Clients>
-        </FadeIn>
-        <FadeIn show={showSkills} setFinished={setShowAbout}>
-          <Skills></Skills>
-        </FadeIn>
-        <FadeIn show={showAbout}>
-          <h2 className="text-4xl mb-2 ">About Me</h2>
-          {/* <div className="justify-center flex w-full"> */}
-          <div className="w-full lg:w-[768px]">
-            <p className="text-lg font-light ">
-              <i>I am a Computer Science Engineer working from Venezuela. I have 4+ years of experience working on IT as a Full Stack developer and AWS Solutions architect, designing cloud infraestructure for high quality, fast, and scalable software</i>
-            </p>
-          </div>
-          {/* </div> */}
-        </FadeIn>
-      </div>
+      <article className="flex justify-center">
+        <div className="px-10 grid grid-cols-1 gap-y-12 max-w-screen-lg ">
+          <FadeIn setFinished={setShowSkills} show={showClients}>
+            <Clients ></Clients>
+          </FadeIn>
+          <FadeIn show={showSkills} setFinished={setShowAbout}>
+            <Skills></Skills>
+          </FadeIn>
+          <FadeIn show={showAbout}>
+            <h2 className="text-4xl mb-8 ">About Me</h2>
+            {/* <div className="justify-center flex w-full"> */}
+            <div className="flex align-center">
+              <div className="text-lg w-11/12">
+                <p >
+                  <i> &emsp; I am a Computer Science Engineer working from Venezuela. I have 4+ years of experience working on IT as a Full Stack developer and AWS Solutions architect, designing cloud infraestructure for high quality, fast, and scalable software. </i>
+                </p>
+                <br />
+                <p>
+                  <i>
+                    &emsp; I love tech in general, PC building, dogs, and many other things, if you are interested on anything of that, take a look to <Link href="/blog" className="text-blue-600 dark:text-blue-500 hover:underline" >my blog</Link>.
+                  </i>
+                </p>
+              </div>
+            </div>
+            {/* </div> */}
+          </FadeIn>
+        </div>
+      </article>
       {/* {(!showSkills && displayAtom) && <div className="h-[100vh]"></div>} */}
       {/* <div className="h-10"></div> */}
 

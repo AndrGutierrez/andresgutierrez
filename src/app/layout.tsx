@@ -22,26 +22,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background`}>
-        <nav className="py-4 px-10">
-          <ul className="flex justify-between xl:w-1/5 w"> 
+      <body className={`${inter.className} `}>
+        <nav className="py-4 px-10 bg-background">
+          <ul className="flex justify-between xl:w-1/5 w">
             <li>
-              <Link href="/about">About me</Link> 
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/projects">Projects</Link> 
+              <Link href="/about">About me</Link>
             </li>
             <li>
-              <Link href="/blog">Blog</Link> 
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
             </li>
 
           </ul>
 
         </nav>
         <RouteProvider>
-        {children}
+          {children}
         </RouteProvider>
-        <footer className="px-10 py-5 mt-36 ">
+        <footer className="px-10 pb-5 pt-44 bg-black">
           <div className="mb-2">
             <h4>
               <strong>
@@ -52,7 +55,7 @@ export default function RootLayout({
           </div>
           <h4>
             <strong>
-             FOLLOW ME 
+              FOLLOW ME
             </strong>
           </h4>
           <div className="flex xl:w-1/6 justify-between p-2">
