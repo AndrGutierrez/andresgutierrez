@@ -171,13 +171,13 @@ export default function Home() {
             <div className="flex align-center">
               <div className="text-lg w-11/12">
                 <p >
-                  <i> &emsp; I am a Computer Science Engineer working from Venezuela. I have 4+ years of experience working on IT as a Full Stack developer and AWS Solutions architect, designing cloud infraestructure for high quality, fast, and scalable software. </i>
+                  &emsp; I am a Computer Science Engineer working from Venezuela. I have 4+ years of experience working on IT as a Full Stack developer and AWS Solutions architect, designing cloud infraestructure for high quality, fast, and scalable software.
                 </p>
                 <br />
                 <p>
-                  <i>
-                    &emsp; I love tech in general, PC building, dogs, and many other things, if you are interested on anything of that, take a look to <Link href="/blog" className="text-blue-600 dark:text-blue-500 hover:underline" >my blog</Link>.
-                  </i>
+                  {/* <i> */}
+                  &emsp; I love tech in general, PC building, dogs, and many other things, if you are interested on anything of that, take a look to <Link href="/blog" className="text-blue-600 dark:text-blue-500 hover:underline" > my blog</Link>.
+                  {/* </i> */}
                 </p>
               </div>
             </div>
