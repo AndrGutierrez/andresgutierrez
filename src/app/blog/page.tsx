@@ -8,7 +8,7 @@ export default function Blog() {
   return <main className="min-h-screen bg-gradient-to-b from-background to-black from-15% flex justify-center">
     <div className="max-w-screen-lg">
       <h1 className="text-4xl">My personal blog.</h1>
-      {items.map(item => <PostItem {...item} />)}
+      {items.map((item, i) => <PostItem key={i} {...item} />)}
     </div>
   </main>
 }
