@@ -146,7 +146,7 @@ export default function Home() {
         </div>
         <div className="h-100 w-100 lg:w-2/3 lg:flex items-center justify-center">
 
-          <div className="h-[400px] md:h-[550px] lg:h-[600px] xl:h-full xl:w-[80%]  ">
+          <div className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]  ">
             {
               displayAtom && (
                 <Canvas>
