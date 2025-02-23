@@ -90,14 +90,14 @@ export default function Atom() {
       <ambientLight intensity={Math.PI / 2} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-      <mesh rotation={[0, -0.15, 0]} ref={mesh} scale={[scale, scale, scale]} >
+      <mesh rotation={[0.15, -0.3, 0]} ref={mesh} scale={[scale, scale, scale]} >
         <Electron position={new Vector3(0, 0, 0)} orbit={orbits["python"]} opacity={opacity} />
         <Electron position={new Vector3(0, 0, 0)} orbit={orbits["js"]} opacity={opacity} />
         <Electron position={new Vector3(0, 0, 0)} orbit={orbits["aws"]} opacity={opacity} />
         <AtomCore gltf={gltf}></AtomCore>
-        <Orbit radius={orbitRadius} rotation={[Math.PI / 2, Math.PI / 4, 0]} opacity={opacity}></Orbit>
-        <Orbit radius={orbitRadius} rotation={[-Math.PI / 2, Math.PI / 4, 0]} opacity={opacity}></Orbit>
-        <Orbit radius={orbitRadius} rotation={[Math.PI / 2, 0, 0]} opacity={opacity}></Orbit>
+        <Orbit radius={orbitRadius} rotation={[Math.PI / 2, Math.PI / 4, 0]} ></Orbit>
+        <Orbit radius={orbitRadius} rotation={[-Math.PI / 2, Math.PI / 4, 0]} ></Orbit>
+        <Orbit radius={orbitRadius} rotation={[Math.PI / 2, 0, 0]} ></Orbit>
 
       </mesh>
       <Rig mouseClicked={mouseClicked} />
