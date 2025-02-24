@@ -84,7 +84,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
             {/* Footer Bottom */}
             <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
-              <p>&copy; {new Date().getFullYear()} Andres Gutierrez. All rights reserved.</p>
             </div>
           </div>
         </footer>

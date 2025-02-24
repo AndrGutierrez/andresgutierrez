@@ -7,7 +7,7 @@ import Skill from "@/components/Skill";
 import Link from "next/link";
 const Atom = lazy(() => import("@/components/Atom"));
 
-function FadeIn({ children, setFinished = () => { }, show = true }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean }) {
+function FadeIn({ children, setFinished = () => { }, show = true, className }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean, className: string }) {
   const ref = useRef(null);
   const mainControls = useAnimation();
   const isInView = useInView(ref);
@@ -22,7 +22,7 @@ function FadeIn({ children, setFinished = () => { }, show = true }: { children: 
 
   return (
     <motion.div
-      className="w-full"
+      className={className ? className : "w-full h-full"}
       ref={ref}
       variants={animationConfig}
       transition={{ duration: 0.6, delay: 0.3 }}
@@ -194,13 +194,11 @@ export default function Home() {
 
         {/* Right Side: Atom Component */}
         <div className="w-full lg:w-2/3 lg:flex items-center justify-center">
-          <div className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]">
-            {displayAtom && (
-              <Canvas>
-                <Atom />
-              </Canvas>
-            )}
-          </div>
+          <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" show={displayAtom}>
+            <Canvas>
+              <Atom />
+            </Canvas>
+          </FadeIn>
         </div>
       </div>
 
