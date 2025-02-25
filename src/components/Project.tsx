@@ -1,10 +1,17 @@
 import React from "react"
-export default function Project() {
+
+type PropTypes = {
+  title: string
+  content: string
+  thumbnail: string
+}
+
+export default function Project({ title, content, thumbnail }: PropTypes) {
   return (
     <div className="rounded p-3">
-      <img src="images/projects/trademanager/main.jpg" alt="" />
-      <h3 className="text-xl">Trade Manager</h3>
-      <p></p>
+      <img src={thumbnail} alt="" />
+      <h3 className="text-xl">{title}</h3>
+      <p>{content}</p>
     </div>
   )
 }
