@@ -7,7 +7,7 @@ import Skill from "@/components/Skill";
 import Link from "next/link";
 const Atom = lazy(() => import("@/components/Atom"));
 
-function FadeIn({ children, setFinished = () => { }, show = true, className }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean, className: string }) {
+function FadeIn({ children, setFinished = () => { }, show = true, className }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean, className?: string }) {
   const ref = useRef(null);
   const mainControls = useAnimation();
   const isInView = useInView(ref);
