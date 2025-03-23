@@ -50,7 +50,7 @@ function Clients() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            // transition={{ type: "spring", stiffness: 300 }}
             className="group relative bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700 hover:border-blue-400"
           >
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -168,7 +168,7 @@ export default function Home() {
   }, [displayAtom]);
 
   return (
-    <main className="bg-gradient-to-b from-gray-900 via-gray-900 to-black">
+    <main className="bg-gradient-to-b from-gray-900 via-gray-900 to-black mt-16">
       <div className="lg:flex min-h-screen justify-between py-10 lg:pl-12 xl:pl-24 h-full" ref={ref}>
         {/* Left Side: Text Content */}
         <div className="flex items-center justify-center px-10 sm:px-0">

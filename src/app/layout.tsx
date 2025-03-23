@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-black text-white`}>
+      <body className={`${inter.className} bg-gray-900 text-white`}>
         {/* Navigation */}
         <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/50 border-b border-gray-800">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="w-full mx-auto px-6 py-4 flex justify-between items-center xl:px-12">
             <ul className="flex space-x-8">
               {[
                 { href: "/", label: "Home" },
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <RouteProvider>{children}</RouteProvider>
 
         {/* Footer */}
-        <footer className="bg-gray-900/50 backdrop-blur-md border-t border-gray-800 mt-20">
+        <footer className="bg-gray-900/50 backdrop-blur-md border-t border-gray-800 mt-16">
           <div className="max-w-7xl mx-auto px-6 py-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Email */}
