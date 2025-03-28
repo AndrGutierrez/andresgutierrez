@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, useRef, useState, lazy, Dispatch, SetStateAction, ReactNode } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-// import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Clients, Skills, About } from '@/components/home'
 import Atom from '@/components/home/animated/Atom'
-// const Atom = lazy(() => import("@/components/home/animated/Atom"));
 
 function FadeIn({ children, setFinished = () => { }, show = true, className, translate = true }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean, className?: string, translate?: boolean }) {
   const ref = useRef(null);
@@ -114,4 +112,3 @@ export default function Home() {
   );
 }
 
-// useGLTF.preload("crystal_heart_compressed.glb");
