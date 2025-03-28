@@ -109,4 +109,4 @@ export default function Home() {
   );
 }
 
-useGLTF.preload("crystal_heart_compressed.glb");
+// useGLTF.preload("crystal_heart_compressed.glb");
