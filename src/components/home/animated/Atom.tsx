@@ -6,7 +6,8 @@ import { useThree, useFrame } from "@react-three/fiber";
 import { Vector3 } from "three";
 import Orbit from "./Orbit";
 
-const AtomCore = lazy(() => import("./AtomCore"));
+import AtomCore from "./AtomCore";
+// const AtomCore = lazy(() => import("./AtomCore"));
 const orbitRadius = 3;
 const electronOrbit = 3
 

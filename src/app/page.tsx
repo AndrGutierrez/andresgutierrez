@@ -87,7 +87,7 @@ export default function Home() {
           {
             displayAtom && (
 
-              <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" translate={false}>
+              <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" translate={false} show={displayAtom}>
                 <Canvas>
                   <Atom />
                 </Canvas>
