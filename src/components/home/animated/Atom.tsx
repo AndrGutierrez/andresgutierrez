@@ -7,7 +7,6 @@ import { Vector3 } from "three";
 import Orbit from "./Orbit";
 
 import AtomCore from "./AtomCore";
-// const AtomCore = lazy(() => import("./AtomCore"));
 const orbitRadius = 3;
 const electronOrbit = 3
 

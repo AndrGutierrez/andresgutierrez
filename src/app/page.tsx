@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, lazy, Dispatch, SetStateAction, ReactNode } from "react";
+import { useEffect, useRef, useState, Dispatch, SetStateAction, ReactNode } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { Clients, Skills, About } from '@/components/home'
@@ -11,7 +11,7 @@ function FadeIn({ children, setFinished = () => { }, show = true, className, tra
   const isInView = useInView(ref);
   useEffect(() => {
     if (isInView && show) mainControls.start("visible");
-  }, [isInView, show]);
+  }, [isInView, show, mainControls]);
 
   const animationConfig = {
     hidden: { opacity: 0, y: translate ? 75 : 0 },
@@ -37,7 +37,7 @@ function FadeIn({ children, setFinished = () => { }, show = true, className, tra
 
 
 export default function Home() {
-  const [title, setTitle] = useState(<>Hi, I&apos;m Andres</>);
+  const [title] = useState(<>Hi, I&apos;m Andres</>);
   const [displayAtom, setDisplayAtom] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -49,7 +49,7 @@ export default function Home() {
 
   useEffect(() => {
     if (isInView) mainControls.start("visible");
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
   useEffect(() => {
     if (displayAtom) setTimeout(() => setShowClients(true), 500);
