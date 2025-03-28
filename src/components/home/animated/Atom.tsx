@@ -86,7 +86,7 @@ export default function Atom() {
         <Orbit radius={orbitRadius} rotation={[Math.PI / 2, 0, 0]} ></Orbit>
 
       </mesh>
-      <Rig mouseClicked={mouseClicked} />
+      <Rig />
 
     </>
   )

@@ -1,21 +1,19 @@
-import React, { useRef, useState, Suspense, useEffect } from 'react'
+import React, { useRef, useState, Suspense } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useTexture } from "@react-three/drei"
-import { Vector3, TextureLoader} from 'three'
+import { Vector3, TextureLoader } from 'three'
 import { useLoader } from '@react-three/fiber'
 
 
 type propTypes = {
-  orbit:{x:Function, y: Function, z: Function, texture: string, color?: string},  
-  position: Vector3, 
+  orbit: { x: Function, y: Function, z: Function, texture: string, color?: string },
+  position: Vector3,
   opacity: number
 }
 
-export default function Electron({orbit, position, opacity}: propTypes) {
+export default function Electron({ orbit, position, opacity }: propTypes) {
   const ref = useRef<THREE.Mesh>(null!)
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
-  // useFrame((state, delta) => (ref.current.rotation.y += delta))
   useFrame((state, delta) => {
 
     const date = Date.now() * 0.0005;
@@ -26,19 +24,12 @@ export default function Electron({orbit, position, opacity}: propTypes) {
     );
     ref.current.position.dot(new Vector3(1, 1, 1))
   })
-  // const textures = useTexture({
-  //   map: orbit.texture,
-  // })
   const colorMap = useLoader(TextureLoader, orbit.texture)
 
 
-  // useEffect(()=>{
-  //   console.log("opacity", opacity)
-  // }, [opacity])
-
   return (
     // TODO: add fallback component
-    <Suspense fallback={"a"}>
+    <Suspense fallback={<div></div>}>
       <mesh
         position={position}
         ref={ref}
@@ -47,7 +38,7 @@ export default function Electron({orbit, position, opacity}: propTypes) {
         onPointerOver={(event) => hover(true)}
         onPointerOut={(event) => hover(false)}>
         <circleGeometry />
-        <meshStandardMaterial   map={colorMap} color={orbit["color"]} opacity={opacity} transparent/> 
+        <meshStandardMaterial map={colorMap} color={orbit["color"]} opacity={opacity} transparent />
       </mesh>
     </Suspense>
   )
