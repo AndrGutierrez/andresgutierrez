@@ -84,11 +84,15 @@ export default function Home() {
 
         {/* Right Side: Atom Component */}
         <div className="w-full lg:w-2/3 lg:flex items-center justify-center">
-          <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" show={displayAtom} translate={false}>
-            <Canvas>
-              <Atom />
-            </Canvas>
-          </FadeIn>
+          {
+            displayAtom && (
+
+              <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" translate={false}>
+                <Canvas>
+                  <Atom />
+                </Canvas>
+              </FadeIn>)
+          }
         </div>
       </div>
 
