@@ -10,7 +10,7 @@ import RouteProvider from "./providers/RouteProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Andres Gutierrez | Full Stack Developer | Computer Science Engineer",
+  title: "Andres Gutierrez | Full Stack Developer | Software Engineer",
   description: "⚛️ Full Stack Developer | React | Django | AWS | Next.js | Docker | Flask | Amazon Web Services",
 };
 
@@ -24,8 +24,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <ul className="flex space-x-8">
               {[
                 { href: "/", label: "Home" },
-                { href: "/about", label: "About Me" },
-                { href: "/projects", label: "Projects" },
+                // { href: "/about", label: "About Me" },
+                // { href: "/projects", label: "Projects" },
                 { href: "/blog", label: "Blog" },
               ].map((link, index) => (
                 <li key={index}>
