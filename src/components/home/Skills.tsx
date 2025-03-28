@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 
 export default function Skills() {
   const skills = [
-    { image: "react.png", title: "React", color: "from-cyan-500 to-blue-600" },
-    { image: "django.png", title: "Django", color: "from-emerald-500 to-green-600" },
-    { image: "aws.png", title: "AWS", color: "from-amber-500 to-orange-600" },
-    { image: "nextjs.png", title: "Next.js", color: "from-gray-100 to-gray-400" },
-    { image: "docker.png", title: "Docker", color: "from-sky-500 to-blue-600" },
+    { image: "react.webp", title: "React", color: "from-cyan-500 to-blue-600" },
+    { image: "django.webp", title: "Django", color: "from-emerald-500 to-green-600" },
+    { image: "aws.webp", title: "AWS", color: "from-amber-500 to-orange-600" },
+    { image: "nextjs.webp", title: "Next.js", color: "from-gray-100 to-gray-400" },
+    { image: "docker.webp", title: "Docker", color: "from-sky-500 to-blue-600" },
   ];
 
   return (
@@ -29,6 +29,8 @@ export default function Skills() {
                 src={`images/skills/${skill.image}`}
                 alt={skill.title}
                 className="h-12 mb-4 object-contain transition-transform group-hover:scale-110 duration-300"
+                width={50}
+                height={50}
               />
               <span className="text-lg font-medium text-gray-300 group-hover:text-white transition-colors">
                 {skill.title}

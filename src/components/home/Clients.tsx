@@ -11,7 +11,7 @@ export default function Clients() {
         Trusted By
       </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {["gobuyside.png", "zeitfur.svg", "uprospect.svg"].map((logo, index) => (
+        {["gobuyside.webp", "zeitfur.svg", "uprospect.svg"].map((logo, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
@@ -22,6 +22,8 @@ export default function Clients() {
               src={`images/clients/${logo}`}
               alt="Client"
               className="h-16 mx-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+              width={500}
+              height={100}
             />
           </motion.div>
         ))}

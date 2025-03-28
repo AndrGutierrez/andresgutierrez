@@ -25,19 +25,19 @@ const orbits = {
     "x": (date: number) => (((Math.cos(date)) * (electronOrbit)) * 0.7),
     "y": (date: number) => ((((Math.cos(date)) * (electronOrbit)) * 0.65)),
     "z": (date: number) => 0.7 * ((Math.sin(date)) * (electronOrbit) * 0.9) + 0.4,
-    "texture": "/images/python.png",
+    "texture": "/images/atom/python.webp",
   },
   "js": {
     "x": (date: number) => -(((Math.cos(date - 2)) * (electronOrbit)) * 0.7),
     "y": (date: number) => ((((Math.cos(date - 2)) * (electronOrbit)) * 0.65)),
     "z": (date: number) => 0.7 * ((Math.sin(date - 2)) * (electronOrbit * 0.9) + 0.4),
-    "texture": "/images/js.png",
+    "texture": "/images/atom/js.webp",
   },
   "aws": {
     "x": (date: number) => -(((Math.cos(date - 4)) * (electronOrbit))),
     "y": (date: number) => 0,
     "z": (date: number) => 0.7 * ((Math.sin(date - 4)) * (electronOrbit * 0.9) + 0.4),
-    "texture": "/images/aws.png",
+    "texture": "/images/atom/aws.webp",
   }
 
 }

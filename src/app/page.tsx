@@ -67,7 +67,7 @@ export default function Home() {
               hidden: { opacity: 0, y: 75 },
               visible: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 1, delay: 0.3 }}
+            transition={{ duration: 0.7, delay: 0 }}
             initial="hidden"
             animate={mainControls}
             onAnimationComplete={() => setDisplayAtom(true)}
