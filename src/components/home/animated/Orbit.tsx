@@ -1,5 +1,4 @@
 import React from "react";
-import { Canvas } from "@react-three/fiber";
 import { Line } from "@react-three/drei";
 import * as THREE from "three";
 
