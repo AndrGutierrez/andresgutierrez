@@ -43,7 +43,6 @@ const orbits = {
 }
 export default function Atom() {
   const [scale, setScale] = useState(1)
-  const [mouseClicked, setMouseClicked] = useState(false);
   const gltf = useGLTF("crystal_heart_compressed.glb");
   const mesh = useRef<THREE.Mesh>(null);
   const [opacity, setOpacity] = useState(0);

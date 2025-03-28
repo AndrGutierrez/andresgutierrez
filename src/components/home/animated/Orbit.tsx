@@ -1,6 +1,6 @@
 import React from "react";
 import { Line } from "@react-three/drei";
-import * as THREE from "three";
+import { Vector3 } from "three";
 
 type EllipseProps = {
   radius: number;
@@ -17,11 +17,11 @@ const Ellipse: React.FC<EllipseProps> = ({
   rotation = [0, 0, 0],
   linewidth = 20,
 }) => {
-  const points: THREE.Vector3[] = [];
+  const points: Vector3[] = [];
   const b = radius * 0.7;
   for (let i = 0; i <= segments; i++) {
     const angle = (i / segments) * Math.PI * 2;
-    points.push(new THREE.Vector3(radius * Math.cos(angle), b * Math.sin(angle), 0));
+    points.push(new Vector3(radius * Math.cos(angle), b * Math.sin(angle), 0));
   }
   return <Line points={points} color={color} linewidth={linewidth} rotation={rotation} />;
 };

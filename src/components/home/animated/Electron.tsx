@@ -29,17 +29,15 @@ export default function Electron({ orbit, position, opacity }: propTypes) {
 
   return (
     // TODO: add fallback component
-    <Suspense fallback={<div></div>}>
-      <mesh
-        position={position}
-        ref={ref}
-        scale={0.25}
-        onClick={(event) => click(!clicked)}
-        onPointerOver={(event) => hover(true)}
-        onPointerOut={(event) => hover(false)}>
-        <circleGeometry />
-        <meshStandardMaterial map={colorMap} color={orbit["color"]} opacity={opacity} transparent />
-      </mesh>
-    </Suspense>
+    <mesh
+      position={position}
+      ref={ref}
+      scale={0.25}
+      onClick={() => click(!clicked)}
+      onPointerOver={() => hover(true)}
+      onPointerOut={() => hover(false)}>
+      <circleGeometry />
+      <meshStandardMaterial map={colorMap} color={orbit["color"]} opacity={opacity} transparent />
+    </mesh>
   )
 }
