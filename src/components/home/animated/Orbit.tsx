@@ -17,6 +17,8 @@ const Ellipse: React.FC<EllipseProps> = ({
   rotation = [0, 0, 0],
   linewidth = 20,
 }) => {
+  let isMobile = window.matchMedia("(max-width: 600px)").matches;
+  if (isMobile) linewidth = 10
   const points: Vector3[] = [];
   const b = radius * 0.7;
   for (let i = 0; i <= segments; i++) {
