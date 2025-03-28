@@ -15,23 +15,8 @@ const config: Config = {
       },
       colors: {
         "background": "#1b1e25",
-        // "background": "linear-gradient(90deg, rgba(27,30,37,1) 10%, rgba(0,0,0,1) 100%)"
       },
 
-      animation: {
-        'fade-in': 'fadeIn 1s ease-in-out',
-        'scale-in': 'scaleIn 0.5s ease-in-out',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        scaleIn: {
-          '0%': { transform: 'scale(0.9)' },
-          '100%': { transform: 'scale(1)' },
-        },
-      },
     },
   },
   plugins: [],
