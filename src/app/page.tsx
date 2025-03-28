@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { Clients, Skills, About } from '@/components/home'
 const Atom = lazy(() => import("@/components/home/animated/Atom"));
 
-function FadeIn({ children, setFinished = () => { }, show = true, className }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean, className?: string }) {
+function FadeIn({ children, setFinished = () => { }, show = true, className, translate = true }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean, className?: string, translate?: boolean }) {
   const ref = useRef(null);
   const mainControls = useAnimation();
   const isInView = useInView(ref);
@@ -15,7 +15,7 @@ function FadeIn({ children, setFinished = () => { }, show = true, className }: {
   }, [isInView, show]);
 
   const animationConfig = {
-    hidden: { opacity: 0, y: 75 },
+    hidden: { opacity: 0, y: translate ? 75 : 0 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -64,8 +64,8 @@ export default function Home() {
           <motion.div
             className="w-full"
             variants={{
-              hidden: { opacity: 0, y: 75 },
-              visible: { opacity: 1, y: 0 },
+              hidden: { opacity: 0, },
+              visible: { opacity: 1, },
             }}
             transition={{ duration: 0.7, delay: 0 }}
             initial="hidden"
@@ -83,7 +83,7 @@ export default function Home() {
 
         {/* Right Side: Atom Component */}
         <div className="w-full lg:w-2/3 lg:flex items-center justify-center">
-          <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" show={displayAtom}>
+          <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" show={displayAtom} translate={false}>
             <Canvas>
               <Atom />
             </Canvas>

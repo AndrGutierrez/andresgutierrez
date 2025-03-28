@@ -51,17 +51,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Email */}
               <div>
-                <h4 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   CONTACT EMAIL
-                </h4>
+                </h3>
                 <p className="text-gray-300 mt-2">andresgutierrezdev@gmail.com</p>
               </div>
 
               {/* Social Links */}
               <div>
-                <h4 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   FOLLOW ME
-                </h4>
+                </h3>
                 <div className="flex space-x-6 mt-2">
                   {[
                     { href: "https://www.instagram.com/andresg.ut", icon: faInstagram },
