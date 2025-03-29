@@ -70,7 +70,7 @@ function useThrottledResize(callback: () => void, limit: number) {
 
 export default function Atom() {
   const [scale, setScale] = useState(1);
-  const gltf = useGLTF("crystal_heart_compressed.glb");
+  const gltf = useGLTF("/crystal_heart_compressed.glb");
   const mesh = useRef<Mesh>(null);
   const [opacity, setOpacity] = useState(0);
   const scaleRef = useRef(scale);
