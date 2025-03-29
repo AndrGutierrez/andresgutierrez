@@ -1,9 +1,13 @@
 "use client";
 import { useEffect, useRef, useState, Dispatch, SetStateAction, ReactNode } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Canvas } from "@react-three/fiber";
 import { Clients, Skills, About } from '@/components/home'
-import Atom from '@/components/home/animated/Atom'
+
+import dynamic from "next/dynamic";
+
+const ModelRenderer = dynamic(() => import("@/components/model-renderer"), {
+  ssr: false,
+});
 
 function FadeIn({ children, setFinished = () => { }, show = true, className, translate = true }: { children: ReactNode; setFinished?: Dispatch<SetStateAction<boolean>>; show?: boolean, className?: string, translate?: boolean }) {
   const ref = useRef(null);
@@ -86,9 +90,7 @@ export default function Home() {
             displayAtom && (
 
               <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" translate={false} show={displayAtom}>
-                <Canvas>
-                  <Atom />
-                </Canvas>
+                <ModelRenderer></ModelRenderer>
               </FadeIn>)
           }
         </div>
