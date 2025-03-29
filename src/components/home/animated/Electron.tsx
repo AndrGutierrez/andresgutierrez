@@ -26,7 +26,7 @@ export default function Electron({ orbit, position, opacity }: ElectronProps) {
   const geometry = useMemo(() => new CircleGeometry(1, 32), []);
 
   const colorMap = useLoader(TextureLoader, orbit.texture);
-  colorMap.flipY = false
+  // colorMap.flipY = false
 
 
   useFrame(() => {
