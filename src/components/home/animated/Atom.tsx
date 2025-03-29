@@ -128,3 +128,4 @@ export default function Atom() {
     </>
   );
 }
+useGLTF.preload('/crystal_heart_compressed.glb')
