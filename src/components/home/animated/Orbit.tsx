@@ -18,8 +18,7 @@ const Ellipse: React.FC<EllipseProps> = ({
   linewidth = 20,
 }) => {
   const points = useMemo(() => {
-    const isMobile = window.matchMedia("(max-width: 600px)").matches;
-    const actualLinewidth = isMobile ? 10 : linewidth;
+    const actualLinewidth = 10
     const b = radius * 0.7;
     const pointsArray: Vector3[] = [];
 
