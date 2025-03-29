@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Line } from "@react-three/drei";
 import { Vector3 } from "three";
 
@@ -17,15 +17,20 @@ const Ellipse: React.FC<EllipseProps> = ({
   rotation = [0, 0, 0],
   linewidth = 20,
 }) => {
-  let isMobile = window.matchMedia("(max-width: 600px)").matches;
-  if (isMobile) linewidth = 10
-  const points: Vector3[] = [];
-  const b = radius * 0.7;
-  for (let i = 0; i <= segments; i++) {
-    const angle = (i / segments) * Math.PI * 2;
-    points.push(new Vector3(radius * Math.cos(angle), b * Math.sin(angle), 0));
-  }
-  return <Line points={points} color={color} linewidth={linewidth} rotation={rotation} />;
+  const points = useMemo(() => {
+    const isMobile = window.matchMedia("(max-width: 600px)").matches;
+    const actualLinewidth = isMobile ? 10 : linewidth;
+    const b = radius * 0.7;
+    const pointsArray: Vector3[] = [];
+
+    for (let i = 0; i <= segments; i++) {
+      const angle = (i / segments) * Math.PI * 2;
+      pointsArray.push(new Vector3(radius * Math.cos(angle), b * Math.sin(angle), 0));
+    }
+    return [pointsArray, actualLinewidth] as const;
+  }, [radius, segments, linewidth]);
+
+  return <Line points={points[0]} color={color} linewidth={points[1]} rotation={rotation} />;
 };
 
 type SceneProps = {

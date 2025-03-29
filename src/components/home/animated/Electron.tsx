@@ -1,43 +1,68 @@
-import React, { useRef, useState, Suspense } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { Vector3, TextureLoader } from 'three'
-import { useLoader } from '@react-three/fiber'
+import React, { useRef, useState, useMemo } from 'react';
+import { useFrame, useLoader } from '@react-three/fiber';
+import { Vector3, TextureLoader, Mesh, MeshStandardMaterial, CircleGeometry } from 'three';
 
+type OrbitFunctions = {
+  x: (date: number) => number;
+  y: (date: number) => number;
+  z: (date: number) => number;
+  texture: string;
+  color?: string;
+};
 
-type propTypes = {
-  orbit: { x: Function, y: Function, z: Function, texture: string, color?: string },
-  position: Vector3,
-  opacity: number
-}
+type ElectronProps = {
+  orbit: OrbitFunctions;
+  position: Vector3;
+  opacity: number;
+};
 
-export default function Electron({ orbit, position, opacity }: propTypes) {
-  const ref = useRef<THREE.Mesh>(null!)
-  const [hovered, hover] = useState(false)
-  const [clicked, click] = useState(false)
-  useFrame((state, delta) => {
+const tempVector = new Vector3(1, 1, 1);
 
-    const date = Date.now() * 0.0005;
+export default function Electron({ orbit, position, opacity }: ElectronProps) {
+  const ref = useRef<Mesh>(null!);
+  const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  const geometry = useMemo(() => new CircleGeometry(1, 32), []);
+
+  const colorMap = useLoader(TextureLoader, orbit.texture);
+
+  useFrame(() => {
+    if (!ref.current) return;
+
+    const date = performance.now() * 0.0005; // More accurate than Date.now()
+
     ref.current.position.set(
-      orbit["x"](date),
-      orbit["y"](date),
-      orbit["z"](date)
+      orbit.x(date),
+      orbit.y(date),
+      orbit.z(date)
     );
-    ref.current.position.dot(new Vector3(1, 1, 1))
-  })
-  const colorMap = useLoader(TextureLoader, orbit.texture)
 
+    // Only calculate dot product if needed
+    if (hovered || clicked) {
+      ref.current.position.dot(tempVector);
+    }
+  });
+
+  // Memoize material props to prevent unnecessary updates
+  const materialProps = useMemo(() => ({
+    map: colorMap,
+    color: orbit.color,
+    opacity,
+    transparent: opacity < 1,
+  }), [colorMap, orbit.color, opacity]);
 
   return (
-    // TODO: add fallback component
     <mesh
       position={position}
       ref={ref}
       scale={0.25}
-      onClick={() => click(!clicked)}
-      onPointerOver={() => hover(true)}
-      onPointerOut={() => hover(false)}>
-      <circleGeometry />
-      <meshStandardMaterial map={colorMap} color={orbit["color"]} opacity={opacity} transparent />
+      onClick={() => setClicked(!clicked)}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+      geometry={geometry}
+    >
+      <meshStandardMaterial {...materialProps} />
     </mesh>
-  )
+  );
 }
