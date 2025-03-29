@@ -10,11 +10,10 @@ const worker = new Worker(new URL("./workers/main.tsx", import.meta.url), {
 
 const ModelRenderer = () => {
   return (
-    <div className="w-full h-auto aspect-[24/25]">
+    <div className="w-full h-full">
       <Suspense
         fallback={
           <div className="w-full flex items-center justify-center h-[calc(100vh-300px)] font-bold text-[30px] font-mono text-white">
-            loading...
           </div>
         }
       >
@@ -22,7 +21,7 @@ const ModelRenderer = () => {
           worker={worker}
           fallback={<Scene />}
           shadows="basic"
-          className="w-full h-full"
+          className=""
         />
       </Suspense>
     </div>
