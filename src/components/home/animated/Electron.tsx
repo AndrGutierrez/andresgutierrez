@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState, useMemo, useEffect } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { Vector3, TextureLoader, Mesh, MeshStandardMaterial, CircleGeometry } from 'three';
 
@@ -26,6 +26,8 @@ export default function Electron({ orbit, position, opacity }: ElectronProps) {
   const geometry = useMemo(() => new CircleGeometry(1, 32), []);
 
   const colorMap = useLoader(TextureLoader, orbit.texture);
+  colorMap.flipY = false
+
 
   useFrame(() => {
     if (!ref.current) return;
@@ -38,13 +40,11 @@ export default function Electron({ orbit, position, opacity }: ElectronProps) {
       orbit.z(date)
     );
 
-    // Only calculate dot product if needed
     if (hovered || clicked) {
       ref.current.position.dot(tempVector);
     }
   });
 
-  // Memoize material props to prevent unnecessary updates
   const materialProps = useMemo(() => ({
     map: colorMap,
     color: orbit.color,
