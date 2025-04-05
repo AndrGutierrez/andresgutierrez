@@ -9,8 +9,8 @@ import RouteProvider from "./providers/RouteProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Andres Gutierrez | Full Stack Developer | Software Engineer",
-  description: "⚛️ Full Stack Developer | React | Django | AWS | Next.js | Docker | Flask | Amazon Web Services",
+  title: "Andrés Gutiérrez | Full Stack Developer & DevOps Engineer | React, Next.js, Python, AWS",
+  description: "Senior Full Stack Developer with 5+ years of experience in IT, building web apps with React, Next.js, Django, and Node.js. Expert in DevOps (Docker, AWS, CI/CD, Github Actions) open-source contributor. Explore projects, posts, resume, and contact details.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -22,15 +22,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="w-full mx-auto px-6 py-4 flex justify-between items-center xl:px-12">
             <ul className="flex space-x-8">
               {[
-                { href: "/", label: "Home" },
+                { href: "/", label: "Home", ariaLabel: 'home page' },
                 // { href: "/about", label: "About Me" },
                 // { href: "/projects", label: "Projects" },
-                { href: "/blog", label: "Blog" },
+                { href: "/blog", label: "Blog", ariaLabel: 'personal blog' },
               ].map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
                     className="text-gray-300 hover:text-white transition-colors font-medium text-lg relative group"
+                    aria-label={link.ariaLabel}
                   >
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all group-hover:w-full"></span>
@@ -63,9 +64,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </h3>
                 <div className="flex space-x-6 mt-2">
                   {[
-                    { href: "https://www.instagram.com/andresg.ut", icon: faInstagram },
-                    { href: "https://www.linkedin.com/in/andr%C3%A9s-gutierrez-1584a1181", icon: faLinkedin },
-                    { href: "https://github.com/AndrGutierrez", icon: faGithub },
+                    { href: "https://www.instagram.com/andresg.ut", icon: faInstagram, ariaLabel: 'my photos in instabram' },
+                    { href: "https://www.linkedin.com/in/andr%C3%A9s-gutierrez-1584a1181", icon: faLinkedin, ariaLabel: 'my linkedin posts' },
+                    { href: "https://github.com/AndrGutierrez", icon: faGithub, ariaLabel: 'personal projects and code' },
                   ].map((social, index) => (
                     <a
                       key={index}

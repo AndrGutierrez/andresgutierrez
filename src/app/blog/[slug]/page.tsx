@@ -1,29 +1,125 @@
-import Head from 'next/head'
-export async function generateStaticParams() {
-  // const posts = await fetch('https://.../posts').then((res) => res.json())
-  const posts = [
-    {
-      slug: 'a',
-      title: 'hola'
-    }
-  ]
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { fetchApi } from '@/utils/fetchApi'
 
-  return posts.map((post: any) => ({
+interface Post {
+  id: string
+  createdAt: number
+  title: string
+  content: string
+  slug: string
+  thumbnailUrl: string
+  description: string
+}
+
+interface PostPreview {
+  id: string
+  slug: string
+  title: string
+  description: string
+  createdAt: number
+  thumbnailUrl: string
+}
+
+export async function generateStaticParams() {
+  const res = await fetchApi(`post`)
+  const list = await res
+  const { posts }: { posts: PostPreview[] } = list
+
+  return posts.map((post) => ({
     slug: post.slug,
-    title: post.title
   }))
 }
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string, title: string }>
-}) {
-  const { slug, title } = await params
+
+
+async function getPostData(slug: string): Promise<{ post: Post }> {
+  const list = await fetchApi(`/post`)
+  const { posts }: { posts: PostPreview[] } = list
+
+  const postPreview = posts.find((post) => post.slug === slug)
+  if (!postPreview) return notFound()
+
+  const res = await fetchApi(`post/${postPreview.id}`)
+  return await res
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  try {
+    const { post } = await getPostData(params.slug)
+    const { title, description, thumbnailUrl, createdAt } = post
+
+    return {
+      title: `${title} | Andrés Gutiérrez`,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: `https://andresgutierrez.me/blog/${params.slug}`,
+        type: 'article',
+        publishedTime: new Date(createdAt).toISOString(),
+        images: thumbnailUrl ? [{
+          url: thumbnailUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        }] : undefined,
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: thumbnailUrl ? [thumbnailUrl] : undefined,
+      },
+      alternates: {
+        canonical: `https://andresgutierrez.me/blog/${params.slug}`,
+      },
+    }
+  } catch (error) {
+    return {
+      title: 'Not Found',
+      description: 'The post you are looking for does not exist',
+    }
+  }
+}
+
+export default async function PostPage({ params }: { params: { slug: string } }) {
+  const { post } = await getPostData(params.slug)
+  const { title, thumbnailUrl, createdAt, content } = post
+
+  const postDate = new Date(createdAt).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
+  const wordCount = content.split(/\s+/).length
+  const readTime = Math.ceil(wordCount / 200)
+
   return (
-    <>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <h1 className="mt-16">My Post: {slug}</h1>
-    </>)
+    <main className="max-w-3xl mx-auto px-4 py-8">
+      <article className="prose prose-lg prose-slate dark:prose-invert max-w-none">
+        {thumbnailUrl && (
+          <img
+            src={thumbnailUrl}
+            alt={title}
+            className="w-full h-auto mb-6 rounded-lg"
+            loading="lazy"
+          />
+        )}
+
+        <h1 className="text-3xl font-bold mb-2">{title}</h1>
+
+        <div className="flex items-center text-gray-600 dark:text-gray-400 mb-8">
+          <time dateTime={new Date(createdAt).toISOString()}>{postDate}</time>
+          <span className="mx-2">•</span>
+          <span>{readTime} min read</span>
+        </div>
+
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </article>
+    </main>
+  )
 }
