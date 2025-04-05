@@ -1,6 +1,8 @@
+import ExportedImage from "next-image-export-optimizer";
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { fetchApi } from '@/utils/fetchApi'
+
 
 interface Post {
   id: string
@@ -99,11 +101,12 @@ export default async function PostPage({ params }: { params: { slug: string } })
     <main className="max-w-3xl mx-auto px-4 py-8">
       <article className="prose prose-lg prose-slate dark:prose-invert max-w-none">
         {thumbnailUrl && (
-          <img
+          <ExportedImage
             src={thumbnailUrl}
             alt={title}
             className="w-full h-auto mb-6 rounded-lg"
             loading="lazy"
+            height={500}
           />
         )}
 

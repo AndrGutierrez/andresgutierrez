@@ -1,4 +1,5 @@
 import React from "react";
+import ExportedImage from "next-image-export-optimizer";
 type PropTypes = {
   title: string,
   content: string,
@@ -7,7 +8,7 @@ type PropTypes = {
 export default function PostItem({ title, content, thumbnail }: PropTypes) {
   return (
     <div>
-      <img src={thumbnail} alt={title} />
+      <ExportedImage src={thumbnail} alt={title} />
       <h2>{title}</h2>
       <p>
         {content}

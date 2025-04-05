@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import ExportedImage from "next-image-export-optimizer";
+
 
 export default function Skills() {
   const skills = [
@@ -25,7 +27,7 @@ export default function Skills() {
           >
             <div className={`absolute -inset-1 rounded-2xl bg-gradient-to-br ${skill.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
             <div className="flex flex-col items-center justify-center h-full">
-              <img
+              <ExportedImage
                 src={`images/skills/${skill.image}`}
                 alt={skill.title}
                 className="h-12 mb-4 object-contain transition-transform group-hover:scale-110 duration-300"

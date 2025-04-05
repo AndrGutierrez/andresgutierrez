@@ -1,4 +1,5 @@
 import React from "react"
+import ExportedImage from "next-image-export-optimizer";
 
 type PropTypes = {
   title: string
@@ -9,7 +10,7 @@ type PropTypes = {
 export default function Project({ title, content, thumbnail }: PropTypes) {
   return (
     <div className="rounded p-3">
-      <img src={thumbnail} alt="" />
+      <ExportedImage src={thumbnail} alt="" />
       <h3 className="text-xl">{title}</h3>
       <p>{content}</p>
     </div>

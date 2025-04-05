@@ -9,3 +9,6 @@ Download resources from s3, note that there will be build files, delete them and
 aws s3 cp s3://www.andresgutierrez.me  . --recursive
 ```
 
+### Image optimization
+Though next doesn't allow image optimization in static builds, image automatic optimization is done via [next-image-optimizer](next-image-optimizer`)
+

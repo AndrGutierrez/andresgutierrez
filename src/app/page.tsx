@@ -39,8 +39,6 @@ function FadeIn({ children, setFinished = () => { }, show = true, className, tra
 }
 
 
-
-
 export default function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -63,7 +61,7 @@ export default function Home() {
 
   useEffect(() => { console.log(rendered) }, [rendered])
   return (
-    <main className="from-gray-900 via-gray-900 to-black mt-16">
+    <main className="from-gray-900 via-gray-900 to-black ">
       <div className="lg:flex min-h-screen justify-between py-10  lg:pl-12 xl:pl-24 h-full" ref={ref}>
         {/* Left Side: Text Content */}
         <div className="flex items-center justify-center px-10 sm:px-0">

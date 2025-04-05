@@ -4,7 +4,6 @@ import "./globals.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import RouteProvider from "./providers/RouteProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${inter.className} bg-gray-900 text-white`}>
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/50 border-b border-gray-800">
+        <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/50 border-b border-gray-800 mb-16">
           <div className="w-full mx-auto px-6 py-4 flex justify-between items-center xl:px-12">
             <ul className="flex space-x-8">
               {[
@@ -43,8 +42,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </nav>
 
         {/* Main Content */}
-        <RouteProvider>{children}</RouteProvider>
-
+        <div className="mt-16">
+          {children}
+        </div>
         {/* Footer */}
         <footer className="bg-gray-900/50 backdrop-blur-md border-t border-gray-800 mt-16">
           <div className="max-w-7xl mx-auto px-6 py-10">
