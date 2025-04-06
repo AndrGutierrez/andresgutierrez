@@ -96,7 +96,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   const wordCount = content.split(/\s+/).length
   const readTime = Math.ceil(wordCount / 200)
-  const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/${thumbnailUrl}`
+  const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/posts/${thumbnailUrl}`
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
