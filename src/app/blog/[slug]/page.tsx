@@ -96,17 +96,23 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   const wordCount = content.split(/\s+/).length
   const readTime = Math.ceil(wordCount / 200)
+  const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/${thumbnailUrl}`
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
       <article className="prose prose-lg prose-slate dark:prose-invert max-w-none">
         {thumbnailUrl && (
           <ExportedImage
-            src={thumbnailUrl}
+            src={thumbnail}
             alt={title}
             className="w-full h-auto mb-6 rounded-lg"
             loading="lazy"
-            height={500}
+            width={500}
+            height={100}
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
           />
         )}
 
