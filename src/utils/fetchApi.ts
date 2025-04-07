@@ -2,17 +2,20 @@ import { SignatureV4 } from "@aws-sdk/signature-v4";
 import { Sha256 } from "@aws-crypto/sha256-js";
 import { HttpRequest } from "@aws-sdk/protocol-http";
 
-export const fetchApi = async <T = any>(route: string): Promise<T> => {
-  const API_URL = process.env.API_URL;
-  const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
-  const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
-  const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
 
-  if (!API_URL || !AWS_ACCESS_KEY_ID || !AWS_SECRET_ACCESS_KEY || !AWS_REGION) {
+const API_URL = process.env.API_URL;
+const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
+
+const getAwsConfig = (route: string) => {
+
+  if (!API_URL || !AWS_ACCESS_KEY_ID || !AWS_SECRET_ACCESS_KEY) {
     throw new Error('Missing required AWS configuration');
   }
 
   const url = new URL(`${API_URL}/${route}`);
+
   const request = new HttpRequest({
     hostname: url.hostname,
     path: url.pathname,
@@ -29,10 +32,14 @@ export const fetchApi = async <T = any>(route: string): Promise<T> => {
       secretAccessKey: AWS_SECRET_ACCESS_KEY,
     },
     region: AWS_REGION,
-    service: "execute-api", // or your service name
+    service: "execute-api",
     sha256: Sha256,
   });
+  return { url, request, signer }
+}
 
+export const fetchApi = async <T = any>(route: string): Promise<T> => {
+  const { url, signer, request } = getAwsConfig(route)
   try {
     const signedRequest = await signer.sign(request);
     const response = await fetch(url.toString(), {
@@ -47,4 +54,3 @@ export const fetchApi = async <T = any>(route: string): Promise<T> => {
   }
 };
 
-export default fetchApi;

@@ -2,6 +2,7 @@ import ExportedImage from "next-image-export-optimizer";
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { fetchApi } from '@/utils/fetchApi'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 
 
 interface Post {
@@ -42,7 +43,8 @@ async function getPostData(slug: string): Promise<{ post: Post }> {
   if (!postPreview) return notFound()
 
   const res = await fetchApi(`post/${postPreview.id}`)
-  return await res
+  // console.log(content)
+  return res
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -86,7 +88,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function PostPage({ params }: { params: { slug: string } }) {
   const { post } = await getPostData(params.slug)
-  const { title, thumbnailUrl, createdAt, content } = post
+
+  const { title, thumbnailUrl, createdAt, content: base64Content, slug } = post
 
   const postDate = new Date(createdAt).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -94,9 +97,10 @@ export default async function PostPage({ params }: { params: { slug: string } })
     day: 'numeric',
   })
 
+  const content = atob(base64Content)
   const wordCount = content.split(/\s+/).length
   const readTime = Math.ceil(wordCount / 200)
-  const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/posts/${thumbnailUrl}`
+  const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/posts/${slug}/${thumbnailUrl}`
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
@@ -107,7 +111,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
             alt={title}
             className="w-full h-auto mb-6 rounded-lg"
             loading="lazy"
-            width={500}
+            width={800}
             height={100}
             style={{
               width: '100%',
@@ -123,11 +127,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
           <span className="mx-2">•</span>
           <span>{readTime} min read</span>
         </div>
-
-        <div
-          className="content"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <MDXRemote source={content}>
+        </MDXRemote>
       </article>
     </main>
   )
