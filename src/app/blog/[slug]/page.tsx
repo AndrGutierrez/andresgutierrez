@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { fetchApi } from '@/utils/fetchApi'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import { useMDXComponents } from "@/mdx-components";
 
 
 interface Post {
@@ -101,6 +102,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
   const wordCount = content.split(/\s+/).length
   const readTime = Math.ceil(wordCount / 200)
   const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/posts/${slug}/${thumbnailUrl}`
+  const components = useMDXComponents({})
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
@@ -127,7 +129,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
           <span className="mx-2">•</span>
           <span>{readTime} min read</span>
         </div>
-        <MDXRemote source={content}>
+        <MDXRemote source={content} components={components}>
         </MDXRemote>
       </article>
     </main>
