@@ -6,7 +6,7 @@ const items: Array<{ title: string, content: string, thumbnail: string }> = [
 ]
 export default function Blog() {
   return <main className="min-h-screen  flex justify-center mt-16">
-    <div className="max-w-screen-lg">
+    <div className="max-w-(--breakpoint-lg)">
       <h1 className="text-4xl">My personal blog.</h1>
       {items.map((item, i) => <PostItem key={i} {...item} />)}
     </div>

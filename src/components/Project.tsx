@@ -9,7 +9,7 @@ type PropTypes = {
 
 export default function Project({ title, content, thumbnail }: PropTypes) {
   return (
-    <div className="rounded p-3">
+    <div className="rounded-sm p-3">
       <ExportedImage src={thumbnail} alt="" />
       <h3 className="text-xl">{title}</h3>
       <p>{content}</p>

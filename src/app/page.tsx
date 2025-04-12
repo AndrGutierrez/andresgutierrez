@@ -78,7 +78,7 @@ export default function Home() {
             onAnimationComplete={() => setDisplayAtom(true)}
           >
             <div className="mb-24 flex flex-col items-center lg:items-start">
-              <h1 className="text-center lg:text-left text-7xl xl:text-8xl font-bold mb-2 sm:truncate bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <h1 className="text-center lg:text-left text-7xl xl:text-8xl font-bold mb-2 sm:truncate bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 {title}
               </h1>
               <p className="text-lg text-gray-400">Software Engineer and tech enthusiast</p>

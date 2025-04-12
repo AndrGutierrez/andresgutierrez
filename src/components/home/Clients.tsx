@@ -7,7 +7,7 @@ export default function Clients() {
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-3xl md:text-4xl font-bold mb-12 text-white bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+        className="text-3xl md:text-4xl font-bold mb-12 text-white bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
       >
         Trusted By
       </motion.h2>
@@ -18,7 +18,7 @@ export default function Clients() {
             whileHover={{ scale: 1.05 }}
             className="group relative bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700 hover:border-blue-400"
           >
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 rounded-xl bg-linear-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             <ExportedImage
               src={`images/clients/${logo}`}
               alt="Client"

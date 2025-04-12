@@ -27,7 +27,7 @@ const Ellipse: React.FC<EllipseProps> = ({
       pointsArray.push(new Vector3(radius * Math.cos(angle), b * Math.sin(angle), 0));
     }
     return [pointsArray, actualLinewidth] as const;
-  }, [radius, segments, linewidth]);
+  }, [radius, segments]);
 
   return <Line points={points[0]} color={color} linewidth={points[1]} rotation={rotation} />;
 };

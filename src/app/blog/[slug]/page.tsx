@@ -4,6 +4,11 @@ import { notFound } from 'next/navigation'
 import { fetchApi } from '@/utils/fetchApi'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { useMDXComponents } from "@/mdx-components";
+import rehypePrettyCode from "rehype-pretty-code";
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
+  theme: "github-dark"
+}
 
 
 interface Post {
@@ -44,7 +49,6 @@ async function getPostData(slug: string): Promise<{ post: Post }> {
   if (!postPreview) return notFound()
 
   const res = await fetchApi(`post/${postPreview.id}`)
-  // console.log(content)
   return res
 }
 
@@ -122,16 +126,22 @@ export default async function PostPage({ params }: { params: { slug: string } })
           />
         )}
 
-        <h1 className="text-3xl font-bold mb-2">{title}</h1>
+        <h1 className="text-4xl font-bold mb-2">{title}</h1>
 
         <div className="flex items-center text-gray-600 dark:text-gray-400 mb-8">
           <time dateTime={new Date(createdAt).toISOString()}>{postDate}</time>
           <span className="mx-2">•</span>
           <span>{readTime} min read</span>
         </div>
-        <MDXRemote source={content} components={components}>
+        <MDXRemote source={content} components={components}
+          options={{
+            mdxOptions: {
+              rehypePlugins: [[rehypePrettyCode, options]],
+            },
+          }}
+        >
         </MDXRemote>
       </article>
-    </main>
+    </main >
   )
 }

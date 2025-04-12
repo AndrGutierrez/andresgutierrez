@@ -33,7 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     aria-label={link.ariaLabel}
                   >
                     {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 transition-all group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-blue-400 to-purple-500 transition-all group-hover:w-full"></span>
                   </Link>
                 </li>
               ))}
@@ -51,7 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Email */}
               <div>
-                <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   CONTACT EMAIL
                 </h3>
                 <p className="text-gray-300 mt-2">andresgutierrezdev@gmail.com</p>
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
               {/* Social Links */}
               <div>
-                <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   FOLLOW ME
                 </h3>
                 <div className="flex space-x-6 mt-2">

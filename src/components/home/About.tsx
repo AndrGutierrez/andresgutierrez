@@ -9,7 +9,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           className="space-y-6 text-lg leading-relaxed text-gray-300"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             About Me
           </h2>
           <div className="space-y-6">
@@ -28,7 +28,7 @@ export default function About() {
           </div>
           <Link
             href="/blog"
-            className="inline-flex items-center mt-8 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:scale-[1.02] transition-transform group"
+            className="inline-flex items-center mt-8 px-6 py-3 bg-linear-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:scale-[1.02] transition-transform group"
           >
             <span>Explore My Blog</span>
             <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">

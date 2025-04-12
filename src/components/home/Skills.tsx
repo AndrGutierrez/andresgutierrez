@@ -13,7 +13,7 @@ export default function Skills() {
 
   return (
     <section className="w-full py-20 px-4">
-      <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+      <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
         Technical Arsenal
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
@@ -25,7 +25,7 @@ export default function Skills() {
             viewport={{ once: true }}
             className="group relative aspect-square bg-gray-800/50 backdrop-blur-lg rounded-2xl p-6 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700 hover:border-blue-400"
           >
-            <div className={`absolute -inset-1 rounded-2xl bg-gradient-to-br ${skill.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
+            <div className={`absolute -inset-1 rounded-2xl bg-linear-to-br ${skill.color} opacity-20 group-hover:opacity-30 transition-opacity`} />
             <div className="flex flex-col items-center justify-center h-full">
               <ExportedImage
                 src={`images/skills/${skill.image}`}
