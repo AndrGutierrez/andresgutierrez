@@ -1,5 +1,4 @@
 import type { MDXComponents } from 'mdx/types'
-import ExportedImage from 'next-image-export-optimizer'
 import CopyButton from '@/components/blog/CopyButton'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -16,7 +15,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <h2 className='text-3xl mb-4'>{children}</h2>
     ),
     img: (props) => (
-      <ExportedImage
+      <img
         src={props.src || ''}
         alt={props.alt || ''}
         width={'1000'}

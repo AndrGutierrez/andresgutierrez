@@ -112,7 +112,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
     <main className="max-w-3xl mx-auto px-4 py-8">
       <article className="prose prose-lg prose-slate dark:prose-invert max-w-none">
         {thumbnailUrl && (
-          <ExportedImage
+          <img
             src={thumbnail}
             alt={title}
             className="w-full h-auto mb-6 rounded-lg"
@@ -128,7 +128,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
 
-        <div className="flex items-center text-gray-600 dark:text-gray-400 mb-8">
+        <div className="flex items-center text-gray-600 dark:text-gray-400 mb-4">
           <time dateTime={new Date(createdAt).toISOString()}>{postDate}</time>
           <span className="mx-2">•</span>
           <span>{readTime} min read</span>
