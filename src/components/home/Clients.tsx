@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import ExportedImage from "next-image-export-optimizer";
 
 export default function Clients() {
   return (
@@ -19,7 +18,7 @@ export default function Clients() {
             className="group relative bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 hover:bg-gray-800/70 transition-all duration-300 border border-gray-700 hover:border-blue-400"
           >
             <div className="absolute inset-0 rounded-xl bg-linear-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <ExportedImage
+            <img
               src={`images/clients/${logo}`}
               alt="Client"
               className="h-16 mx-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-500"

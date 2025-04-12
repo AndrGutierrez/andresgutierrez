@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import NProgressClient from "@/components/nprogress";
+import { Inter } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 

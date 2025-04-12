@@ -1,10 +1,10 @@
-import ExportedImage from "next-image-export-optimizer";
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { fetchApi } from '@/utils/fetchApi'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { useMDXComponents } from "@/mdx-components";
 import rehypePrettyCode from "rehype-pretty-code";
+import { PostPreview } from "@/types";
 /** @type {import('rehype-pretty-code').Options} */
 const options = {
   theme: "github-dark"
@@ -21,14 +21,6 @@ interface Post {
   description: string
 }
 
-interface PostPreview {
-  id: string
-  slug: string
-  title: string
-  description: string
-  createdAt: number
-  thumbnailUrl: string
-}
 
 export async function generateStaticParams() {
   const res = await fetchApi(`post`)
@@ -115,13 +107,12 @@ export default async function PostPage({ params }: { params: { slug: string } })
           <img
             src={thumbnail}
             alt={title}
-            className="w-full h-auto mb-6 rounded-lg"
+            className="w-full h-auto mb-6 rounded-lg object-cover "
             loading="lazy"
             width={800}
             height={100}
             style={{
-              width: '100%',
-              height: 'auto',
+              height: '300px'
             }}
           />
         )}
