@@ -34,8 +34,8 @@ export default async function BlogPage() {
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <PostItem post={post}></PostItem>
+        {posts.map((post, i) => (
+          <PostItem post={post} key={i}></PostItem>
         ))}
       </div>
     </main>

@@ -31,7 +31,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           <CopyButton text={reactToText(props.children)} />
         </figcaption>
         <pre
-          className="relative rounded-b-lg rounded-t-none border border-zinc-200 bg-zinc-100 px-0 py-4 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-[#abb2bf]"
+          className="relative rounded-b-lg rounded-t-none border border-zinc-200 bg-zinc-100 px-0 py-4 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-[#abb2bf] px-2"
           {...props}
         />
       </pre>
