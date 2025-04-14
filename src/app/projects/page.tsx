@@ -1,5 +1,4 @@
 import React from "react"
-import Project from "@/components/Project"
 
 const items: Array<{ title: string, content: string, thumbnail: string }> = [
 
@@ -13,7 +12,6 @@ export default function Blog() {
   return <main className="min-h-screen bg-linear-to-b from-background to-black from-15% flex justify-center">
     <div className="max-w-(--breakpoint-lg)">
       <h1 className="text-4xl">My projects.</h1>
-      {items.map((item, i) => <Project key={i} {...item} />)}
     </div>
   </main>
 }
