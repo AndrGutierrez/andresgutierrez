@@ -23,8 +23,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h3: ({ children }) => (
       <h3 className='text-2xl mb-3'>{children}</h3>
     ),
-    a: ({ children }) => (
-      <a className='text-underline text-cyan-600'>{children}</a>
+    a: (props) => (
+      <a className='text-underline text-cyan-600' href={props.href}>{props.children}</a>
     ),
     img: (props) => (
       <img
