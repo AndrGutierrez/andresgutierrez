@@ -32,6 +32,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt={props.alt || ''}
         width={'1000'}
         height={'500'}
+        loading="lazy"
       />
     ),
     pre: (props: JSX.IntrinsicElements["pre"] & { "data-language"?: string }) => (
