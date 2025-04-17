@@ -14,6 +14,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2: ({ children }) => (
       <h2 className='text-3xl mb-4'>{children}</h2>
     ),
+    ol: ({ children }) => (
+      <ol className='list-decimal ml-5 mb-5'>{children}</ol>
+    ),
+    ul: ({ children }) => (
+      <ul className='list-disc ml-5 mb-5'>{children}</ul>
+    ),
+    h3: ({ children }) => (
+      <h3 className='text-2xl mb-3'>{children}</h3>
+    ),
+    a: ({ children }) => (
+      <a className='text-underline text-cyan-600'>{children}</a>
+    ),
     img: (props) => (
       <img
         src={props.src || ''}
@@ -31,7 +43,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           <CopyButton text={reactToText(props.children)} />
         </figcaption>
         <pre
-          className="relative rounded-b-lg rounded-t-none border border-zinc-200 bg-zinc-100 px-0 py-4 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-[#abb2bf] px-2"
+          className="relative rounded-b-lg rounded-t-none border border-zinc-200 bg-zinc-100 px-0 py-4 text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-[#abb2bf] px-2 overflow-auto"
           {...props}
         />
       </pre>
