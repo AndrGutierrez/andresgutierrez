@@ -1,7 +1,7 @@
 
-import { PostPreview } from "@/types"
+import { PostPreviewType } from "@/types"
 import Link from "next/link"
-export default function PostItem({ post }: { post: PostPreview }) {
+export default function PostItem({ post }: { post: PostPreviewType }) {
 
   return (
     <Link

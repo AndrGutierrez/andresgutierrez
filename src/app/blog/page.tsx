@@ -1,7 +1,7 @@
 import PostItem from '@/components/blog/PostItem'
 import type { Metadata } from 'next'
 import { fetchApi } from '@/utils/fetchApi'
-import { PostPreview } from '@/types'
+import { PostPreviewType } from '@/types'
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function BlogPage() {
   const res = await fetchApi(`post`)
-  const { posts }: { posts: PostPreview[] } = await res
+  const { posts }: { posts: PostPreviewType[] } = await res
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-8">

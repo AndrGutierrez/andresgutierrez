@@ -1,31 +1,14 @@
-import type { Metadata } from 'next'
+import PostContent from '@/components/blog/PostContent'
 import { notFound } from 'next/navigation'
 import { fetchApi } from '@/utils/fetchApi'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import { useMDXComponents } from "@/mdx-components";
-import rehypePrettyCode from "rehype-pretty-code";
-import { PostPreview } from "@/types";
-/** @type {import('rehype-pretty-code').Options} */
-const options = {
-  theme: "github-dark"
-}
-
-
-interface Post {
-  id: string
-  createdAt: number
-  title: string
-  content: string
-  slug: string
-  thumbnailUrl: string
-  description: string
-}
+import { PostPreviewType, PostType } from "@/types";
+import type { Metadata } from 'next'
 
 
 export async function generateStaticParams() {
   const res = await fetchApi(`post`)
   const list = await res
-  const { posts }: { posts: PostPreview[] } = list
+  const { posts }: { posts: PostPreviewType[] } = list
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -33,9 +16,9 @@ export async function generateStaticParams() {
 }
 
 
-async function getPostData(slug: string): Promise<{ post: Post }> {
+async function getPostData(slug: string): Promise<{ post: PostType }> {
   const list = await fetchApi(`/post`)
-  const { posts }: { posts: PostPreview[] } = list
+  const { posts }: { posts: PostPreviewType[] } = list
 
   const postPreview = posts.find((post) => post.slug === slug)
   if (!postPreview) return notFound()
@@ -98,7 +81,6 @@ export default async function PostPage({ params }: { params: { slug: string } })
   const wordCount = content.split(/\s+/).length
   const readTime = Math.ceil(wordCount / 200)
   const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/posts/${slug}/${thumbnailUrl}`
-  const components = useMDXComponents({})
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
@@ -124,14 +106,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
           <span className="mx-2">•</span>
           <span>{readTime} min read</span>
         </div>
-        <MDXRemote source={content} components={components}
-          options={{
-            mdxOptions: {
-              rehypePlugins: [[rehypePrettyCode, options]],
-            },
-          }}
-        >
-        </MDXRemote>
+        <PostContent post={post} />
       </article>
     </main >
   )
