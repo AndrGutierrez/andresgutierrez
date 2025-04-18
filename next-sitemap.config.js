@@ -1,7 +1,6 @@
 // next-sitemap.config.js
 module.exports = {
-  siteUrl: 'https://andresgutierrez.me',   
-  // siteUrl: 'http:localhost:3000',
+  siteUrl: 'https://andresgutierrez.me',
   generateRobotsTxt: true,
   changefreq: 'daily',
   priority: 0.7,
@@ -26,10 +25,10 @@ module.exports = {
 
     if (path === '/') {
       priority = 1.0;
-      changefreq = 'daily';
+      changefreq = 'montly';
     } else if (path === '/blog') {
       priority = 0.9;
-      changefreq = 'weekly';
+      changefreq = 'monthly';
     } else if (path.startsWith('/blog/')) {
       priority = 0.8;
       changefreq = 'monthly';
