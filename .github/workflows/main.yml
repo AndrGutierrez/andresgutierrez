@@ -38,14 +38,12 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
         AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}} 
         NEXT_PUBLIC_CDN_URL: 'https://andresgutierrez.me/images/attachments'
-    - name: postbuild
-      run: yarn postbuild 
     - name: ls
-      run: ls out & ls public
+      run: ls out
 
     - name: Copy files to the production website with the AWS CLI
       run: |
-        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }} --exclude crystal_heart_compressed.glb --exclude images/* --include public/robots.txt --include public/sitemap.xml --include public/sitemap-0.xml
+        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }} --exclude crystal_heart_compressed.glb --exclude images/*
     - name: Copy files to the production website with the AWS CLI
       run: |
         aws cloudfront create-invalidation \
