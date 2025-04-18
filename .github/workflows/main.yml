@@ -45,7 +45,7 @@ jobs:
 
     - name: Copy files to the production website with the AWS CLI
       run: |
-        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }} --exclude crystal_heart_compressed.glb --exclude images/* 
+        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }} --exclude crystal_heart_compressed.glb --exclude images/* --include public/robots.txt --include public/sitemap.xml --include public/sitemap-0.xml
     - name: Copy files to the production website with the AWS CLI
       run: |
         aws cloudfront create-invalidation \
