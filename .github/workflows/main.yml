@@ -32,7 +32,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: Build
-      run: yarn build || ls out
+      run: yarn build & ls out
       env:
         API_URL: ${{secrets.API_URL}}
         AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
