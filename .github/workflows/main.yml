@@ -41,7 +41,7 @@ jobs:
     - name: postbuild
       run: yarn postbuild 
     - name: ls
-      run: ls out
+      run: ls out & ls public
 
     - name: Copy files to the production website with the AWS CLI
       run: |
