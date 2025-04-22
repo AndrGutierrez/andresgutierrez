@@ -55,7 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <h3 className="text-lg font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                   CONTACT EMAIL
                 </h3>
-                <p className="text-gray-300 mt-2">andresgutierrezdev@gmail.com</p>
+                <p className="text-gray-300 mt-2">mail@andresgutierrez.me</p>
               </div>
 
               {/* Social Links */}
@@ -65,13 +65,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 </h3>
                 <div className="flex space-x-6 mt-2">
                   {[
-                    { href: "https://www.instagram.com/andresg.ut", icon: faInstagram, ariaLabel: 'my photos in instabram' },
-                    { href: "https://www.linkedin.com/in/andr%C3%A9s-gutierrez-1584a1181", icon: faLinkedin, ariaLabel: 'my linkedin posts' },
+                    { href: "https://www.instagram.com/andresg.ut", icon: faInstagram, ariaLabel: 'my photos on instagram', },
+                    { href: "https://www.linkedin.com/in/andr%C3%A9s-gutierrez-1584a1181", icon: faLinkedin, ariaLabel: 'my linkedin posts', },
                     { href: "https://github.com/AndrGutierrez", icon: faGithub, ariaLabel: 'personal projects and code' },
                   ].map((social, index) => (
                     <a
                       key={index}
                       href={social.href}
+                      aria-label={social.ariaLabel}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-300 hover:text-white transition-colors"
