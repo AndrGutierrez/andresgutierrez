@@ -38,22 +38,7 @@ function FadeIn({ children, setFinished = () => { }, show = true, className, tra
     </motion.div>
   );
 }
-export const metadata = {
-  title: 'Andrés Gutiérrez - Full Stack Developer',
-  description: 'Full Stack Developer Andrés Gutiérrez specializes in React, Next.js, Python (Django/Flask), and DevOps (Docker, AWS). With 4+ years of experience building ERP systems, streaming tools, and scalable web apps.',
-  keywords: ['Full Stack Developer', 'React', 'Next.js', 'Django', 'AWS', 'Portfolio'],
-  openGraph: {
-    title: 'Andrés Gutiérrez - Full Stack Developer',
-    description: '4+ years building web apps with React, Python, and AWS. Explore my projects and experience.',
-    url: 'https://andresgutierrez.me',
-    images: '/og-image.png', // Add an OpenGraph image
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Andrés Gutiérrez - Full Stack Developer',
-    description: 'React/Python Developer | AWS DevOps | Open Source Contributor',
-  }
-}
+
 
 export default function Home() {
   const ref = useRef(null);
