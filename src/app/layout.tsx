@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Andrés Gutiérrez | Full Stack Developer & DevOps Engineer | React, Next.js, Python, AWS",
+  title: "Andrés Gutiérrez - Software Engineer",
   description: "Senior Full Stack Developer with 5+ years of experience in IT, building web apps with React, Next.js, Django, and Node.js. Expert in DevOps (Docker, AWS, CI/CD, Github Actions) open-source contributor. Explore projects, posts, resume, and contact details.",
 };
 
