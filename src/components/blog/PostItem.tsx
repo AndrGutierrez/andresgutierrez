@@ -9,13 +9,13 @@ export default function PostItem({ post }: { post: PostPreviewType }) {
       href={`/blog/${post.slug}`}
       className="group block rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-gray-800"
     >
-      <div className="relative aspect-video overflow-hidden">
+      <div className="relative overflow-hidden h-[150px]">
         {post.thumbnailUrl && (
           <img
             src={`${process.env.NEXT_PUBLIC_CDN_URL}/posts/${post.slug}/${post.thumbnailUrl}`}
             alt={post.title}
             width={400}
-            height={225}
+            height={200}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />

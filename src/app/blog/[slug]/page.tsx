@@ -89,12 +89,11 @@ export default async function PostPage({ params }: { params: { slug: string } })
           <img
             src={thumbnail}
             alt={title}
-            className="w-full h-auto mb-6 rounded-lg object-cover "
+            className="w-full h-auto mb-6 rounded-lg object-cover xs:h-[150px] md:h-[300px] "
             loading="lazy"
             width={800}
             height={100}
             style={{
-              height: '300px'
             }}
           />
         )}
