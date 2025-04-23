@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         publishedTime: new Date(createdAt).toISOString(),
         images: thumbnail ? [{
           url: thumbnail,
-          width: 533,
-          height: 300,
+          width: 1000,
+          height: 630,
           alt: title,
         }] : undefined,
       },
@@ -87,16 +87,10 @@ export default async function PostPage({ params }: { params: { slug: string } })
     <main className="max-w-3xl mx-auto px-4 py-8">
       <article className="prose prose-lg prose-slate dark:prose-invert max-w-none">
         {thumbnailUrl && (
-          <img
-            src={thumbnail}
+          <img src={thumbnail}
             alt={title}
-            className="w-full h-auto mb-6 rounded-lg object-cover "
+            className="w-full mb-6 rounded-lg  h-[300px] object-cover"
             loading="lazy"
-            width={533}
-            height={300}
-            style={{
-              height: '300px'
-            }}
           />
         )}
 
