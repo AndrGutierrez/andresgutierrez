@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         publishedTime: new Date(createdAt).toISOString(),
         images: thumbnail ? [{
           url: thumbnail,
-          width: 1200,
+          width: 1000,
           height: 630,
           alt: title,
         }] : undefined,
