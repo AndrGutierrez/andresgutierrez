@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   try {
     const { post } = await getPostData(params.slug)
     const { title, description, thumbnailUrl, createdAt } = post
+    const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/posts/${params.slug}/${thumbnailUrl}`
 
     return {
       title: `${title} | Andrés Gutiérrez`,
@@ -41,8 +42,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         url: `https://andresgutierrez.me/blog/${params.slug}`,
         type: 'article',
         publishedTime: new Date(createdAt).toISOString(),
-        images: thumbnailUrl ? [{
-          url: thumbnailUrl,
+        images: thumbnail ? [{
+          url: thumbnail,
           width: 1200,
           height: 630,
           alt: title,
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         card: 'summary_large_image',
         title,
         description,
-        images: thumbnailUrl ? [thumbnailUrl] : undefined,
+        images: thumbnail ? [thumbnail] : undefined,
       },
       alternates: {
         canonical: `https://andresgutierrez.me/blog/${params.slug}`,
