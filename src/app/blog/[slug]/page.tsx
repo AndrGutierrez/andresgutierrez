@@ -92,8 +92,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
             alt={title}
             className="w-full h-auto mb-6 rounded-lg object-cover "
             loading="lazy"
-            width={800}
-            height={100}
+            width={533}
+            height={300}
             style={{
               height: '300px'
             }}
