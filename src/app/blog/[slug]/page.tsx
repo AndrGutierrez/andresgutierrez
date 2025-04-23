@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   try {
     const { post } = await getPostData(params.slug)
     const { title, description, thumbnailUrl, createdAt } = post
+    const thumbnail = `${process.env.NEXT_PUBLIC_CDN_URL}/posts/${params.slug}/${thumbnailUrl}`
 
     return {
       title: `${title} | Andrés Gutiérrez`,
@@ -41,9 +42,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         url: `https://andresgutierrez.me/blog/${params.slug}`,
         type: 'article',
         publishedTime: new Date(createdAt).toISOString(),
-        images: thumbnailUrl ? [{
-          url: thumbnailUrl,
-          width: 1200,
+        images: thumbnail ? [{
+          url: thumbnail,
+          width: 1000,
           height: 630,
           alt: title,
         }] : undefined,
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         card: 'summary_large_image',
         title,
         description,
-        images: thumbnailUrl ? [thumbnailUrl] : undefined,
+        images: thumbnail ? [thumbnail] : undefined,
       },
       alternates: {
         canonical: `https://andresgutierrez.me/blog/${params.slug}`,
@@ -86,8 +87,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
     <main className="max-w-3xl mx-auto px-4 py-8">
       <article className="prose prose-lg prose-slate dark:prose-invert max-w-none">
         {thumbnailUrl && (
-          <img
-            src={thumbnail}
+          <img src={thumbnail}
             alt={title}
             className="w-full h-auto mb-6 rounded-lg object-cover xs:h-[150px] md:h-[300px] "
             loading="lazy"
