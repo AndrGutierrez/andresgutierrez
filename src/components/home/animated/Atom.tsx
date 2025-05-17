@@ -5,7 +5,6 @@ import { Vector3, MeshStandardMaterial, Mesh } from "three";
 import Electron from "./Electron";
 import Orbit from "./Orbit";
 import AtomCore from "./AtomCore";
-import { useRenderStore } from "@/store";
 
 const orbitRadius = 3;
 const electronOrbit = 3;

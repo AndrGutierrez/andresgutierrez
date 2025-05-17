@@ -12,10 +12,9 @@ type EllipseProps = {
 
 const Ellipse: React.FC<EllipseProps> = ({
   radius,
-  segments = 100,
+  segments = 64,
   color = "#ffffff",
   rotation = [0, 0, 0],
-  linewidth = 20,
 }) => {
   const points = useMemo(() => {
     const actualLinewidth = 10

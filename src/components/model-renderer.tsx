@@ -1,5 +1,5 @@
 'use client'
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import { Canvas } from "@react-three/offscreen";
 import { useRenderStore } from "@/store";
 
