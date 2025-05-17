@@ -1,6 +1,6 @@
-import React, { useRef, useState, useMemo, useEffect } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { Vector3, TextureLoader, Mesh, MeshStandardMaterial, CircleGeometry } from 'three';
+import { Vector3, TextureLoader, Mesh, CircleGeometry } from 'three';
 
 type OrbitFunctions = {
   x: (date: number) => number;
