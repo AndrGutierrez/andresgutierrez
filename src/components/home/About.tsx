@@ -15,7 +15,7 @@ export default function About() {
           <div className="space-y-6">
             <p className="flex items-start gap-4">
               <span className="text-blue-400 text-xl">▹</span>
-              Computer Science Engineer with 4+ years experience in full-stack development and AWS cloud architecture
+              Software Engineer with 5 years experience in full-stack development and AWS cloud architecture
             </p>
             <p className="flex items-start gap-4">
               <span className="text-purple-400 text-xl">▹</span>
