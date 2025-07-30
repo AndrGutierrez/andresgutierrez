@@ -5,6 +5,7 @@ import { Vector3, MeshStandardMaterial, Mesh } from "three";
 import Electron from "./Electron";
 import Orbit from "./Orbit";
 import AtomCore from "./AtomCore";
+import { useRenderStore } from "@/store";
 
 const orbitRadius = 3;
 const electronOrbit = 3;
@@ -69,6 +70,7 @@ function useThrottledResize(callback: () => void, limit: number) {
 }
 
 export default function Atom() {
+  const { setRendered, rendered } = useRenderStore()
   const [scale, setScale] = useState(1);
   const gltf = useGLTF("/crystal_heart_compressed.glb");
   const mesh = useRef<Mesh>(null);
@@ -77,6 +79,7 @@ export default function Atom() {
 
   // Optimized opacity animation
   useFrame(() => {
+    if (!rendered) setRendered(true); // optional if you're syncing to a global store
     if (opacity < 1 && mesh.current) {
       const newOpacity = Math.min(opacity + 0.01, 1);
       setOpacity(newOpacity);
@@ -105,6 +108,11 @@ export default function Atom() {
   // Use throttled resize handler
   useThrottledResize(updateScale, 200);
 
+  useEffect(() => {
+    if (opacity >= 1) {
+      self.postMessage({ type: 'SET_RENDERED', value: true });
+    }
+  }, [opacity]);
   // Initial scale setup
   useEffect(() => {
     updateScale();
@@ -114,9 +122,7 @@ export default function Atom() {
       <ambientLight intensity={Math.PI / 2} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-      <mesh rotation={[0.15, -0.3, 0]} ref={mesh} scale={[scale, scale, scale]} onAfterRender={() => {
-        self.postMessage({ type: 'SET_RENDERED', value: true })
-      }}>
+      <mesh rotation={[0.15, -0.3, 0]} ref={mesh} scale={[scale, scale, scale]} >
         <Electron position={new Vector3(0, 0, 0)} orbit={orbits.python} opacity={opacity} />
         <Electron position={new Vector3(0, 0, 0)} orbit={orbits.js} opacity={opacity} />
         <Electron position={new Vector3(0, 0, 0)} orbit={orbits.aws} opacity={opacity} />
