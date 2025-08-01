@@ -66,7 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <div className="flex space-x-6 mt-2">
                   {[
                     { href: "https://www.instagram.com/andresg.ut", icon: faInstagram, ariaLabel: 'my photos on instagram', },
-                    { href: "https://www.linkedin.com/in/andres-gutierrez-1584a1181", icon: faLinkedin, ariaLabel: 'my linkedin posts', },
+                    { href: "https://www.linkedin.com/in/andres-gutierrezo", icon: faLinkedin, ariaLabel: 'my linkedin posts', },
                     { href: "https://github.com/AndrGutierrez", icon: faGithub, ariaLabel: 'personal projects and code' },
                   ].map((social, index) => (
                     <a
