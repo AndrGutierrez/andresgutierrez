@@ -61,6 +61,11 @@ export default function Home() {
     if (displayAtom) setTimeout(() => setShowClients(true), 500);
   }, [displayAtom]);
 
+
+  useEffect(() => {
+    console.log(rendered)
+
+  }, [rendered])
   return (
     <main className="from-gray-900 via-gray-900 to-black ">
       <div className="lg:flex min-h-screen justify-between py-10  lg:pl-12 xl:pl-24 h-full" ref={ref}>
