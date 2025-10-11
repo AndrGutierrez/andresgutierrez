@@ -1,7 +1,6 @@
 'use client'
 import { lazy, useEffect, useState } from "react";
 import { Canvas } from "@react-three/offscreen";
-import { useRenderStore } from "@/store";
 import { LoadingWheel } from '@/components/app'
 
 
@@ -10,9 +9,9 @@ const worker = new Worker(new URL("./workers/main.tsx", import.meta.url), {
 });
 
 const ModelRenderer = () => {
-  const { rendered, setRendered } = useRenderStore()
   const [r, setR] = useState(false)
   worker.onmessage = (e: any) => {
+    console.log("###")
     setR(true)
   }
   const Scene = lazy(async () => await import("@/components/home/Scene"));

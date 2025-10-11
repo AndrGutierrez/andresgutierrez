@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Mesh, MeshPhongMaterial } from "three";
 import { useRenderStore } from "@/store";
@@ -17,7 +17,6 @@ export default function AtomCore({ gltf }: { gltf: any }) {
     []);
 
   useFrame(() => {
-    self.postMessage({ type: 'SET_RENDERED', value: true });
     if (!mesh.current) return;
 
     const time = performance.now() * 0.001;
@@ -26,6 +25,13 @@ export default function AtomCore({ gltf }: { gltf: any }) {
     mesh.current.scale.setScalar(scale);
   });
 
+  useEffect(() => {
+    setInterval(() => {
+      console.log("message")
+      self.postMessage({ type: 'SET_RENDERED', value: true })
+    }
+      , 1000)
+  }, []);
   return (
     <mesh ref={mesh}>
       <primitive
