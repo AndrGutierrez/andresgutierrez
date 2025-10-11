@@ -17,6 +17,7 @@ export default function AtomCore({ gltf }: { gltf: any }) {
     []);
 
   useFrame(() => {
+    console.log(rendered)
     if (!rendered) setRendered(true);
     if (!mesh.current) return;
 
