@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState, Dispatch, SetStateAction, ReactNode } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Clients, Skills, About } from '@/components/home'
-import { LoadingWheel } from '@/components/app'
 
 import dynamic from "next/dynamic";
 import { useRenderStore } from "@/store";
@@ -64,7 +63,6 @@ export default function Home() {
 
   useEffect(() => {
     console.log(rendered)
-
   }, [rendered])
   return (
     <main className="from-gray-900 via-gray-900 to-black ">
@@ -99,13 +97,8 @@ export default function Home() {
               <>
                 <FadeIn className="h-[400px] md:h-[550px] w-full xl:h-full xl:w-[80%]" translate={false} show={displayAtom}>
                   <ModelRenderer></ModelRenderer>
-
                 </FadeIn>
 
-                {!rendered && (
-                  <LoadingWheel>
-                  </LoadingWheel>
-                )}
               </>
             )
           }

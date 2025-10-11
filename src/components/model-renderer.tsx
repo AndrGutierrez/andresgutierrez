@@ -2,6 +2,7 @@
 import { lazy } from "react";
 import { Canvas } from "@react-three/offscreen";
 import { useRenderStore } from "@/store";
+import { LoadingWheel } from '@/components/app'
 
 
 const worker = new Worker(new URL("./workers/main.tsx", import.meta.url), {
@@ -9,7 +10,7 @@ const worker = new Worker(new URL("./workers/main.tsx", import.meta.url), {
 });
 
 const ModelRenderer = () => {
-  const { setRendered } = useRenderStore()
+  const { rendered, setRendered } = useRenderStore()
   worker.onmessage = (e: any) => {
     setRendered(true)
   }
@@ -22,6 +23,10 @@ const ModelRenderer = () => {
         shadows="basic"
         className=""
       />
+      {!rendered && (
+        <LoadingWheel>
+        </LoadingWheel>
+      )}
     </div>
   );
 };
