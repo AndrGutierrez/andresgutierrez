@@ -70,21 +70,17 @@ function useThrottledResize(callback: () => void, limit: number) {
 }
 
 export default function Atom() {
-  const { setRendered, rendered } = useRenderStore()
   const [scale, setScale] = useState(1);
   const gltf = useGLTF("/crystal_heart_compressed.glb");
   const mesh = useRef<Mesh>(null);
   const [opacity, setOpacity] = useState(0);
   const scaleRef = useRef(scale);
 
-  // Optimized opacity animation
   useFrame(() => {
-    if (!rendered) setRendered(true); // optional if you're syncing to a global store
     if (opacity < 1 && mesh.current) {
       const newOpacity = Math.min(opacity + 0.01, 1);
       setOpacity(newOpacity);
 
-      // Type-safe material handling
       mesh.current.traverse((child) => {
         if (child instanceof Mesh && child.material instanceof MeshStandardMaterial) {
           child.material.transparent = true;
@@ -94,7 +90,6 @@ export default function Atom() {
     }
   });
 
-  // Handle initial scale and responsive changes
   const updateScale = useMemo(() => {
     return () => {
       const newScale = (window.innerWidth >= 450 && window.innerWidth <= 1024) ? 1.3 : 1;
@@ -105,7 +100,6 @@ export default function Atom() {
     };
   }, []);
 
-  // Use throttled resize handler
   useThrottledResize(updateScale, 200);
 
   useEffect(() => {
