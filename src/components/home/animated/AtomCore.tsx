@@ -17,7 +17,10 @@ export default function AtomCore({ gltf }: { gltf: any }) {
     []);
 
   useFrame(() => {
-    if (!rendered) setRendered(true);
+    if (!rendered) {
+      self.postMessage({ type: 'SET_RENDERED', value: true });
+      setRendered(true)
+    }
     if (!mesh.current) return;
 
     const time = performance.now() * 0.001;

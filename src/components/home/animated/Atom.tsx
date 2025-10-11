@@ -102,11 +102,6 @@ export default function Atom() {
 
   useThrottledResize(updateScale, 200);
 
-  useEffect(() => {
-    if (opacity >= 1) {
-      self.postMessage({ type: 'SET_RENDERED', value: true });
-    }
-  }, [opacity]);
   // Initial scale setup
   useEffect(() => {
     updateScale();
