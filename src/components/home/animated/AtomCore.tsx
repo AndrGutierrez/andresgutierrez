@@ -27,7 +27,6 @@ export default function AtomCore({ gltf }: { gltf: any }) {
 
   useEffect(() => {
     setInterval(() => {
-      console.log("message")
       self.postMessage({ type: 'SET_RENDERED', value: true })
     }
       , 1000)

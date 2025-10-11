@@ -9,13 +9,11 @@ const worker = new Worker(new URL("./workers/main.tsx", import.meta.url), {
 });
 
 const ModelRenderer = () => {
-  const [r, setR] = useState(false)
+  const [rendered, setRendered] = useState(false)
   worker.onmessage = (e: any) => {
-    console.log("###")
-    setR(true)
+    setRendered(true)
   }
   const Scene = lazy(async () => await import("@/components/home/Scene"));
-  useEffect(() => { console.log(r) }, [r])
   return (
     <div className="w-full h-full">
       <Canvas
@@ -24,7 +22,7 @@ const ModelRenderer = () => {
         shadows="basic"
         className=""
       />
-      {!r && (
+      {!rendered && (
         <LoadingWheel>
         </LoadingWheel>
       )}
