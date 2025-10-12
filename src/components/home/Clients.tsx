@@ -6,7 +6,7 @@ export default function Clients() {
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-3xl md:text-4xl font-bold mb-12 text-white bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+        className="text-3xl md:text-4xl font-bold mb-8 bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
       >
         Trusted By
       </motion.h2>

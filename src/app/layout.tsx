@@ -56,6 +56,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   CONTACT EMAIL
                 </h3>
                 <p className="text-gray-300 mt-2">mail@andresgutierrez.me</p>
+
+                <a
+                  href="mailto:mail@andresgutierrez.me?subject=Meeting invitation&body=Hi! I want to talk, let's schedule a meeting."
+                  className="inline-flex items-center mt-8 px-6 py-3 bg-linear-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:scale-[1.02] transition-transform group"
+                >
+                  <span>Let&apos;s Get in touch!</span>
+                </a>
+
               </div>
 
               {/* Social Links */}
@@ -85,8 +93,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </div>
 
             {/* Footer Bottom */}
-            <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
-            </div>
           </div>
         </footer>
       </body>
