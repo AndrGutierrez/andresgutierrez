@@ -4,7 +4,6 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { Clients, Skills, About } from '@/components/home'
 
 import dynamic from "next/dynamic";
-import { useRenderStore } from "@/store";
 
 const ModelRenderer = dynamic(() => import("@/components/model-renderer"), {
   ssr: false,
@@ -50,7 +49,6 @@ export default function Home() {
   const [showAbout, setShowAbout] = useState(false);
   const [showClients, setShowClients] = useState(false);
 
-  const { rendered } = useRenderStore()
 
   useEffect(() => {
     if (isInView) mainControls.start("visible");

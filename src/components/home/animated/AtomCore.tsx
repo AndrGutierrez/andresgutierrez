@@ -1,11 +1,9 @@
 import React, { useRef, useMemo, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Mesh, MeshPhongMaterial } from "three";
-import { useRenderStore } from "@/store";
 
 export default function AtomCore({ gltf }: { gltf: any }) {
   const mesh = useRef<Mesh>(null!);
-  const { rendered, setRendered } = useRenderStore()
   const { scene } = gltf;
 
   const material = useMemo(() =>
@@ -25,12 +23,6 @@ export default function AtomCore({ gltf }: { gltf: any }) {
     mesh.current.scale.setScalar(scale);
   });
 
-  useEffect(() => {
-    setInterval(() => {
-      self.postMessage({ type: 'SET_RENDERED', value: true })
-    }
-      , 1000)
-  }, []);
   return (
     <mesh ref={mesh}>
       <primitive

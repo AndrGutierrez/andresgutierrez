@@ -101,6 +101,12 @@ export default function Atom() {
 
   useThrottledResize(updateScale, 200);
 
+  useEffect(() => {
+    setInterval(() => {
+      self.postMessage({ type: 'SET_RENDERED', value: true })
+    }
+      , 1000)
+  }, []);
   // Initial scale setup
   useEffect(() => {
     updateScale();
