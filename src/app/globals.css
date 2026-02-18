@@ -1,14 +1,18 @@
-@import 'tailwindcss';
-@import url('https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css')
-layer(utilities);
+/* 1. Imports externos primero */
+@import url('https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css');
 
+/* 2. Motor de Tailwind */
+@import "tailwindcss";
+
+/* 3. Configuración (asegúrate que la ruta sea correcta) */
 @config '../../tailwind.config.ts';
 
+/* 4. Utilidades y capas */
 @utility text-balance {
   text-wrap: balance;
 }
 
-@layer utilities {
+@layer base {
   :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
@@ -25,9 +29,13 @@ layer(utilities);
 
   body {
     color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
   }
-}
 
-h1{
-  font-family: futura-font;
+  h1 {
+    font-family: 'Futura', sans-serif;
+    /* Verifica el nombre exacto de la fuente en el CSS de jsdelivr */
+  }
 }
