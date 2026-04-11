@@ -34,7 +34,7 @@ export default function Navbar() {
           }`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3" aria-label="Go to homepage">
           <AGLogo />
           <span
             className="font-archivo font-extrabold text-xl text-gradient-brand"
@@ -49,12 +49,14 @@ export default function Navbar() {
           <Link
             href="/"
             className="font-space-grotesk text-[#FCFCFD] text-base leading-6 hover:text-white/80 transition-colors"
+            aria-label="Home"
           >
             Home
           </Link>
           <Link
             href="/blog"
             className="font-space-grotesk text-white/50 text-base leading-6 hover:text-white/70 transition-colors"
+            aria-label="Read my blog"
           >
             Blog
           </Link>
@@ -63,8 +65,9 @@ export default function Navbar() {
         {/* CTA Button */}
         <div className="hidden md:flex">
           <a
-            href="mailto:contact@andresgutierrez.dev"
+            href="mailto:mail@andresgutierrez.me"
             className="flex items-center gap-1.5 pl-4 pr-1 py-1 rounded-full border border-[#8CBAAE] bg-gradient-to-b from-[#8DBBAF] to-[#3D887D] transition-opacity hover:opacity-90"
+            aria-label="Send an email to mail@andresgutierrez.me"
           >
             <span className="font-space-grotesk text-[#0A0D0C] text-base leading-6">
               Get in touch
@@ -101,6 +104,7 @@ export default function Navbar() {
           <Link
             href="/"
             className="font-space-grotesk text-white text-lg"
+            aria-label="Home"
             onClick={() => setMenuOpen(false)}
           >
             Home
@@ -108,6 +112,7 @@ export default function Navbar() {
           <Link
             href="/blog"
             className="font-space-grotesk text-white/50 text-lg"
+            aria-label="Blog"
             onClick={() => setMenuOpen(false)}
           >
             Blog
@@ -115,6 +120,7 @@ export default function Navbar() {
           <a
             href="mailto:contact@andresgutierrez.dev"
             className="flex items-center justify-center gap-1.5 px-4 py-2 rounded-full border border-[#8CBAAE] bg-gradient-to-b from-[#8DBBAF] to-[#3D887D] mt-2"
+            aria-label="Send an email to contact@andresgutierrez.dev"
             onClick={() => setMenuOpen(false)}
           >
             <span className="font-space-grotesk text-[#0A0D0C] text-base">Get in touch</span>

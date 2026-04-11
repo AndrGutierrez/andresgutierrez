@@ -22,12 +22,14 @@ export default function Footer() {
             <Link 
               href="/" 
               className="font-space-grotesk text-white/60 hover:text-white transition-colors text-lg"
+              aria-label="Home"
             >
               Home
             </Link>
             <Link 
               href="/blog" 
               className="font-space-grotesk text-white/60 hover:text-white transition-colors text-lg"
+              aria-label="Read my blog"
             >
               Blog
             </Link>
@@ -47,28 +49,28 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <a 
                 href="https://instagram.com" 
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#94969C] hover:text-white hover:border-white/20 transition-all"
+                aria-label="Follow me on Instagram"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-[#fcfcfd] hover:text-brand-400 transition-colors"
-                aria-label="Instagram"
               >
                 <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
               </a>
               <a 
                 href="https://github.com" 
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#94969C] hover:text-white hover:border-white/20 transition-all"
+                aria-label="Visit my GitHub profile"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-brand-400 hover:text-brand-light transition-colors"
-                aria-label="GitHub"
               >
                 <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
               </a>
               <a 
                 href="https://linkedin.com" 
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#94969C] hover:text-white hover:border-white/20 transition-all"
+                aria-label="Connect with me on LinkedIn"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-brand-400 hover:text-brand-light transition-colors"
-                aria-label="LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
               </a>

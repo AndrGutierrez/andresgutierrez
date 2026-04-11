@@ -57,7 +57,19 @@ export default function HeroSection() {
             playsInline
             onCanPlay={() => setIsVideoLoaded(true)}
             className="relative w-full h-full object-contain mix-blend-lighten "
+            aria-label="Animated Tux penguin mascot"
+            title="Tux Penguin"
           />
+          {/* Screen reader description */}
+          <span className="sr-only">
+            A high-quality 3D animation of Tux, the Linux mascot, floating and interacting in the background.
+          </span>
+          {/* Subtle caption for the mascot */}
+          <div className="absolute bottom-10 right-10 md:bottom-20 md:right-20 pointer-events-none">
+            <span className="font-space-grotesk text-[10px] uppercase tracking-[0.2em] text-white/20">
+              Interactive Mascot: Tux
+            </span>
+          </div>
         </div>
       </div>
 
@@ -82,6 +94,7 @@ export default function HeroSection() {
             <a
               href="mailto:contact@andresgutierrez.dev"
               className="group flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-brand-stroke bg-gradient-brand w-full sm:w-auto transition-transform hover:scale-[1.02] shadow-sm relative overflow-hidden"
+              aria-label="Send an email to contact@andresgutierrez.dev to work together"
             >
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <span className="font-space-grotesk text-bg-main font-semibold text-lg z-10">
@@ -95,6 +108,7 @@ export default function HeroSection() {
             <a
               href="/blog"
               className="font-space-grotesk text-white/70 underline underline-offset-4 decoration-white/30 text-lg hover:text-white transition-colors"
+              aria-label="Read my blog"
             >
               Read my blog
             </a>

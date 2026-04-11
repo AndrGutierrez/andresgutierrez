@@ -14,6 +14,7 @@ export default function PostItem({ post }: { post: PostPreviewType }) {
     <Link
       href={`/blog/${post.slug}`}
       className="group relative flex flex-col gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/[0.08]"
+      aria-label={`Read article: ${post.title}`}
     >
       {/* Corner Accents */}
       <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/40 opacity-0 group-hover:opacity-100 transition-opacity" />

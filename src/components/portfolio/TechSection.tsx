@@ -156,6 +156,7 @@ export default function TechSection() {
               <a
                 href="mailto:contact@andresgutierrez.dev"
                 className="group flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-brand-stroke bg-gradient-brand w-fit transition-transform hover:scale-[1.02] shadow-sm relative overflow-hidden"
+                aria-label="Send an email to contact@andresgutierrez.dev to start a project"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="font-space-grotesk text-bg-main font-semibold text-lg z-10">

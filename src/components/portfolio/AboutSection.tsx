@@ -128,6 +128,7 @@ export default function AboutSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center hover:opacity-80 transition-opacity"
+                aria-label="Follow me on Instagram"
               >
                 <FontAwesomeIcon icon={faInstagram} className="w-5 h-5 text-[#13201E]" />
               </a>
@@ -136,6 +137,7 @@ export default function AboutSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/60 transition-colors border border-white/5"
+                aria-label="Visit my GitHub profile"
               >
                 <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
               </a>
@@ -144,6 +146,7 @@ export default function AboutSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/60 transition-colors border border-white/5"
+                aria-label="Connect with me on LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
               </a>

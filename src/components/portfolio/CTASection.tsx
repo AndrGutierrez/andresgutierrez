@@ -36,6 +36,7 @@ export default function CTASection() {
             <a
               href="mailto:contact@andresgutierrez.dev"
               className="group/btn flex items-center justify-center gap-4 px-10 py-5 rounded-full border border-brand-stroke hover:border-brand-light bg-gradient-brand transition-all duration-300 hover:scale-[1.02] shadow-[0_0_30px_rgba(108,160,148,0.2)] hover:shadow-[0_0_40px_rgba(108,160,148,0.4)] relative overflow-hidden"
+              aria-label="Send an email to contact@andresgutierrez.dev"
             >
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
               <span className="font-space-grotesk text-bg-main font-bold text-lg tracking-wide z-10">
