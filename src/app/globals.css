@@ -1,33 +1,155 @@
-@import 'tailwindcss';
-@import url('https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css')
-layer(utilities);
+@import url("https://cdn.jsdelivr.net/npm/futura-font@1.0.0/styles.min.css");
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
 
-@config '../../tailwind.config.ts';
 
-@utility text-balance {
-  text-wrap: balance;
+@layer base {
+  :root {
+    --background: 168 24% 6%;
+    --foreground: 210 40% 99%;
+
+    --card: 168 24% 7%;
+    --card-foreground: 210 40% 99%;
+
+    --popover: 168 24% 7%;
+    --popover-foreground: 210 40% 99%;
+
+    --primary: 168 22% 53%;
+    --primary-foreground: 168 33% 9%;
+
+    --secondary: 168 20% 12%;
+    --secondary-foreground: 210 40% 99%;
+
+    --muted: 168 20% 12%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 168 22% 53%;
+    --accent-foreground: 168 33% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 100% / 0.20;
+    --input: 168 20% 15%;
+    --ring: 168 22% 53%;
+
+    --radius: 0.5rem;
+
+    --brand-from: #8DBBAF;
+    --brand-to: #3D887D;
+    --brand-main: #6CA094;
+    --brand-stroke: #8CBAAE;
+    --bg-main: #0B1211;
+    --bg-section: #0E1715;
+  }
 }
 
-@layer utilities {
-  :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+@layer base {
+  * {
+    @apply border-border;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --foreground-rgb: 255, 255, 255;
-      --background-start-rgb: 0, 0, 0;
-      --background-end-rgb: 0, 0, 0;
-    }
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    color: rgb(var(--foreground-rgb));
+    @apply bg-bg-main text-foreground;
+    background-color: #0B1211;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-archivo), sans-serif;
+    font-stretch: 125%;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
   }
 }
 
-h1{
-  font-family: futura-font;
+@layer utilities {
+  .font-archivo {
+    font-family: var(--font-archivo), sans-serif;
+    font-stretch: 125%;
+  }
+
+  .font-space-grotesk {
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(180deg, #8DBBAF 0%, #3D887D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-brand {
+    background: linear-gradient(180deg, #8DBBAF 0%, #3D887D 100%);
+  }
+
+  .border-gradient-brand {
+    border-color: #8CBAAE;
+  }
+
+  .card-corners {
+    position: relative;
+  }
+
+  .card-corners::before,
+  .card-corners::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg) translateX(var(--orbit-r)) rotate(360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
