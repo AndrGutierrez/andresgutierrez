@@ -39,10 +39,10 @@ export default function CompaniesSection() {
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-white/10 group-hover:border-brand-stroke transition-colors duration-500" />
 
             <div className="w-full h-full flex items-center justify-center p-8">
-              <img 
-                src="/company1.svg" 
-                alt="Company 1" 
-                className="max-w-full max-h-[50px] object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500" 
+              <img
+                src="https://andresgutierrez.me/images/clients/gobuyside.webp"
+                alt="Company 1"
+                className="max-w-full max-h-[50px] object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
@@ -56,10 +56,11 @@ export default function CompaniesSection() {
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-white/10 group-hover:border-brand-stroke transition-colors duration-500" />
 
             <div className="w-full h-full flex items-center justify-center p-8">
-              <img 
-                src="/company2.svg" 
-                alt="Company 2" 
-                className="max-w-full max-h-[40px] object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500" 
+              <img
+                // TODO: change to webp
+                src="https://andresgutierrez.me/images/clients/zeitfur.svg"
+                alt="Company 2"
+                className="max-w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
@@ -73,10 +74,10 @@ export default function CompaniesSection() {
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-white/10 group-hover:border-brand-stroke transition-colors duration-500" />
 
             <div className="w-full h-full flex items-center justify-center p-8">
-              <img 
-                src="/company3.svg" 
-                alt="Company 3" 
-                className="max-w-full max-h-[25px] object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500" 
+              <img
+                src="https://andresgutierrez.me/images/clients/uprospect.webp"
+                alt="Company 3"
+                className="max-w-full max-h-[25px] object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
