@@ -23,12 +23,12 @@ export default function AboutSection() {
                 <span className="text-sm font-space-grotesk text-brand-400 font-medium">About</span>
               </div>
 
-              <h2 className="font-space-grotesk font-medium text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white">
+              <h2 className="font-archivo font-medium text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white">
                 A bit about who I am today, honestly
               </h2>
             </div>
 
-            <p className="font-space-grotesk text-white/70 text-base md:text-lg leading-relaxed">
+            <p className="font-space-grotesk text-white/90 text-base md:text-lg leading-relaxed">
               Explore what makes me tick beyond the technical resume.
             </p>
 
@@ -42,14 +42,14 @@ export default function AboutSection() {
                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-white/20 group-hover:border-brand-stroke transition-colors" />
 
                 <div className="flex items-start gap-4 relative z-10">
-                  <div className="mt-1 p-2 rounded-lg bg-white/[0.03] border border-white/10 group-hover:border-brand-400/30 group-hover:text-brand-400 transition-colors text-white/60">
+                  <div className="mt-1 p-2 rounded-lg bg-white/[0.03] border border-white/10 group-hover:border-brand-400/30 group-hover:text-brand-400 transition-colors text-white/80">
                     <Code className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
                       Software engineer
                     </h3>
-                    <p className="font-space-grotesk text-white/70 text-sm leading-relaxed">
+                    <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
                       I love building software — 5 years in, still excited about solving problems, from responsive UIs to scalable AWS infrastructure.
                     </p>
                   </div>
@@ -64,14 +64,14 @@ export default function AboutSection() {
                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-white/20 group-hover:border-brand-stroke transition-colors" />
 
                 <div className="flex items-start gap-4 relative z-10">
-                  <div className="mt-1 p-2 rounded-lg bg-white/[0.03] border border-white/10 group-hover:border-brand-400/30 group-hover:text-brand-400 transition-colors text-white/60">
+                  <div className="mt-1 p-2 rounded-lg bg-white/[0.03] border border-white/10 group-hover:border-brand-400/30 group-hover:text-brand-400 transition-colors text-white/80">
                     <User className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
                       I care about the craft
                     </h3>
-                    <p className="font-space-grotesk text-white/70 text-sm leading-relaxed">
+                    <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
                       Clean code, thoughtful architecture, and interfaces that feel good to use matter to me personally.
                     </p>
                   </div>
@@ -86,14 +86,14 @@ export default function AboutSection() {
                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-white/20 group-hover:border-brand-stroke transition-colors" />
 
                 <div className="flex items-start gap-4 relative z-10">
-                  <div className="mt-1 p-2 rounded-lg bg-white/[0.03] border border-white/10 group-hover:border-brand-400/30 group-hover:text-brand-400 transition-colors text-white/60">
+                  <div className="mt-1 p-2 rounded-lg bg-white/[0.03] border border-white/10 group-hover:border-brand-400/30 group-hover:text-brand-400 transition-colors text-white/80">
                     <Heart className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
                       Tech is genuinely my hobby
                     </h3>
-                    <p className="font-space-grotesk text-white/70 text-sm leading-relaxed">
+                    <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
                       Hardware tinkering, cloud infrastructure experiments, open-source contributions — I do this stuff for fun, not just for work.
                     </p>
                   </div>
@@ -102,7 +102,7 @@ export default function AboutSection() {
             </div>
 
             {/* Quote */}
-            <p className="font-space-grotesk text-white/60 text-base italic mt-4 pt-4 border-t border-white/10">
+            <p className="font-space-grotesk text-white/80 text-base italic mt-4 pt-4 border-t border-white/10">
               "This site is a little bit about who I am as an engineer, and a little bit about who I am as a person. Both feel equally important to share."
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function AboutSection() {
               <div className="w-24 h-24 rounded-full bg-brand-400/10 flex items-center justify-center p-6 border border-brand-stroke/30">
                 <User className="w-full h-full text-brand-light opacity-50" />
               </div>
-              <p className="font-space-grotesk text-brand-light/70 uppercase tracking-widest text-sm font-bold">
+              <p className="font-space-grotesk text-brand-light/90 uppercase tracking-widest text-sm font-bold">
                 Profile Placeholder
               </p>
             </div>
@@ -136,7 +136,7 @@ export default function AboutSection() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/60 transition-colors border border-white/5"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/80 transition-colors border border-white/5"
                 aria-label="Visit my GitHub profile"
               >
                 <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
@@ -145,7 +145,7 @@ export default function AboutSection() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/60 transition-colors border border-white/5"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/80 transition-colors border border-white/5"
                 aria-label="Connect with me on LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />

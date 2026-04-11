@@ -103,12 +103,12 @@ export default function TechSection() {
                 <span className="text-sm font-space-grotesk text-brand-400 font-medium">Technologies</span>
               </div>
 
-              <h2 className="font-space-grotesk font-medium text-5xl md:text-6xl leading-tight tracking-tight text-white">
+              <h2 className="font-archivo font-medium text-5xl md:text-6xl leading-tight tracking-tight text-white">
                 Technologies I love working with
               </h2>
             </div>
 
-            <p className="font-space-grotesk text-white/70 text-base md:text-lg leading-relaxed max-w-[500px]">
+            <p className="font-space-grotesk text-white/90 text-base md:text-lg leading-relaxed max-w-[500px]">
               These are the tools I've spent real time with — not just tutorials, but production systems, side projects, and everything in between.
             </p>
 
@@ -154,9 +154,9 @@ export default function TechSection() {
             {/* CTA Button */}
             <div className="pt-6">
               <a
-                href="mailto:contact@andresgutierrez.dev"
+                href="mailto:mail@andresgutierrez.me"
                 className="group flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-brand-stroke bg-gradient-brand w-fit transition-transform hover:scale-[1.02] shadow-sm relative overflow-hidden"
-                aria-label="Send an email to contact@andresgutierrez.dev to start a project"
+                aria-label="Send an email to mail@andresgutierrez.me to start a project"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="font-space-grotesk text-bg-main font-semibold text-lg z-10">

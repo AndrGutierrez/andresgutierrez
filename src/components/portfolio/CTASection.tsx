@@ -27,16 +27,16 @@ export default function CTASection() {
                 Have a Project in Mind?
               </h2>
 
-              <p className="font-space-grotesk text-white/70 text-base md:text-lg text-center leading-relaxed">
+              <p className="font-space-grotesk text-white/90 text-base md:text-lg text-center leading-relaxed">
                 Let's build something scalable, efficient, and built for growth. Whether you need a full-stack platform or a specialized infrastructure review, I'm here to help.
               </p>
             </div>
 
             {/* CTA Button */}
             <a
-              href="mailto:contact@andresgutierrez.dev"
+              href="mailto:mail@andresgutierrez.me"
               className="group/btn flex items-center justify-center gap-4 px-10 py-5 rounded-full border border-brand-stroke hover:border-brand-light bg-gradient-brand transition-all duration-300 hover:scale-[1.02] shadow-[0_0_30px_rgba(108,160,148,0.2)] hover:shadow-[0_0_40px_rgba(108,160,148,0.4)] relative overflow-hidden"
-              aria-label="Send an email to contact@andresgutierrez.dev"
+              aria-label="Send an email to mail@andresgutierrez.me"
             >
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
               <span className="font-space-grotesk text-bg-main font-bold text-lg tracking-wide z-10">

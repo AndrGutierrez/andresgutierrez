@@ -28,13 +28,19 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${archivo.variable} ${spaceGrotesk.variable} font-sans antialiased bg-bg-main text-white`}>
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-brand-400 focus:text-bg-main focus:rounded-full focus:font-bold transition-all"
+        >
+          Skip to content
+        </a>
         {/* Navigation */}
         <Navbar></Navbar>
 
         {/* Main Content */}
-        <div >
+        <main id="main-content">
           {children}
-        </div>
+        </main>
         {/* Footer */}
         <Footer></Footer>
       </body>

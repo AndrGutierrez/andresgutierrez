@@ -18,12 +18,12 @@ export default function CompaniesSection() {
               <span className="text-sm font-space-grotesk text-brand-400 font-medium">Trusted by</span>
             </div>
 
-            <h2 className="font-space-grotesk font-medium text-4xl md:text-5xl lg:text-6xl text-center text-white tracking-tight">
+            <h2 className="font-archivo font-medium text-4xl md:text-5xl lg:text-6xl text-center text-white tracking-tight">
               Companies I've worked with
             </h2>
           </div>
 
-          <p className="font-space-grotesk text-white/70 text-base md:text-lg text-center max-w-2xl leading-relaxed">
+          <p className="font-space-grotesk text-white/90 text-base md:text-lg text-center max-w-2xl leading-relaxed">
             From early-stage startups to growing companies — delivering solutions that scale with the business.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function CompaniesSection() {
               <img
                 src="https://andresgutierrez.me/images/clients/gobuyside.webp"
                 alt="Company 1"
-                className="max-w-full max-h-[50px] object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+                className="max-w-full max-h-[50px] object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function CompaniesSection() {
                 // TODO: change to webp
                 src="https://andresgutierrez.me/images/clients/zeitfur.svg"
                 alt="Company 2"
-                className="max-w-full h-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+                className="max-w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function CompaniesSection() {
               <img
                 src="https://andresgutierrez.me/images/clients/uprospect.webp"
                 alt="Company 3"
-                className="max-w-full max-h-[25px] object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+                className="max-w-full max-h-[25px] object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
           </div>

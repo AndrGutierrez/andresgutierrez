@@ -49,7 +49,7 @@ export default function ExpertiseSection() {
               </h2>
             </div>
 
-            <p className="font-space-grotesk text-white/60 text-base md:text-lg text-center max-w-2xl leading-relaxed">
+            <p className="font-space-grotesk text-white/90 text-base md:text-lg text-center max-w-2xl leading-relaxed">
               A proven stack of modern technologies for building reliable, performant apps.
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function ExpertiseSection() {
                   <h3 className="font-archivo font-medium text-2xl md:text-[28px] text-white leading-tight mb-3 group-hover:text-brand-light transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="font-space-grotesk text-white/60 text-base md:text-lg leading-relaxed max-w-md">
+                  <p className="font-space-grotesk text-white/90 text-base md:text-lg leading-relaxed max-w-md">
                     {item.description}
                   </p>
                 </div>

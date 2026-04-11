@@ -13,7 +13,7 @@ export default function Footer() {
           </h2>
           
           {/* Subtitle */}
-          <p className="font-space-grotesk text-white/60 text-base md:text-lg mb-12">
+          <p className="font-space-grotesk text-white/85 text-base md:text-lg mb-12">
             Software Engineer focused on scalable solutions
           </p>
 
@@ -21,14 +21,14 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-12 mb-16">
             <Link 
               href="/" 
-              className="font-space-grotesk text-white/60 hover:text-white transition-colors text-lg"
+              className="font-space-grotesk text-white/85 hover:text-white transition-colors text-lg"
               aria-label="Home"
             >
               Home
             </Link>
             <Link 
               href="/blog" 
-              className="font-space-grotesk text-white/60 hover:text-white transition-colors text-lg"
+              className="font-space-grotesk text-white/85 hover:text-white transition-colors text-lg"
               aria-label="Read my blog"
             >
               Blog
@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Bottom section */}
           <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8 py-4">
             {/* Copyright */}
-            <p className="font-space-grotesk text-white/40 text-sm md:text-base">
+            <p className="font-space-grotesk text-white/70 text-sm md:text-base">
               © {new Date().getFullYear()} Andres Gutierrez — All rights reserved
             </p>
 
@@ -49,7 +49,7 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <a 
                 href="https://instagram.com" 
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#94969C] hover:text-white hover:border-white/20 transition-all"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Follow me on Instagram"
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -58,7 +58,7 @@ export default function Footer() {
               </a>
               <a 
                 href="https://github.com" 
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#94969C] hover:text-white hover:border-white/20 transition-all"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Visit my GitHub profile"
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -67,7 +67,7 @@ export default function Footer() {
               </a>
               <a 
                 href="https://linkedin.com" 
-                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#94969C] hover:text-white hover:border-white/20 transition-all"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Connect with me on LinkedIn"
                 target="_blank" 
                 rel="noopener noreferrer"

@@ -66,7 +66,7 @@ export default function HeroSection() {
           </span>
           {/* Subtle caption for the mascot */}
           <div className="absolute bottom-10 right-10 md:bottom-20 md:right-20 pointer-events-none">
-            <span className="font-space-grotesk text-[10px] uppercase tracking-[0.2em] text-white/20">
+            <span className="font-space-grotesk text-[10px] uppercase tracking-[0.2em] text-white/40">
               Interactive Mascot: Tux
             </span>
           </div>
@@ -85,16 +85,16 @@ export default function HeroSection() {
               Andrés<br />Gutiérrez.
             </h1>
 
-            <p className="font-space-grotesk text-white/70 text-base md:text-lg max-w-[600px] leading-relaxed mt-4">
+            <p className="font-space-grotesk text-white/85 text-base md:text-lg max-w-[600px] leading-relaxed mt-4">
               A full-stack engineer with 5 years of experience crafting production-grade web applications and AWS cloud architecture that businesses rely on.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-8 w-full sm:w-auto pt-6">
             <a
-              href="mailto:contact@andresgutierrez.dev"
+              href="mailto:mail@andresgutierrez.me"
               className="group flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-brand-stroke bg-gradient-brand w-full sm:w-auto transition-transform hover:scale-[1.02] shadow-sm relative overflow-hidden"
-              aria-label="Send an email to contact@andresgutierrez.dev to work together"
+              aria-label="Send an email to mail@andresgutierrez.me to work together"
             >
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <span className="font-space-grotesk text-bg-main font-semibold text-lg z-10">
@@ -107,7 +107,7 @@ export default function HeroSection() {
 
             <a
               href="/blog"
-              className="font-space-grotesk text-white/70 underline underline-offset-4 decoration-white/30 text-lg hover:text-white transition-colors"
+              className="font-space-grotesk text-white/85 underline underline-offset-4 decoration-white/30 text-lg hover:text-white transition-colors"
               aria-label="Read my blog"
             >
               Read my blog
