@@ -1,14 +1,36 @@
-import { ArrowRight, Code2, Database, Cloud, Terminal, Cpu, Blocks } from "lucide-react";
+"use client";
+import { useEffect, useRef } from "react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const loopStart = 1.66;
+    const loopEnd = 4.54;
+
+    let frameId: number;
+
+    const checkTime = () => {
+      if (video.currentTime >= loopEnd) {
+        video.currentTime = loopStart;
+      }
+      frameId = requestAnimationFrame(checkTime);
+    };
+
+    frameId = requestAnimationFrame(checkTime);
+    return () => cancelAnimationFrame(frameId);
+  }, []);
+
   return (
     <section className="relative w-full pt-32 pb-20 md:pt-40 overflow-hidden bg-bg-main min-h-screen flex items-center">
-      {/* Background Glows and Rays */}
+      {/* 1. Background Glows and Rays */}
       <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
-        {/* Glow */}
         <div className="absolute top-[-10%] right-[-10%] w-full max-w-[1000px] aspect-square rounded-[100%] blur-[275px] opacity-20 bg-[#1F8B83]" />
 
-        {/* Decorative Rays */}
         <svg
           className="absolute -top-[10%] -right-[10%] w-[120%] h-[120%] opacity-[0.15]"
           viewBox="0 0 1440 800"
@@ -17,18 +39,11 @@ export default function HeroSection() {
           preserveAspectRatio="none"
         >
           <g filter="url(#rayFilter)">
-            {/* Primary background ray - Ends at y=800 */}
             <path d="M1150 -200L550 800H540L950 -200Z" fill="url(#rayGrad)" opacity="0.6" />
-            {/* Medium ray - Shorter, ends at y=600 */}
             <path d="M750 -200L350 600H345L600 -200Z" fill="url(#rayGrad)" />
-            {/* Long sharp ray - Ends at y=900 */}
             <path d="M1450 -200L870 900H865L1350 -200Z" fill="url(#rayGrad)" opacity="0.8" />
-            {/* Small subtle ray - Very short, ends at y=500 */}
             <path d="M500 -200L80 500H75L400 -200Z" fill="url(#rayGrad)" />
-            {/* Faint wide depth ray - Ends at y=750 */}
             <path d="M1800 -200L800 750H780L1600 -200Z" fill="url(#rayGrad)" opacity="0.4" />
-
-            {/* --- New Smaller Delicate Rays --- */}
             <path d="M900 -200L450 550H448L850 -200Z" fill="url(#rayGrad)" opacity="0.7" />
             <path d="M1280 -200L820 700H818L1250 -200Z" fill="url(#rayGrad)" opacity="0.9" />
             <path d="M1700 -200L1100 850H1098L1650 -200Z" fill="url(#rayGrad)" opacity="0.6" />
@@ -46,10 +61,26 @@ export default function HeroSection() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 relative z-10 w-full">
+      {/* 2. Background Video Element - Repositioned and Scaled */}
+      <div className="absolute top-1/2 left-[45%] md:left-[50%] lg:left-[55%] -translate-x-1/2 -translate-y-1/2 w-[140%] md:w-[110%] lg:w-[90%] max-w-[1800px] aspect-square pointer-events-none z-0 opacity-40 md:opacity-60 lg:opacity-75">
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-brand-400/10 blur-[150px] rounded-full" />
 
-        {/* Left Content */}
-        <div className="flex flex-col items-start gap-8 flex-1 w-full lg:max-w-2xl">
+          <video
+            ref={videoRef}
+            src="https://andresgutierrez.me/tux.webm"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="relative w-full h-full object-contain mix-blend-lighten "
+          />
+        </div>
+      </div>
+
+      {/* 3. Main Content Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="flex flex-col items-start gap-8 w-full lg:max-w-2xl py-20">
           <div className="flex flex-col items-start gap-6">
             <h1 className="font-archivo font-medium text-[50px] md:text-[80px] lg:text-[100px] leading-[1.0] tracking-[-0.02em] text-white">
               <span className="flex items-center gap-4 text-[30px] md:text-[50px] font-normal mb-2 text-[#E7E6E2]">
@@ -86,71 +117,7 @@ export default function HeroSection() {
             </a>
           </div>
         </div>
-
-        {/* Right - Animated Orbit */}
-        <div className="relative w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
-
-          <div className="relative w-[340px] h-[340px] md:w-[480px] md:h-[480px]">
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-brand-400/30 blur-[60px] rounded-full" />
-
-            {/* Outer dashed track */}
-            <div className="absolute inset-0 rounded-full border border-dashed border-white/20 animate-spin-slow" />
-
-            {/* Inner dashed track */}
-            <div className="absolute inset-[60px] md:inset-[90px] rounded-full border border-dashed border-brand-400/30 animate-spin-slow-reverse" />
-
-            {/* Center AG Logo */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-brand-stroke/30 bg-[#13201E] flex items-center justify-center shadow-[0_0_80px_rgba(108,160,148,0.2)] z-20">
-              <span className="font-archivo font-extrabold text-[#F4F9F7] text-4xl mt-1 tracking-tighter shadow-sm">AG.</span>
-            </div>
-
-            {/* Orbiting Elements - Outer Ring */}
-            <div className="absolute inset-0 animate-spin-slow z-10 w-full h-full">
-              <div className="absolute -top-7 left-1/2 -translate-x-1/2">
-                <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
-                  <Code2 className="w-8 h-8" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <div className="absolute top-1/2 -right-7 -translate-y-1/2">
-                <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
-                  <Database className="w-8 h-8" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <div className="absolute -bottom-7 left-1/2 -translate-x-1/2">
-                <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
-                  <Cloud className="w-8 h-8" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <div className="absolute top-1/2 -left-7 -translate-y-1/2">
-                <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
-                  <Terminal className="w-8 h-8" strokeWidth={1.5} />
-                </div>
-              </div>
-            </div>
-
-            {/* Orbiting Elements - Inner Ring */}
-            <div className="absolute inset-[60px] md:inset-[90px] animate-spin-slow-reverse z-10">
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                <div className="animate-spin-slow flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
-                  <Cpu className="w-6 h-6" strokeWidth={1.5} />
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                <div className="animate-spin-slow flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
-                  <Blocks className="w-6 h-6" strokeWidth={1.5} />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
       </div>
     </section>
   );
 }
-

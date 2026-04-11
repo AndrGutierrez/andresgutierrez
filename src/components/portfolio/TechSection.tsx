@@ -1,123 +1,66 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Code2, Database, Cloud, Terminal, Cpu, Blocks } from "lucide-react";
 
 export default function TechSection() {
   return (
     <section className="relative w-full py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-          {/* Left - Orbit Visualization */}
-          <div className="relative w-full lg:w-auto h-[400px] md:h-[500px] flex items-center justify-center flex-1">
-            {/* Background Glow */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div
-                className="w-[300px] md:w-[400px] h-[300px] md:h-[400px] rounded-full opacity-10 blur-[200px]"
-                style={{
-                  background: "linear-gradient(135deg, #6CA094 0%, transparent 100%)",
-                }}
-              />
-            </div>
+          {/* Left - Hero Atom Moved Here */}
+          <div className="relative w-full lg:w-1/2 min-h-[400px] md:min-h-[500px] flex items-center justify-center flex-1">
+            <div className="relative w-[340px] h-[340px] md:w-[480px] md:h-[480px]">
+              {/* Background Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-brand-400/30 blur-[60px] rounded-full" />
 
-            {/* Orbit Container */}
-            <div className="absolute w-[280px] md:w-[380px] h-[280px] md:h-[380px]">
-              {/* Outer Dashed Circle */}
-              <svg
-                className="absolute inset-0 w-full h-full animate-spin-slow"
-                viewBox="0 0 380 357"
-                fill="none"
-              >
-                <circle
-                  cx="190"
-                  cy="178.5"
-                  r="174"
-                  stroke="white"
-                  strokeOpacity="0.2"
-                  strokeWidth="2"
-                  strokeDasharray="25.58 25.58"
-                />
-              </svg>
+              {/* Outer dashed track */}
+              <div className="absolute inset-0 rounded-full border border-dashed border-white/20 animate-spin-slow" />
 
-              {/* Inner Dashed Circle */}
-              <svg
-                className="absolute inset-0 w-full h-full animate-spin-slow-reverse"
-                viewBox="0 0 380 357"
-                fill="none"
-              >
-                <circle
-                  cx="190"
-                  cy="178.5"
-                  r="110"
-                  stroke="#6CA094"
-                  strokeOpacity="0.3"
-                  strokeWidth="2"
-                  strokeDasharray="25.58 25.58"
-                />
-              </svg>
+              {/* Inner dashed track */}
+              <div className="absolute inset-[60px] md:inset-[90px] rounded-full border border-dashed border-brand-400/30 animate-spin-slow-reverse" />
 
-              {/* AG Center Circle */}
-              <svg
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 md:w-24 md:h-24 flex-shrink-0 z-20 drop-shadow-[0_0_30px_rgba(108,160,148,0.2)]"
-                viewBox="0 0 120 120"
-                fill="none"
-              >
-                <circle cx="60" cy="60" r="60" fill="#13201E" stroke="#6CA094" strokeWidth="2" strokeOpacity="0.3" />
-                <path
-                  d="M51 60L60 68.5L74 54"
-                  stroke="#8DBBAF"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              {/* Center AG Logo */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-brand-stroke/30 bg-[#13201E] flex items-center justify-center shadow-[0_0_80px_rgba(108,160,148,0.2)] z-20">
+                <span className="font-archivo font-extrabold text-[#F4F9F7] text-4xl mt-1 tracking-tighter shadow-sm">AG.</span>
+              </div>
 
-              {/* Tech Logos - positioned around outer orbit */}
+              {/* Orbiting Elements - Outer Ring */}
               <div className="absolute inset-0 animate-spin-slow z-10 w-full h-full">
-                {/* Top - React */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border border-[#6CA094]/30 bg-bg-main backdrop-blur-md flex items-center justify-center animate-spin-slow-reverse shadow-lg -translate-y-[10%]">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <circle cx="24" cy="24" r="22" stroke="#61DAFB" strokeWidth="2" strokeOpacity="0.8" />
-                    <circle cx="24" cy="24" r="4" fill="#61DAFB" />
-                    <ellipse cx="24" cy="24" rx="16" ry="6" stroke="#61DAFB" strokeWidth="2" fill="none" />
-                    <ellipse cx="24" cy="24" rx="16" ry="6" stroke="#61DAFB" strokeWidth="2" fill="none" transform="rotate(60 24 24)" />
-                    <ellipse cx="24" cy="24" rx="16" ry="6" stroke="#61DAFB" strokeWidth="2" fill="none" transform="rotate(120 24 24)" />
-                  </svg>
+                <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+                  <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
+                    <Code2 className="w-8 h-8" strokeWidth={1.5} />
+                  </div>
                 </div>
 
-                {/* Right - Node.js */}
-                <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[20%] w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border border-[#6CA094]/30 bg-bg-main backdrop-blur-md flex items-center justify-center animate-spin-slow-reverse shadow-lg">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <path d="M24 6 L42 16 L42 32 L24 42 L6 32 L6 16 Z" stroke="#68A063" strokeWidth="2" fill="none" />
-                    <circle cx="24" cy="24" r="5" fill="#68A063" />
-                  </svg>
+                <div className="absolute top-1/2 -right-7 -translate-y-1/2">
+                  <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
+                    <Database className="w-8 h-8" strokeWidth={1.5} />
+                  </div>
                 </div>
 
-                {/* Left - AWS */}
-                <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-[20%] w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border border-[#6CA094]/30 bg-bg-main backdrop-blur-md flex items-center justify-center animate-spin-slow-reverse shadow-lg">
-                  <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
-                    <path d="M10 32 Q10 16 24 10 Q38 16 38 32" stroke="#FF9900" strokeWidth="3" fill="none" strokeLinecap="round" />
-                    <circle cx="16" cy="28" r="3" fill="#FF9900" />
-                    <circle cx="24" cy="24" r="3" fill="#FF9900" />
-                    <circle cx="32" cy="28" r="3" fill="#FF9900" />
-                  </svg>
+                <div className="absolute -bottom-7 left-1/2 -translate-x-1/2">
+                  <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
+                    <Cloud className="w-8 h-8" strokeWidth={1.5} />
+                  </div>
+                </div>
+
+                <div className="absolute top-1/2 -left-7 -translate-y-1/2">
+                  <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
+                    <Terminal className="w-8 h-8" strokeWidth={1.5} />
+                  </div>
                 </div>
               </div>
 
-              {/* Tech Logos - positioned around inner orbit */}
+              {/* Orbiting Elements - Inner Ring */}
               <div className="absolute inset-[60px] md:inset-[90px] animate-spin-slow-reverse z-10">
-                {/* Top Inner - TypeScript */}
-                <div className="absolute top-0 right-0 translate-x-[20%] -translate-y-[20%] w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border border-[#6CA094]/30 bg-bg-section flex items-center justify-center animate-spin-slow shadow-lg">
-                  <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-                    <rect x="8" y="8" width="32" height="32" rx="4" fill="#3178C6" />
-                    <text x="24" y="32" fontSize="20" fontWeight="bold" fill="white" textAnchor="middle" fontFamily="monospace">TS</text>
-                  </svg>
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                  <div className="animate-spin-slow flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
+                    <Cpu className="w-6 h-6" strokeWidth={1.5} />
+                  </div>
                 </div>
 
-                {/* Bottom Inner - PostgreSQL */}
-                <div className="absolute bottom-0 left-0 -translate-x-[20%] translate-y-[20%] w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border border-[#6CA094]/30 bg-bg-section flex items-center justify-center animate-spin-slow shadow-lg">
-                  <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
-                    <ellipse cx="24" cy="18" rx="12" ry="6" stroke="#336791" strokeWidth="2" fill="none" />
-                    <rect x="12" y="18" width="24" height="18" stroke="#336791" strokeWidth="2" fill="none" />
-                    <path d="M12 27 Q12 33 24 33 Q36 33 36 27" stroke="#336791" strokeWidth="2" fill="none" />
-                  </svg>
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
+                  <div className="animate-spin-slow flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
+                    <Blocks className="w-6 h-6" strokeWidth={1.5} />
+                  </div>
                 </div>
               </div>
             </div>
