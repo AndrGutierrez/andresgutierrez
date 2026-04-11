@@ -23,7 +23,7 @@ export default function AboutSection() {
                 <span className="text-sm font-space-grotesk text-brand-400 font-medium">About</span>
               </div>
 
-              <h2 className="font-futura font-medium text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white">
+              <h2 className="font-space-grotesk font-medium text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white">
                 A bit about who I am today, honestly
               </h2>
             </div>

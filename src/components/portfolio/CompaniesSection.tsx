@@ -18,7 +18,7 @@ export default function CompaniesSection() {
               <span className="text-sm font-space-grotesk text-brand-400 font-medium">Trusted by</span>
             </div>
 
-            <h2 className="font-futura font-medium text-4xl md:text-5xl lg:text-6xl text-center text-white tracking-tight">
+            <h2 className="font-space-grotesk font-medium text-4xl md:text-5xl lg:text-6xl text-center text-white tracking-tight">
               Companies I've worked with
             </h2>
           </div>

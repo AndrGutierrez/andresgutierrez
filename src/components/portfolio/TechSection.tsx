@@ -103,7 +103,7 @@ export default function TechSection() {
                 <span className="text-sm font-space-grotesk text-brand-400 font-medium">Technologies</span>
               </div>
 
-              <h2 className="font-futura font-medium text-5xl md:text-6xl leading-tight tracking-tight text-white">
+              <h2 className="font-space-grotesk font-medium text-5xl md:text-6xl leading-tight tracking-tight text-white">
                 Technologies I love working with
               </h2>
             </div>

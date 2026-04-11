@@ -68,7 +68,6 @@ export default {
       fontFamily: {
         archivo: ["var(--font-archivo)", "sans-serif"],
         "space-grotesk": ["var(--font-space-grotesk)", "sans-serif"],
-        futura: ["FuturaBT-Medium", "futura-pt", "Futura", "Trebuchet MS", "sans-serif"], // Adding Futura with fallback
         sans: ["var(--font-space-grotesk)", "sans-serif"],
       },
       borderRadius: {
