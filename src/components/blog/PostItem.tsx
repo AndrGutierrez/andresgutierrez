@@ -1,47 +1,88 @@
+import React from 'react';
+import { PostPreviewType } from "@/types";
+import Link from "next/link";
+import { Clock, Calendar, ArrowRight } from 'lucide-react';
 
-import { PostPreviewType } from "@/types"
-import Link from "next/link"
 export default function PostItem({ post }: { post: PostPreviewType }) {
+  const dateStr = new Date(post.createdAt).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
 
   return (
     <Link
-      key={post.id}
       href={`/blog/${post.slug}`}
-      className="group block rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-gray-800"
+      className="group relative flex flex-col gap-4 p-5 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:bg-white/[0.08]"
     >
-      <div className="relative overflow-hidden h-[150px]">
-        {post.thumbnailUrl && (
+      {/* Corner Accents */}
+      <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+      
+      {/* Post Image / Thumbnail Placeholder */}
+      <div className="aspect-[16/7] w-full rounded-lg overflow-hidden bg-white/5 border border-white/10">
+        {post.thumbnailUrl ? (
           <img
             src={`${process.env.NEXT_PUBLIC_CDN_URL}/posts/${post.slug}/${post.thumbnailUrl}`}
             alt={post.title}
-            width={400}
-            height={200}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
           />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-white/10 uppercase tracking-widest font-archivo">
+            Thumbnail
+          </div>
         )}
       </div>
 
-      <div className="p-5">
-        <h2 className="text-xl font-bold mb-2 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+      <div className="flex flex-col gap-4">
+        {/* Meta Info */}
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2 text-white/60">
+            <Calendar className="w-4 h-4 text-brand" />
+            <span className="text-sm font-space-grotesk">{dateStr}</span>
+          </div>
+          <div className="flex items-center gap-2 text-white/60">
+            <Clock className="w-4 h-4 text-brand" />
+            <span className="text-sm font-space-grotesk">5 min read</span>
+          </div>
+        </div>
+
+        {/* Title */}
+        <h2 className="text-xl md:text-2xl font-archivo text-white leading-tight group-hover:text-brand transition-colors">
           {post.title}
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-3 line-clamp-2">
+
+        {/* Excerpt */}
+        <p className="text-sm font-space-grotesk text-white/60 line-clamp-2 leading-relaxed">
           {post.excerpt}
         </p>
-        <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-          <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <time dateTime={new Date(post.createdAt).toISOString()}>
-            {new Date(post.createdAt).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            })}
-          </time>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mt-2">
+          {post.tags?.length ? (
+            post.tags.map((tag) => (
+              <span 
+                key={tag} 
+                className="px-3 py-1 rounded-full text-xs font-space-grotesk bg-white/5 border border-white/10 text-brand-light/60 group-hover:text-brand-light group-hover:bg-brand/10 transition-all duration-300"
+              >
+                {tag}
+              </span>
+            ))
+          ) : (
+            <span className="px-3 py-1 rounded-full text-xs font-space-grotesk bg-white/5 border border-white/10 text-white/20">
+              Personal
+            </span>
+          )}
+        </div>
+
+        {/* Read Post Link */}
+        <div className="flex items-center gap-2 mt-4">
+          <span className="text-base font-space-grotesk text-white border-b border-white group-hover:text-brand group-hover:border-brand transition-all">
+            Read post
+          </span>
+          <ArrowRight className="w-4 h-4 text-brand transform -rotate-45 group-hover:rotate-0 transition-transform" />
         </div>
       </div>
     </Link>
-  )
+  );
 }

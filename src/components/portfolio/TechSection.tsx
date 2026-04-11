@@ -2,7 +2,7 @@ import { ArrowRight, Code2, Database, Cloud, Terminal, Cpu, Blocks } from "lucid
 
 export default function TechSection() {
   return (
-    <section className="relative w-full py-20 md:py-32">
+    <section className="relative w-full py-20 md:py-32 bg-bg-main overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
           {/* Left - Hero Atom Moved Here */}
@@ -22,44 +22,70 @@ export default function TechSection() {
                 <span className="font-archivo font-extrabold text-[#F4F9F7] text-4xl mt-1 tracking-tighter shadow-sm">AG.</span>
               </div>
 
-              {/* Orbiting Elements - Outer Ring */}
+              {/* Orbiting Elements - Outer Ring - INDIVIDUAL ORBITS */}
+              {/* Icon 1: Code2 */}
               <div className="absolute inset-0 animate-spin-slow z-10 w-full h-full">
                 <div className="absolute -top-7 left-1/2 -translate-x-1/2">
                   <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
                     <Code2 className="w-8 h-8" strokeWidth={1.5} />
                   </div>
                 </div>
+              </div>
 
-                <div className="absolute top-1/2 -right-7 -translate-y-1/2">
-                  <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
-                    <Database className="w-8 h-8" strokeWidth={1.5} />
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-7 left-1/2 -translate-x-1/2">
-                  <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
-                    <Cloud className="w-8 h-8" strokeWidth={1.5} />
-                  </div>
-                </div>
-
-                <div className="absolute top-1/2 -left-7 -translate-y-1/2">
-                  <div className="animate-spin-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
-                    <Terminal className="w-8 h-8" strokeWidth={1.5} />
+              {/* Icon 2: Database */}
+              <div className="absolute inset-0 animate-spin-medium z-10 w-full h-full rotate-[90deg]">
+                <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+                  {/* Compensate for initial 90deg offset to start upright */}
+                  <div className="rotate-[-90deg]">
+                    <div className="animate-spin-medium-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
+                      <Database className="w-8 h-8" strokeWidth={1.5} />
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Orbiting Elements - Inner Ring */}
-              <div className="absolute inset-[60px] md:inset-[90px] animate-spin-slow-reverse z-10">
+              {/* Icon 3: Cloud */}
+              <div className="absolute inset-0 animate-spin-inner z-10 w-full h-full rotate-[180deg]">
+                <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+                  {/* Compensate for initial 180deg offset to start upright */}
+                  <div className="rotate-[-180deg]">
+                    <div className="animate-spin-inner-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
+                      <Cloud className="w-8 h-8" strokeWidth={1.5} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Icon 4: Terminal */}
+              <div className="absolute inset-0 animate-spin-extra-slow z-10 w-full h-full rotate-[270deg]">
+                <div className="absolute -top-7 left-1/2 -translate-x-1/2">
+                  {/* Compensate for initial 270deg offset to start upright */}
+                  <div className="rotate-[-270deg]">
+                    <div className="animate-spin-extra-slow-reverse flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-bg-main border border-brand-stroke/40 shadow-lg text-brand-light backdrop-blur-md">
+                      <Terminal className="w-8 h-8" strokeWidth={1.5} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Orbiting Elements - Inner Ring - INDIVIDUAL ORBITS */}
+              {/* Icon 5: Cpu */}
+              <div className="absolute inset-[60px] md:inset-[90px] animate-spin-inner-reverse z-10">
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                  <div className="animate-spin-slow flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
+                  <div className="animate-spin-inner flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
                     <Cpu className="w-6 h-6" strokeWidth={1.5} />
                   </div>
                 </div>
+              </div>
 
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                  <div className="animate-spin-slow flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
-                    <Blocks className="w-6 h-6" strokeWidth={1.5} />
+              {/* Icon 6: Blocks */}
+              <div className="absolute inset-[60px] md:inset-[90px] animate-spin-slow z-10 rotate-[180deg]">
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                  {/* Compensate for initial 180deg offset */}
+                  <div className="rotate-[-180deg]">
+                    <div className="animate-spin-slow-reverse flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-bg-section border border-brand-400/30 shadow-lg text-brand-400">
+                      <Blocks className="w-6 h-6" strokeWidth={1.5} />
+                    </div>
                   </div>
                 </div>
               </div>

@@ -7,6 +7,7 @@ export interface PostType {
   slug: string
   thumbnailUrl: string
   description: string
+  tags?: string[]
 }
 
 export interface PostPreviewType {
@@ -17,4 +18,5 @@ export interface PostPreviewType {
   excerpt: string
   createdAt: number
   thumbnailUrl: string
+  tags?: string[]
 }

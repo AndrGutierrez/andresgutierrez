@@ -2,7 +2,7 @@ import { Send } from "lucide-react";
 
 export default function CTASection() {
   return (
-    <section className="relative w-full py-20 md:py-32 bg-bg-main overflow-hidden">
+    <section className="relative w-full py-20 md:py-32 bg-bg-section overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-[150px] bg-gradient-brand" />

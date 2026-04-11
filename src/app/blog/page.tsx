@@ -1,8 +1,9 @@
-import PostItem from '@/components/blog/PostItem'
 import type { Metadata } from 'next'
 import { fetchApi } from '@/utils/fetchApi'
 import { PostPreviewType } from '@/types'
-
+import BlogHero from '@/components/blog/BlogHero'
+import BlogContent from '@/components/blog/BlogContent'
+import BackgroundRays from '@/components/ui/BackgroundRays'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -30,14 +31,15 @@ export default async function BlogPage() {
   const { posts }: { posts: PostPreviewType[] } = await res
 
   return (
-    <main className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+    <main className="bg-bg-main min-h-screen text-white relative overflow-hidden">
+      {/* 1. Background Glows and Rays */}
+      <BackgroundRays opacity={0.1} />
+      
+      {/* Premium Hero Section */}
+      <BlogHero />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {posts.map((post, i) => (
-          <PostItem post={post} key={i}></PostItem>
-        ))}
-      </div>
+      {/* Main Content (Filters + Grid + Sidebar) */}
+      <BlogContent initialPosts={posts} />
     </main>
   )
 }

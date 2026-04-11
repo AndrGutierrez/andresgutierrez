@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types'
+import { JSX } from 'react';
 import CopyButton from '@/components/blog/CopyButton'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -6,7 +7,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     if (typeof children === 'string') return children;
     if (Array.isArray(children)) return children.map(reactToText).join('');
     if (children && typeof children === 'object' && 'props' in children) {
-      return reactToText(children.props.children);
+      return reactToText((children as any).props.children);
     }
     return '';
   };
