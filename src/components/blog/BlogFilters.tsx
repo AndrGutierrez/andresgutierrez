@@ -1,4 +1,5 @@
 import React from 'react';
+import Tag from '@/components/ui/Tag';
 
 const CATEGORIES = [
   'All posts',
@@ -22,13 +23,17 @@ export default function BlogFilters({ activeCategory, onCategoryChange }: BlogFi
             <button
               key={category}
               onClick={() => onCategoryChange(category)}
-              className={`px-6 py-3 rounded-full font-space-grotesk text-sm transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-brand/90 text-brand-950 font-medium shadow-[0_0_20px_rgba(108,160,148,0.3)]'
-                  : 'text-white/60 hover:text-white hover:bg-white/5'
-              }`}
+              className="relative"
             >
-              {category}
+              {activeCategory === category ? (
+                <Tag variant="solid" className="px-6 py-3 text-sm">
+                  {category}
+                </Tag>
+              ) : (
+                <div className="px-6 py-3 rounded-full font-space-grotesk text-sm text-white/60 hover:text-white hover:bg-white/5 transition-all">
+                  {category}
+                </div>
+              )}
             </button>
           ))}
         </div>

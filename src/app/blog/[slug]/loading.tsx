@@ -1,51 +1,63 @@
 export default function Loading() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8">
-      <div className="prose prose-lg prose-slate dark:prose-invert max-w-none animate-pulse">
-        {/* Featured Image Skeleton */}
-        <div
-          className="w-full mb-6 rounded-lg bg-gray-300 dark:bg-gray-700"
-          style={{ height: '300px' }}
-        ></div>
+    <div className="min-h-screen bg-bg-main text-white font-space-grotesk relative overflow-hidden">
+      {/* Hero Skeleton */}
+      <section className="relative pt-12 pb-20 px-4 md:px-8 max-w-[1440px] mx-auto">
+        <div className="max-w-[1240px] mx-auto space-y-8 animate-pulse">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-brand/20"></div>
+            <div className="h-4 w-20 bg-white/5 rounded"></div>
+          </div>
 
-        {/* Title Skeleton */}
-        <div className="h-10 w-full bg-gray-200 dark:bg-gray-600 rounded mb-4"></div>
-        <div className="h-10 w-3/4 bg-gray-200 dark:bg-gray-600 rounded mb-8"></div>
+          <div className="space-y-4">
+            <div className="h-12 w-3/4 bg-white/5 rounded-lg"></div>
+            <div className="h-12 w-1/2 bg-white/5 rounded-lg"></div>
+          </div>
 
-        {/* Meta Info Skeleton */}
-        <div className="flex items-center text-gray-600 dark:text-gray-400 mb-8">
-          <div className="h-4 w-24 bg-gray-200 dark:bg-gray-600 rounded"></div>
-          <span className="mx-2">•</span>
-          <div className="h-4 w-16 bg-gray-200 dark:bg-gray-600 rounded"></div>
+          <div className="w-full aspect-[21/9] md:h-[400px] bg-white/5 rounded-2xl border border-white/10"></div>
         </div>
+      </section>
 
-        {/* Content Skeleton */}
-        <div className="space-y-4">
-          <div className="h-4 w-full bg-gray-200 dark:bg-gray-600 rounded"></div>
-          <div className="h-4 w-5/6 bg-gray-200 dark:bg-gray-600 rounded"></div>
-          <div className="h-4 w-2/3 bg-gray-200 dark:bg-gray-600 rounded"></div>
-          <div className="h-4 w-full bg-gray-200 dark:bg-gray-600 rounded"></div>
-          <div className="h-4 w-3/4 bg-gray-200 dark:bg-gray-600 rounded"></div>
-
-          {/* Code block skeleton */}
-          <div className="my-6 rounded-md overflow-hidden">
-            <div className="h-8 bg-gray-800 dark:bg-gray-900 flex items-center px-4">
-              <div className="h-3 w-16 bg-gray-600 dark:bg-gray-700 rounded"></div>
+      {/* Content Skeleton */}
+      <section className="pb-32 px-4 md:px-8 max-w-[1440px] mx-auto">
+        <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_287px] gap-12 xl:gap-24">
+          
+          <div className="space-y-8 animate-pulse">
+            <div className="space-y-4">
+              <div className="h-4 w-full bg-white/5 rounded"></div>
+              <div className="h-4 w-11/12 bg-white/5 rounded"></div>
+              <div className="h-4 w-10/12 bg-white/5 rounded"></div>
+              <div className="h-4 w-full bg-white/5 rounded"></div>
             </div>
-            <div className="p-4 bg-gray-100 dark:bg-gray-800">
-              <div className="space-y-3">
-                <div className="h-4 w-11/12 bg-gray-300 dark:bg-gray-600 rounded"></div>
-                <div className="h-4 w-10/12 bg-gray-300 dark:bg-gray-600 rounded"></div>
-                <div className="h-4 w-9/12 bg-gray-300 dark:bg-gray-600 rounded"></div>
-              </div>
+            
+            <div className="h-64 w-full bg-white/5 rounded-2xl border border-white/10"></div>
+            
+            <div className="space-y-4">
+              <div className="h-4 w-full bg-white/5 rounded"></div>
+              <div className="h-4 w-11/12 bg-white/5 rounded"></div>
             </div>
           </div>
 
-          {/* More content */}
-          <div className="h-4 w-full bg-gray-200 dark:bg-gray-600 rounded"></div>
-          <div className="h-4 w-5/6 bg-gray-200 dark:bg-gray-600 rounded"></div>
+          {/* Sidebar Skeleton */}
+          <aside className="space-y-8 lg:block hidden">
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-6 animate-pulse">
+              <div className="space-y-6">
+                {[1, 2, 3, 4].map(i => (
+                  <div key={i} className="flex items-center justify-between py-3 border-b border-white/5">
+                    <div className="h-4 w-20 bg-white/5 rounded"></div>
+                    <div className="h-4 w-24 bg-white/5 rounded"></div>
+                  </div>
+                ))}
+              </div>
+              <div className="pt-6 border-t border-white/5 space-y-4">
+                <div className="h-6 w-3/4 bg-white/5 rounded"></div>
+                <div className="h-4 w-full bg-white/5 rounded"></div>
+                <div className="h-12 w-full bg-brand/10 rounded-full"></div>
+              </div>
+            </div>
+          </aside>
         </div>
-      </div>
-    </main>
+      </section>
+    </div>
   )
 }

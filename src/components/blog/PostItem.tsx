@@ -2,6 +2,7 @@ import React from 'react';
 import { PostPreviewType } from "@/types";
 import Link from "next/link";
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
+import Tag from '@/components/ui/Tag';
 
 export default function PostItem({ post }: { post: PostPreviewType }) {
   const dateStr = new Date(post.createdAt).toLocaleDateString('en-US', {
@@ -62,17 +63,12 @@ export default function PostItem({ post }: { post: PostPreviewType }) {
         <div className="flex flex-wrap gap-2 mt-2">
           {post.tags?.length ? (
             post.tags.map((tag) => (
-              <span 
-                key={tag} 
-                className="px-3 py-1 rounded-full text-xs font-space-grotesk bg-white/5 border border-white/10 text-brand-light/60 group-hover:text-brand-light group-hover:bg-brand/10 transition-all duration-300"
-              >
+              <Tag key={tag} variant="outline">
                 {tag}
-              </span>
+              </Tag>
             ))
           ) : (
-            <span className="px-3 py-1 rounded-full text-xs font-space-grotesk bg-white/5 border border-white/10 text-white/20">
-              Personal
-            </span>
+            <Tag variant="ghost">Personal</Tag>
           )}
         </div>
 

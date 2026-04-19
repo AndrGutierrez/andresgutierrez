@@ -43,20 +43,20 @@ export default function BlogContent({ initialPosts }: BlogContentProps) {
               <PostItem post={post} key={post.id || i} />
             ))}
           </div>
-
-          {/* Load More Button */}
-          <div className="flex justify-center mt-16">
-            <button className="flex items-center gap-4 px-8 py-4 rounded-full bg-brand text-brand-950 font-space-grotesk font-medium text-lg hover:shadow-[0_0_30px_rgba(108,160,148,0.4)] transition-all group">
-              Load more posts
-              <div className="w-10 h-10 rounded-full bg-brand-950 flex items-center justify-center group-hover:rotate-90 transition-transform">
-                <ChevronDown className="w-5 h-5 text-brand" />
-              </div>
-            </button>
-          </div>
         </div>
 
         {/* Sidebar */}
         <BlogSidebar />
+      </div>
+
+      {/* Load More Button (Centered outside the layout flexbox) */}
+      <div className="flex justify-center mt-20">
+        <button className="flex items-center gap-4 px-10 py-5 rounded-full bg-gradient-brand text-brand-950 font-space-grotesk font-semibold text-xl hover:shadow-[0_0_40px_rgba(108,160,148,0.5)] transition-all group scale-100 hover:scale-105 active:scale-95">
+          Load more posts
+          <div className="w-12 h-12 rounded-full bg-brand-950 flex items-center justify-center group-hover:rotate-90 transition-transform shadow-lg">
+            <ChevronDown className="w-6 h-6 text-brand" />
+          </div>
+        </button>
       </div>
     </div>
   );

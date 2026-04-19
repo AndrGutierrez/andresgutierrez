@@ -25,7 +25,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <h3 className='text-2xl mb-3'>{children}</h3>
     ),
     a: (props) => (
-      <a className='text-underline text-cyan-600' href={props.href}>{props.children}</a>
+      <a 
+        className='text-brand hover:text-white transition-colors underline decoration-brand/30 underline-offset-4' 
+        href={props.href}
+      >
+        {props.children}
+      </a>
     ),
     img: (props) => (
       <img
