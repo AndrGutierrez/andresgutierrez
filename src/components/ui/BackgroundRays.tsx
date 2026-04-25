@@ -17,11 +17,11 @@ export default function BackgroundRays({
     >
       {/* Background Glow */}
       {showGlow && (
-        <div className="absolute top-[-10%] right-[-10%] w-full max-w-[1000px] aspect-square rounded-[100%] blur-[275px] opacity-20 bg-[#1F8B83]" />
+        <div className="absolute top-[-10%] right-[-10%] w-[70%] md:w-full max-w-[1000px] aspect-square rounded-[100%] blur-[275px] opacity-40 md:opacity-20 bg-[#1F8B83]" />
       )}
 
       <svg
-        className="absolute -top-[5%] -right-[5%] md:-top-[10%] md:-right-[10%] w-[110%] md:w-[120%] h-[110%] md:h-[120%]"
+        className="absolute -top-[10%] -right-[15%] md:-top-[10%] md:-right-[10%] w-[160%] md:w-[120%] h-[120%] md:h-[120%]"
         style={{ opacity }}
         viewBox="0 0 1440 800"
         fill="none"
