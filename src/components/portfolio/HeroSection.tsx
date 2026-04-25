@@ -93,15 +93,15 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center gap-8 w-full sm:w-auto pt-6">
             <a
               href="mailto:mail@andresgutierrez.me"
-              className="group flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-brand-stroke bg-gradient-brand w-full sm:w-auto transition-transform hover:scale-[1.02] shadow-sm relative overflow-hidden"
+              className="group/btn flex items-center justify-center gap-4 px-10 py-5 rounded-full border border-brand-stroke hover:border-brand-light bg-gradient-brand w-full sm:w-auto transition-all duration-300 hover:scale-[1.02] shadow-[0_0_30px_rgba(108,160,148,0.2)] hover:shadow-[0_0_40px_rgba(108,160,148,0.4)] relative overflow-hidden"
               aria-label="Send an email to mail@andresgutierrez.me to work together"
             >
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <span className="font-space-grotesk text-bg-main font-semibold text-lg z-10">
+              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
+              <span className="font-space-grotesk text-bg-main font-bold text-lg tracking-wide z-10">
                 Let's work together
               </span>
-              <div className="bg-bg-main rounded-[50%] p-2 group-hover:-rotate-45 transition-transform duration-300 z-10">
-                <ArrowRight className="w-4 h-4 text-brand-light" />
+              <div className="bg-brand-950 rounded-full p-2 group-hover/btn:-rotate-45 transition-transform duration-300 z-10">
+                <ArrowRight className="w-4 h-4 text-white" />
               </div>
             </a>
 

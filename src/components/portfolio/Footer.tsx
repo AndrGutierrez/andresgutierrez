@@ -48,7 +48,7 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-6">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/andresg.ut" 
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Follow me on Instagram"
                 target="_blank" 
@@ -57,7 +57,7 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/AndrGutierrez" 
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Visit my GitHub profile"
                 target="_blank" 
@@ -66,7 +66,7 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/andres-gutierrezo" 
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Connect with me on LinkedIn"
                 target="_blank" 

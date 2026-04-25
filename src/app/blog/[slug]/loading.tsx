@@ -1,6 +1,9 @@
+import BackgroundRays from "@/components/ui/BackgroundRays";
+
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-bg-main text-white font-space-grotesk relative overflow-hidden">
+    <div className="min-h-screen bg-bg-main text-white font-space-grotesk relative overflow-hidden pt-24">
+      <BackgroundRays opacity={0.1} />
       {/* Hero Skeleton */}
       <section className="relative pt-12 pb-20 px-4 md:px-8 max-w-[1440px] mx-auto">
         <div className="max-w-[1240px] mx-auto space-y-8 animate-pulse">
@@ -21,7 +24,6 @@ export default function Loading() {
       {/* Content Skeleton */}
       <section className="pb-32 px-4 md:px-8 max-w-[1440px] mx-auto">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_287px] gap-12 xl:gap-24">
-          
           <div className="space-y-8 animate-pulse">
             <div className="space-y-4">
               <div className="h-4 w-full bg-white/5 rounded"></div>
@@ -29,9 +31,9 @@ export default function Loading() {
               <div className="h-4 w-10/12 bg-white/5 rounded"></div>
               <div className="h-4 w-full bg-white/5 rounded"></div>
             </div>
-            
+
             <div className="h-64 w-full bg-white/5 rounded-2xl border border-white/10"></div>
-            
+
             <div className="space-y-4">
               <div className="h-4 w-full bg-white/5 rounded"></div>
               <div className="h-4 w-11/12 bg-white/5 rounded"></div>
@@ -42,8 +44,11 @@ export default function Loading() {
           <aside className="space-y-8 lg:block hidden">
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-6 animate-pulse">
               <div className="space-y-6">
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="flex items-center justify-between py-3 border-b border-white/5">
+                {[1, 2, 3, 4].map((i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-between py-3 border-b border-white/5"
+                  >
                     <div className="h-4 w-20 bg-white/5 rounded"></div>
                     <div className="h-4 w-24 bg-white/5 rounded"></div>
                   </div>
@@ -59,5 +64,5 @@ export default function Loading() {
         </div>
       </section>
     </div>
-  )
+  );
 }

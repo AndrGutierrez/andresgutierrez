@@ -42,8 +42,8 @@ export default function CTASection() {
               <span className="font-space-grotesk text-bg-main font-bold text-lg tracking-wide z-10">
                 Get in Touch
               </span>
-              <div className="bg-bg-main rounded-full p-2 group-hover/btn:-rotate-12 group-hover/btn:translate-x-1 transition-transform duration-300 z-10">
-                <Send className="w-4 h-4 text-brand-light" fill="currentColor" />
+              <div className="bg-brand-950 rounded-full p-2 group-hover/btn:-rotate-12 group-hover/btn:translate-x-1 transition-transform duration-300 z-10">
+                <Send className="w-4 h-4 text-white" fill="currentColor" />
               </div>
             </a>
           </div>

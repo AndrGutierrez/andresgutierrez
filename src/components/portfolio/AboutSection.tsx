@@ -124,7 +124,7 @@ export default function AboutSection() {
             {/* Social Icons */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-[#13201E]/80 backdrop-blur-xl px-6 py-3 rounded-full border border-brand-stroke/30">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/andresg.ut"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -133,7 +133,7 @@ export default function AboutSection() {
                 <FontAwesomeIcon icon={faInstagram} className="w-5 h-5 text-[#13201E]" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/AndrGutierrez"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/80 transition-colors border border-white/5"
@@ -142,7 +142,7 @@ export default function AboutSection() {
                 <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/andres-gutierrezo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/80 transition-colors border border-white/5"

@@ -1,4 +1,5 @@
 import { Plus } from 'lucide-react';
+import Tag from '@/components/ui/Tag';
 
 export default function BlogHero() {
   return (
@@ -6,13 +7,15 @@ export default function BlogHero() {
 
       <div className="container relative z-10 flex flex-col items-center text-center">
         {/* Subtitle Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand/20 bg-brand/5 mb-8">
-          <div className="w-4 h-4 rounded-sm bg-brand flex items-center justify-center">
-            <Plus className="w-3 h-3 text-white" />
-          </div>
-          <span className="text-brand font-space-grotesk text-sm font-medium tracking-tight">
-            Personal blog
-          </span>
+        <div className="mb-8">
+          <Tag variant="solid" className="px-4 py-2 gap-2">
+            <div className="w-4 h-4 rounded-sm bg-brand-950 flex items-center justify-center">
+              <Plus className="w-3 h-3 text-brand" />
+            </div>
+            <span className="uppercase tracking-widest text-xs font-bold">
+              Personal blog
+            </span>
+          </Tag>
         </div>
 
         {/* Title */}
