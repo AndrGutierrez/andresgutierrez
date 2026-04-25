@@ -45,7 +45,7 @@ export default function HeroSection() {
       <BackgroundRays opacity={0.1} />
 
       {/* 2. Background Video Element - Repositioned and Scaled */}
-      <div className={`absolute top-1/2 left-[45%] md:left-[50%] lg:left-[55%] -translate-x-1/2 -translate-y-1/2 w-[140%] md:w-[110%] lg:w-[90%] max-w-[1800px] aspect-square pointer-events-none z-0 transition-opacity duration-700 ${isVideoLoaded ? "opacity-40 md:opacity-60 lg:opacity-75" : "opacity-0"}`}>
+      <div className={`absolute top-1/2 left-[45%] md:left-[50%] lg:left-[55%] -translate-x-1/2 -translate-y-1/2 w-[140%] md:w-[110%] lg:w-[90%] max-w-[1800px] aspect-square pointer-events-none z-0 transition-opacity duration-700 ${isVideoLoaded ? "opacity-50 md:opacity-75 lg:opacity-90" : "opacity-0"}`}>
         <div className="relative w-full h-full flex items-center justify-center">
 
           <video
