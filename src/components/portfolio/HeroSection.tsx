@@ -86,7 +86,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="font-space-grotesk text-white/85 text-base md:text-lg max-w-[600px] leading-relaxed mt-4">
-              A full-stack engineer with 5 years of experience crafting production-grade web applications and AWS cloud architecture that businesses rely on.
+              Software Engineer. Over 5 years of experience in Software Development with expertise in Web Applications and AWS cloud architecture.
             </p>
           </div>
 
