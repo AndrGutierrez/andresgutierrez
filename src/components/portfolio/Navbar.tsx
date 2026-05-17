@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const AGLogo = () => (
@@ -31,6 +32,7 @@ const AGLogo = () => (
 );
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -68,14 +70,18 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <Link
             href="/"
-            className="font-space-grotesk text-[#FCFCFD] text-base leading-6 hover:text-white/80 transition-colors"
+            className={`font-space-grotesk text-base leading-6 hover:text-white/80 transition-colors ${
+              pathname === "/" ? "text-[#FCFCFD]" : "text-white/80"
+            }`}
             aria-label="Home"
           >
             Home
           </Link>
           <Link
             href="/blog"
-            className="font-space-grotesk text-white/80 text-base leading-6 hover:text-white/70 transition-colors"
+            className={`font-space-grotesk text-base leading-6 hover:text-white/70 transition-colors ${
+              pathname.startsWith("/blog") ? "text-[#FCFCFD]" : "text-white/80"
+            }`}
             aria-label="Read my blog"
           >
             Blog
@@ -129,7 +135,9 @@ export default function Navbar() {
         <div className="absolute top-full left-4 right-4 mt-2 rounded-2xl border border-white/20 bg-[#0B1211]/95 backdrop-blur-xl p-6 flex flex-col gap-4 md:hidden">
           <Link
             href="/"
-            className="font-space-grotesk text-white text-lg"
+            className={`font-space-grotesk text-lg ${
+              pathname === "/" ? "text-white" : "text-white/80"
+            }`}
             aria-label="Home"
             onClick={() => setMenuOpen(false)}
           >
@@ -137,7 +145,9 @@ export default function Navbar() {
           </Link>
           <Link
             href="/blog"
-            className="font-space-grotesk text-white/80 text-lg"
+            className={`font-space-grotesk text-lg ${
+              pathname.startsWith("/blog") ? "text-white" : "text-white/80"
+            }`}
             aria-label="Blog"
             onClick={() => setMenuOpen(false)}
           >

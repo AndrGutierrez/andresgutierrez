@@ -1,4 +1,3 @@
-import React from 'react';
 import { PostPreviewType } from "@/types";
 import Link from "next/link";
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
@@ -20,7 +19,7 @@ export default function PostItem({ post }: { post: PostPreviewType }) {
       {/* Corner Accents */}
       <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/40 opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/40 opacity-0 group-hover:opacity-100 transition-opacity" />
-      
+
       {/* Post Image / Thumbnail Placeholder */}
       <div className="aspect-[16/7] w-full rounded-lg overflow-hidden bg-white/5 border border-white/10">
         {post.thumbnailUrl ? (

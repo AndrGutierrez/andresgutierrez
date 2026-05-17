@@ -1,4 +1,3 @@
-import React from 'react';
 import Tag from '@/components/ui/Tag';
 
 const CATEGORIES = [

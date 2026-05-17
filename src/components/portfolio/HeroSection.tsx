@@ -98,7 +98,7 @@ export default function HeroSection() {
             >
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
               <span className="font-space-grotesk text-bg-main font-bold text-lg tracking-wide z-10">
-                Let's work together
+                Let's get in touch
               </span>
               <div className="bg-brand-950 rounded-full p-2 group-hover/btn:-rotate-45 transition-transform duration-300 z-10">
                 <ArrowRight className="w-4 h-4 text-white" />

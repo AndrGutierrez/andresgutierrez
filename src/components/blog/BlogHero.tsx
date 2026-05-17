@@ -20,12 +20,12 @@ export default function BlogHero() {
 
         {/* Title */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-archivo font-medium tracking-tight text-white mb-6 max-w-4xl">
-          Things I&apos;ve <span className="text-brand">learned.</span>
+          Welcome to my <span className="text-brand">blog.</span>
         </h1>
 
         {/* Description */}
         <p className="text-lg md:text-xl font-space-grotesk text-white/60 max-w-2xl mb-10 leading-relaxed">
-          Writing about software engineering, cloud infrastructure, open-source, and the occasional hardware rabbit hole. No fluff — just things I&apos;ve actually built, broken, and figured out.
+          A window into my mind, tech career, hobbies and personal projects. Writing helps me solidify what I learn, and I use this space to share the ideas, tools, and insights I find most interesting.
         </p>
 
         {/* Stats */}

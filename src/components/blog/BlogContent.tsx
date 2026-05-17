@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { PostPreviewType } from "@/types";
 import BlogFilters from "@/components/blog/BlogFilters";
 import PostItem from "@/components/blog/PostItem";
@@ -20,13 +20,13 @@ export default function BlogContent({ initialPosts }: BlogContentProps) {
     activeCategory === "All posts"
       ? initialPosts
       : initialPosts.filter((post) =>
-          post.tags?.some((tag) => {
-            const cat = activeCategory.toLowerCase();
-            const t = tag.toLowerCase();
-            // Match direct or partial (e.g. "Cloud & AWS" matches "Cloud")
-            return t === cat || cat.includes(t) || t.includes(cat);
-          }),
-        );
+        post.tags?.some((tag) => {
+          const cat = activeCategory.toLowerCase();
+          const t = tag.toLowerCase();
+          // Match direct or partial (e.g. "Cloud & AWS" matches "Cloud")
+          return t === cat || cat.includes(t) || t.includes(cat);
+        }),
+      );
 
   return (
     <div className="container py-8">
