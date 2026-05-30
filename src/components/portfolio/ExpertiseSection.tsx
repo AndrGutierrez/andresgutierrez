@@ -12,7 +12,7 @@ export default function ExpertiseSection() {
       icon: "cloud",
       lucideIcon: Cloud,
       title: "AWS Cloud Architecture",
-      description: "Scalable, cost-effective infrastructure design. EC2, S3, Lambda, RDS — built to grow with your product.",
+      description: "Scalable, cost-effective infrastructure design. EC2, S3, Lambda, RDS — built to scale.",
     },
     {
       icon: "rocket",
@@ -20,12 +20,12 @@ export default function ExpertiseSection() {
       title: "DevOps & CI/CD",
       description: "Containerised deployments with Docker and automated pipelines. Ship faster with confidence.",
     },
-    {
-      icon: "search",
-      lucideIcon: Microscope,
-      title: "Open Source & Tech R&D",
-      description: "Passionate about hardware, cloud infra, and contributing to the open-source ecosystem.",
-    },
+    // {
+    //   icon: "search",
+    //   lucideIcon: Microscope,
+    //   title: "Open Source & Tech R&D",
+    //   description: "Passionate about hardware, cloud infra, and contributing to the open-source ecosystem.",
+    // },
   ];
 
   return (
@@ -50,7 +50,7 @@ export default function ExpertiseSection() {
             </div>
 
             <p className="font-space-grotesk text-white/90 text-base md:text-lg text-center max-w-2xl leading-relaxed">
-              A proven stack of modern technologies for building reliable, performant apps.
+              Engineering skills developed for building high quality projects
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function ExpertiseSection() {
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-bg-section to-transparent z-20" />
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg-section to-transparent z-20" />
 
-          <div 
+          <div
             className="flex w-max animate-marquee translate-z-0"
             style={{ '--duration': '80s', '--gap': '2rem' } as React.CSSProperties}
           >

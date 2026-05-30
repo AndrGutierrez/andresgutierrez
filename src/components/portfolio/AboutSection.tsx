@@ -24,12 +24,12 @@ export default function AboutSection() {
               </div>
 
               <h2 className="font-archivo font-medium text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white">
-                A bit about who I am today, honestly
+                About who I am
               </h2>
             </div>
 
             <p className="font-space-grotesk text-white/90 text-base md:text-lg leading-relaxed">
-              Explore what makes me tick beyond the technical resume.
+              This site is a little bit about who I am as an engineer, and a little bit about who I am as a person. Both feel equally important to share.
             </p>
 
             {/* About Cards */}
@@ -47,10 +47,10 @@ export default function AboutSection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
-                      Software engineer
+                      Curious person
                     </h3>
                     <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
-                      I love building software — 5 years in, still excited about solving problems, from responsive UIs to scalable AWS infrastructure.
+                      I love learning about history, science, technology and specially new ways to improve at my hobbies.
                     </p>
                   </div>
                 </div>
@@ -69,10 +69,10 @@ export default function AboutSection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
-                      I care about the craft
+                      Sports & fitness
                     </h3>
                     <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
-                      Clean code, thoughtful architecture, and interfaces that feel good to use matter to me personally.
+                      Weightlifting, swimming and chess (yes, it's a sport) are very precious to me, and I love talking about them when I have the chance
                     </p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ export default function AboutSection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
-                      Tech is genuinely my hobby
+                      I love tech
                     </h3>
                     <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
                       Hardware tinkering, cloud infrastructure experiments, open-source contributions — I do this stuff for fun, not just for work.
@@ -101,10 +101,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Quote */}
-            <p className="font-space-grotesk text-white/80 text-base italic mt-4 pt-4 border-t border-white/10">
-              "This site is a little bit about who I am as an engineer, and a little bit about who I am as a person. Both feel equally important to share."
-            </p>
           </div>
 
           {/* Right - Profile Container */}
