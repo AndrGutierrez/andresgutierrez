@@ -11,23 +11,23 @@ export default function Footer() {
           <h2 className="font-archivo font-medium text-4xl md:text-5xl lg:text-6xl text-white tracking-widest uppercase mb-4">
             Andres Gutierrez
           </h2>
-          
+
           {/* Subtitle */}
           <p className="font-space-grotesk text-white/85 text-base md:text-lg mb-12">
-            Software Engineer focused on scalable solutions
+            Software Engineer
           </p>
 
           {/* Site Navigation */}
           <div className="flex items-center justify-center gap-12 mb-16">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="font-space-grotesk text-white/85 hover:text-white transition-colors text-lg"
               aria-label="Home"
             >
               Home
             </Link>
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="font-space-grotesk text-white/85 hover:text-white transition-colors text-lg"
               aria-label="Read my blog"
             >
@@ -47,29 +47,29 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-6">
-              <a 
-                href="https://www.instagram.com/andresg.ut" 
+              <a
+                href="https://www.instagram.com/andresg.ut"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Follow me on Instagram"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faInstagram} className="w-6 h-6" />
               </a>
-              <a 
-                href="https://github.com/AndrGutierrez" 
+              <a
+                href="https://github.com/AndrGutierrez"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Visit my GitHub profile"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/andres-gutierrezo" 
+              <a
+                href="https://www.linkedin.com/in/andres-gutierrezo"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:border-white/40 transition-all"
                 aria-label="Connect with me on LinkedIn"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />

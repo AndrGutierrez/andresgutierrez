@@ -31,10 +31,10 @@ export default function BlogContent({ initialPosts }: BlogContentProps) {
   return (
     <div className="container py-8">
       {/* Filters Section */}
-      <BlogFilters
+      {/* <BlogFilters
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
-      />
+      /> */}
 
       <div className="flex flex-col lg:flex-row gap-12 mt-8">
         {/* Main Posts Grid */}

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
 import BackgroundRays from "../ui/BackgroundRays";
+import CTAButton from "@/components/ui/CTAButton";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -91,19 +91,13 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-8 w-full sm:w-auto pt-6">
-            <a
-              href="mailto:mail@andresgutierrez.me"
-              className="group/btn flex items-center justify-center gap-4 px-10 py-5 rounded-full border border-brand-stroke hover:border-brand-light bg-gradient-brand w-full sm:w-auto transition-all duration-300 hover:scale-[1.02] shadow-[0_0_30px_rgba(108,160,148,0.2)] hover:shadow-[0_0_40px_rgba(108,160,148,0.4)] relative overflow-hidden"
-              aria-label="Send an email to mail@andresgutierrez.me to work together"
+            <CTAButton
+              variant="hero"
+              className="w-full sm:w-auto"
+              ariaLabel="Send an email to mail@andresgutierrez.me to work together"
             >
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-              <span className="font-space-grotesk text-bg-main font-bold text-lg tracking-wide z-10">
-                Let's get in touch
-              </span>
-              <div className="bg-brand-950 rounded-full p-2 group-hover/btn:-rotate-45 transition-transform duration-300 z-10">
-                <ArrowRight className="w-4 h-4 text-white" />
-              </div>
-            </a>
+              Let's get in touch
+            </CTAButton>
 
             <a
               href="/blog"

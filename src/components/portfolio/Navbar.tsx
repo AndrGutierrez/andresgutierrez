@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import CTAButton from "@/components/ui/CTAButton";
 
 const AGLogo = () => (
   <svg
@@ -90,26 +91,12 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden md:flex">
-          <a
-            href="mailto:mail@andresgutierrez.me"
-            className="flex items-center gap-1.5 pl-4 pr-1 py-1 rounded-full border border-[#8CBAAE] bg-gradient-to-b from-[#8DBBAF] to-[#3D887D] transition-opacity hover:opacity-90"
-            aria-label="Send an email to mail@andresgutierrez.me"
+          <CTAButton
+            variant="navbar"
+            ariaLabel="Send an email to mail@andresgutierrez.me"
           >
-            <span className="font-space-grotesk text-[#0A0D0C] text-base leading-6">
-              Get in touch
-            </span>
-            <div className="w-[30px] h-[30px] rounded-full bg-[#13201E] flex items-center justify-center flex-shrink-0">
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                <path
-                  d="M10.9378 4.0622L3.75 11.25M4.99969 3.75002H11.25V10.0003"
-                  stroke="#FCFCFD"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </a>
+            Get in touch
+          </CTAButton>
         </div>
 
         {/* Mobile hamburger */}
@@ -153,16 +140,14 @@ export default function Navbar() {
           >
             Blog
           </Link>
-          <a
-            href="mailto:mail@andresgutierrez.me"
-            className="flex items-center justify-center gap-1.5 px-4 py-2 rounded-full border border-[#8CBAAE] bg-gradient-to-b from-[#8DBBAF] to-[#3D887D] mt-2"
-            aria-label="Send an email to mail@andresgutierrez.me"
+          <CTAButton
+            variant="mobile-nav"
+            className="mt-2"
+            ariaLabel="Send an email to mail@andresgutierrez.me"
             onClick={() => setMenuOpen(false)}
           >
-            <span className="font-space-grotesk text-[#0A0D0C] text-base">
-              Get in touch
-            </span>
-          </a>
+            Get in touch
+          </CTAButton>
         </div>
       )}
     </header>

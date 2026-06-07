@@ -2,6 +2,7 @@ import PostContent from "@/components/blog/PostContent";
 import PostItem from "@/components/blog/PostItem";
 import Tag from "@/components/ui/Tag";
 import BackgroundRays from "@/components/ui/BackgroundRays";
+import CTAButton from "@/components/ui/CTAButton";
 import { notFound } from "next/navigation";
 import { fetchApi } from "@/utils/fetchApi";
 import { PostPreviewType, PostType } from "@/types";
@@ -51,13 +52,13 @@ export async function generateMetadata({
         publishedTime: new Date(post.createdAt).toISOString(),
         images: thumbnail
           ? [
-              {
-                url: thumbnail,
-                width: 1000,
-                height: 630,
-                alt: title,
-              },
-            ]
+            {
+              url: thumbnail,
+              width: 1000,
+              height: 630,
+              alt: title,
+            },
+          ]
           : undefined,
       },
       twitter: {
@@ -230,20 +231,17 @@ export default async function PostPage({
               {/* Newsletter or Contact Mini-CTA */}
               <div className="pt-6 border-t border-white/5">
                 <h4 className="font-archivo text-lg mb-4">
-                  Have a project in mind?
+                  Wanna reach out?
                 </h4>
                 <p className="text-white/60 text-sm mb-6 leading-relaxed">
-                  Let's talk about your awesome project and make something cool!
+                  If you found this interesting or have any feedback send an email to mail@andresgutierrez.me!
                 </p>
-                <a
+                <CTAButton
+                  variant="blog-sidebar"
                   href="#contact"
-                  className="group flex items-center justify-between w-full px-6 py-3 bg-gradient-brand text-brand-950 font-bold rounded-full hover:shadow-[0_0_20px_rgba(108,160,148,0.3)] transition-all shadow-[0_0_15px_rgba(108,160,148,0.2)]"
                 >
-                  <span>Let's Talk</span>
-                  <span className="w-6 h-6 rounded-full bg-brand-950 flex items-center justify-center transition-colors">
-                    <span className="text-white">→</span>
-                  </span>
-                </a>
+                  Let's Talk
+                </CTAButton>
               </div>
             </div>
           </aside>

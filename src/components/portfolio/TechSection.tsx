@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import CTAButton from "@/components/ui/CTAButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDocker, faReact, faLinux } from "@fortawesome/free-brands-svg-icons";
 
@@ -212,7 +212,7 @@ export default function TechSection() {
                 </svg>
                 <div>
                   <h3 className="font-space-grotesk text-white font-medium text-lg tracking-wide">
-                    Battle-tested technologies used all around the world
+                    Battle-tested used all around the world
                   </h3>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function TechSection() {
                 </svg>
                 <div>
                   <h3 className="font-space-grotesk text-white font-medium text-lg tracking-wide">
-                    Market leaders trusted by millions
+                    Market leader technologies trusted by millions
                   </h3>
                 </div>
               </div>
@@ -244,19 +244,12 @@ export default function TechSection() {
 
             {/* CTA Button */}
             <div className="pt-6">
-              <a
-                href="mailto:mail@andresgutierrez.me"
-                className="group flex items-center justify-center gap-4 px-8 py-4 rounded-full border border-brand-stroke bg-gradient-brand w-fit transition-transform hover:scale-[1.02] shadow-sm relative overflow-hidden"
-                aria-label="Send an email to mail@andresgutierrez.me to start a project"
+              <CTAButton
+                variant="tech"
+                ariaLabel="Send an email to mail@andresgutierrez.me to start a project"
               >
-                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="font-space-grotesk text-bg-main font-semibold text-lg z-10">
-                  Send an email
-                </span>
-                <div className="bg-bg-main rounded-[50%] p-2 group-hover:-rotate-45 transition-transform duration-300 z-10">
-                  <ArrowRight className="w-4 h-4 text-brand-light" />
-                </div>
-              </a>
+                Send an email
+              </CTAButton>
             </div>
           </div>
         </div>

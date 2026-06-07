@@ -47,7 +47,7 @@ export default function AboutSection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
-                      Curious person
+                      Curious
                     </h3>
                     <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
                       I love learning about history, science, technology and specially new ways to improve at my hobbies.
@@ -69,7 +69,7 @@ export default function AboutSection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
-                      Sports & fitness
+                      Sportsman
                     </h3>
                     <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
                       Weightlifting, swimming and chess (yes, it's a sport) are very precious to me, and I love talking about them when I have the chance
@@ -91,7 +91,7 @@ export default function AboutSection() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-space-grotesk text-white font-semibold text-xl mb-2 group-hover:text-brand-light transition-colors">
-                      I love tech
+                      Tech Nerd
                     </h3>
                     <p className="font-space-grotesk text-white/90 text-sm leading-relaxed">
                       Hardware tinkering, cloud infrastructure experiments, open-source contributions — I do this stuff for fun, not just for work.

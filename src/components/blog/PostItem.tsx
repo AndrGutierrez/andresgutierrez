@@ -59,17 +59,15 @@ export default function PostItem({ post }: { post: PostPreviewType }) {
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mt-2">
-          {post.tags?.length ? (
-            post.tags.map((tag) => (
+        {post.tags?.length && (
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
               <Tag key={tag} variant="outline">
                 {tag}
               </Tag>
-            ))
-          ) : (
-            <Tag variant="ghost">Personal</Tag>
-          )}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Read Post Link */}
         <div className="flex items-center gap-2 mt-4">

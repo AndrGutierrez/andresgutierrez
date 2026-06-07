@@ -24,12 +24,12 @@ export default function BlogHero() {
         </h1>
 
         {/* Description */}
-        <p className="text-lg md:text-xl font-space-grotesk text-white/60 max-w-2xl mb-10 leading-relaxed">
+        <p className="text-lg md:text-xl font-space-grotesk text-white/60 max-w-2xl leading-relaxed">
           A window into my mind, tech career, hobbies and personal projects. Writing helps me solidify what I learn, and I use this space to share the ideas, tools, and insights I find most interesting.
         </p>
 
         {/* Stats */}
-        <div className="flex items-center gap-12 border-t border-white/10 pt-10">
+        {/* <div className="flex items-center gap-12 border-t border-white/10 pt-10">
           <div className="flex flex-col items-start">
             <span className="text-4xl md:text-5xl font-archivo text-white/80 leading-none mb-2">12</span>
             <span className="text-base font-space-grotesk text-white/40">Articles</span>
@@ -39,7 +39,7 @@ export default function BlogHero() {
             <span className="text-4xl md:text-5xl font-archivo text-white/80 leading-none mb-2">4</span>
             <span className="text-base font-space-grotesk text-white/40">Topics</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

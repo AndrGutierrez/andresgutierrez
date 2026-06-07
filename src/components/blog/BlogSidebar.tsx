@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, ArrowRight, User } from "lucide-react";
+import CTAButton from "@/components/ui/CTAButton";
 
 export default function BlogSidebar() {
   return (
@@ -26,17 +27,14 @@ export default function BlogSidebar() {
             Writing about the things I genuinely find interesting — cloud infra,
             full-stack dev, hardware, and the occasional engineering opinion.
           </p>
-          <button className="flex items-center justify-between w-full px-4 py-3 rounded-full bg-gradient-brand hover:shadow-[0_0_20px_rgba(108,160,148,0.3)] shadow-[0_0_15px_rgba(108,160,148,0.2)] transition-all text-brand-950 font-space-grotesk font-medium text-sm group/btn">
+          <CTAButton variant="blog-sidebar">
             Say hello
-            <div className="w-6 h-6 rounded-full bg-brand-950 flex items-center justify-center group-hover/btn:bg-brand-900 transition-colors">
-              <ArrowRight className="w-3 h-3 text-white" />
-            </div>
-          </button>
+          </CTAButton>
         </div>
       </div>
 
       {/* Topics */}
-      <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
+      {/* <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
         <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/40" />
         <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/40" />
 
@@ -63,7 +61,7 @@ export default function BlogSidebar() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Subscribe */}
       <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
