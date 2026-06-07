@@ -14,7 +14,7 @@ export default function Loading() {
           <div className="h-16 w-3/4 max-w-2xl bg-white/5 rounded-2xl mb-6 animate-pulse" />
           <div className="h-5 w-1/2 max-w-lg bg-white/5 rounded-xl mb-10 animate-pulse" />
 
-          <div className="flex gap-12 border-t border-white/10 pt-10">
+          {/* <div className="flex gap-12 border-t border-white/10 pt-10">
             <div className="flex flex-col gap-2">
               <div className="w-16 h-10 bg-white/5 rounded-lg animate-pulse" />
               <div className="w-12 h-4 bg-white/5 rounded animate-pulse" />
@@ -24,15 +24,15 @@ export default function Loading() {
               <div className="w-16 h-10 bg-white/5 rounded-lg animate-pulse" />
               <div className="w-12 h-4 bg-white/5 rounded animate-pulse" />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
       <div className="container py-8">
         {/* Filters Skeleton */}
-        <div className="w-full flex justify-center py-8">
+        {/* <div className="w-full flex justify-center py-8">
           <div className="h-[60px] w-full max-w-[600px] bg-white/5 border border-white/10 rounded-full animate-pulse" />
-        </div>
+        </div> */}
 
         <div className="flex flex-col lg:flex-row gap-12 mt-8">
           {/* Main Posts Grid Skeleton */}
