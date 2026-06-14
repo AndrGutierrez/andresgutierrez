@@ -63,7 +63,7 @@ export default function BlogSidebar() {
         </div>
       </div> */}
 
-      {/* Subscribe */}
+      {/* Subscribe 
       <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10 overflow-hidden">
         <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/40" />
         <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/40" />
@@ -93,6 +93,7 @@ export default function BlogSidebar() {
           </button>
         </div>
       </div>
+*/}
 
       {/* Most Read */}
       {/* <div className="relative p-6 rounded-2xl bg-white/5 border border-white/10 overflow-hidden text-left">

@@ -202,12 +202,15 @@ export default async function PostPage({
                   </span>
                 </div>
 
+                {/* Views -  
                 <div className="flex items-center justify-between text-sm py-3 border-b border-white/5">
                   <span className="text-white/40 flex items-center gap-2 lowercase">
                     <span className="w-4 h-4 text-brand">👁️</span> Views
                   </span>
                   <span className="text-white/90 font-medium">1.2k</span>
                 </div>
+                */}
+
 
                 <div className="flex items-center justify-between py-3">
                   <div className="flex items-center gap-2 text-white/40">
