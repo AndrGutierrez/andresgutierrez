@@ -13,8 +13,8 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left Content */}
-          <div className="flex flex-col gap-8 flex-1 w-full lg:w-auto">
-            <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3 flex-1 w-full lg:w-auto">
+            <div className="flex flex-col gap-4">
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-stroke/20 bg-white/[0.02] backdrop-blur-sm w-fit">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" className="text-brand-400" />
@@ -33,7 +33,7 @@ export default function AboutSection() {
             </p>
 
             {/* About Cards */}
-            <div className="flex flex-col gap-6 pt-4">
+            <div className="flex flex-col gap-4 pt-4">
               {/* Card 1 */}
               <div className="border border-white/10 bg-white/[0.01] backdrop-blur-md rounded-2xl p-6 hover:border-brand-stroke/40 hover:bg-white/[0.02] transition-all duration-300 overflow-hidden relative group">
                 <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-white/20 group-hover:border-brand-stroke transition-colors" />
@@ -103,19 +103,14 @@ export default function AboutSection() {
 
           </div>
 
-          {/* Right - Profile Container */}
-          <div className="relative w-full lg:w-auto h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center flex-1 rounded-3xl overflow-hidden border border-brand-stroke/20 bg-[#13201E] group">
-            <div className="absolute inset-0 bg-gradient-brand opacity-10 group-hover:opacity-20 transition-opacity duration-500" />
+          {/* Right - Profile Picture */}
+          <div className="relative w-full lg:w-auto h-[400px] md:h-[500px] lg:h-[600px] flex-1 rounded-3xl overflow-hidden border border-brand-stroke/20 bg-[#13201E] group group-hover:shadow-[0_0_40px_-10px_rgba(0,200,150,0.15)] transition-shadow duration-500">
+            <img
+              src="https://andresgutierrez.me/images/me.jpg"
+              alt="Andres Gutierrez"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute top-0 w-full h-[50%] bg-gradient-to-b from-brand-light/5 to-transparent pointer-events-none" />
-
-            <div className="flex flex-col items-center gap-6 z-10 text-brand-light">
-              <div className="w-24 h-24 rounded-full bg-brand-400/10 flex items-center justify-center p-6 border border-brand-stroke/30">
-                <User className="w-full h-full text-brand-light opacity-50" />
-              </div>
-              <p className="font-space-grotesk text-brand-light/90 uppercase tracking-widest text-sm font-bold">
-                Profile Placeholder
-              </p>
-            </div>
 
             {/* Social Icons */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-[#13201E]/80 backdrop-blur-xl px-6 py-3 rounded-full border border-brand-stroke/30">
@@ -123,10 +118,10 @@ export default function AboutSection() {
                 href="https://www.instagram.com/andresg.ut"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center hover:opacity-80 transition-opacity"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 hover:text-white text-white/80 transition-colors border border-white/5"
                 aria-label="Follow me on Instagram"
               >
-                <FontAwesomeIcon icon={faInstagram} className="w-5 h-5 text-[#13201E]" />
+                <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
               </a>
               <a
                 href="https://github.com/AndrGutierrez"

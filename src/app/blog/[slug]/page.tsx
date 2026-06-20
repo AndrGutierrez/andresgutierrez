@@ -211,28 +211,27 @@ export default async function PostPage({
                 </div>
                 */}
 
+                {tags?.length && (
 
-                <div className="flex items-center justify-between py-3">
-                  <div className="flex items-center gap-2 text-white/40">
-                    <Layout className="w-4 h-4" />
-                    <span className="text-sm">Topic</span>
+                  <div className="flex items-center justify-between py-3 border-b">
+                    <div className="flex items-center gap-2 text-white/40">
+                      <Layout className="w-4 h-4" />
+                      <span className="text-sm">Topic</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 justify-end">
+                      {
+                        tags.map((tag) => (
+                          <Tag key={tag} variant="solid">
+                            {tag}
+                          </Tag>
+                        ))}
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 justify-end">
-                    {tags?.length ? (
-                      tags.map((tag) => (
-                        <Tag key={tag} variant="solid">
-                          {tag}
-                        </Tag>
-                      ))
-                    ) : (
-                      <Tag variant="solid">DevOps</Tag>
-                    )}
-                  </div>
-                </div>
+                )}
               </div>
 
               {/* Newsletter or Contact Mini-CTA */}
-              <div className="pt-6 border-t border-white/5">
+              <div className="  border-white/5">
                 <h4 className="font-archivo text-lg mb-4">
                   Wanna reach out?
                 </h4>
@@ -241,7 +240,6 @@ export default async function PostPage({
                 </p>
                 <CTAButton
                   variant="blog-sidebar"
-                  href="#contact"
                 >
                   Let's Talk
                 </CTAButton>
@@ -255,6 +253,7 @@ export default async function PostPage({
       <div className="max-w-[1240px] mx-auto border-t border-white/10" />
 
       {/* "More Posts" Section */}
+      {/*
       <section className="py-24 px-4 md:px-8 max-w-[1440px] mx-auto">
         <div className="max-w-[1240px] mx-auto">
           <div className="flex items-center gap-4 mb-12">
@@ -273,6 +272,7 @@ export default async function PostPage({
           </div>
         </div>
       </section>
+      */}
     </div>
   );
 }
