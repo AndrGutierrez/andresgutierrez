@@ -43,8 +43,10 @@ export default function PostItem({ post }: { post: PostPreviewType }) {
             <span className="text-sm font-space-grotesk">{dateStr}</span>
           </div>
           <div className="flex items-center gap-2 text-white/60">
+            {/*
             <Clock className="w-4 h-4 text-brand" />
             <span className="text-sm font-space-grotesk">5 min read</span>
+          */}
           </div>
         </div>
 

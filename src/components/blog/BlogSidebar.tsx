@@ -12,8 +12,12 @@ export default function BlogSidebar() {
         <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/40" />
 
         <div className="flex flex-col items-start gap-4">
-          <div className="w-14 h-14 rounded-full bg-brand/20 flex items-center justify-center border border-brand/40">
-            <User className="text-brand w-8 h-8" />
+          <div className="w-14 h-14 rounded-full overflow-hidden border border-brand/40">
+            <img
+              src="https://andresgutierrez.me/images/me.jpeg"
+              alt="Andrés Gutiérrez"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <h3 className="text-xl font-archivo text-white">
